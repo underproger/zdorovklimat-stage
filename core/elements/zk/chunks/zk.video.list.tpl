@@ -13,9 +13,9 @@
         </div>
         <div class="video-grid">
             {foreach $videos as $i => $v}
-            <article class="video-card{$i == 0 ? ' is-featured' : ''}">
+            <article class="video-card">
                 <div class="video-cover">
-                    <img src="{$v.cover}" alt="" loading="lazy" width="960" height="540">
+                    <img src="{$v.cover}" alt="" loading="lazy" width="640" height="360">
                     <span class="video-num">{($i < 9 ? '0' : '') ~ ($i + 1)}</span>
                     <span class="video-play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
                 </div>

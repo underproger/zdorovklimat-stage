@@ -6,7 +6,7 @@
 <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V4m-6 6 6-6 6 6"/></symbol>
 <symbol id="i-close" viewBox="0 0 24 24"><path d="m5 5 14 14M5 19 19 5"/></symbol>
 <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 7h18M3 16h18"/></symbol>
-<symbol id="i-play" viewBox="0 0 24 24"><path d="M8 4 20 12 8 20Z" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M8.5 6.6v10.8c0 .8.9 1.3 1.6.9l8.5-5.4c.6-.4.6-1.4 0-1.8L10.1 5.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor" stroke="none"/></symbol>
 <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-3 2c1.5 3 3 4.5 6 6l2-3 5 2v4c0 1-1 2-2 2C10 20 4 14 3 5c0-1 1-2 2-2Z"/></symbol>
 <symbol id="i-phone-solid" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z" fill="currentColor" stroke="none"/></symbol>
 <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3.5 6h17v12h-17zM4 6.6l8 6.4 8-6.4"/></symbol>
