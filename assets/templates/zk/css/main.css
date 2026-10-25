@@ -213,7 +213,7 @@ main{min-height:65vh;display:block}
 .step p{font-size:12.5px;color:#697177;line-height:1.85;max-width:265px}
 
 /* ---------- partners + SEO text (макет 10.2026) ---------- */
-.partners-section{background:#f7f7f7;padding-top:76px;padding-bottom:90px}
+.partners-section{background:#f7f7f7;padding-top:76px;padding-bottom:84px}
 .partners-head{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;margin-bottom:46px}
 .partners-head .eyebrow{margin-bottom:22px}
 .partners-head .section-title{font-size:clamp(34px,3.5vw,52px);font-weight:700;letter-spacing:-1.8px;line-height:1.08}
@@ -231,9 +231,9 @@ main{min-height:65vh;display:block}
 .partner img{max-width:150px;max-height:48px;width:auto;height:auto;object-fit:contain;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.05);opacity:.78;transition:filter .3s,opacity .3s}
 .partner img:hover{filter:none;opacity:1}
 @keyframes partners{to{transform:translateX(-50%)}}
-.seo-block{position:relative;padding-top:42px}
-.seo-block:before{content:'';position:absolute;left:0;top:0;width:50px;height:3px;background:var(--yellow)}
-.partners-row+.seo-block{margin-top:18px}
+.seo-section{background:#f4f4f2;padding-bottom:90px}
+.seo-block{position:relative;padding-top:44px;border-top:1px solid var(--line)}
+.seo-block:before{content:'';position:absolute;left:0;top:-2px;width:50px;height:3px;background:var(--yellow)}
 .seo-text{font-size:14.5px;line-height:1.85;color:#5c666c;position:relative}
 .seo-text h2,.seo-text h3{color:var(--ink);font-size:28px;line-height:1.25;font-weight:700;letter-spacing:-.8px;margin:0 0 18px}
 .seo-text h3{font-size:20px;margin-top:28px;letter-spacing:-.4px}
@@ -241,7 +241,7 @@ main{min-height:65vh;display:block}
 .seo-text ul,.seo-text ol{margin:0 0 14px;padding-left:20px;list-style:disc}
 .seo-text a{text-decoration:underline}
 [data-collapsible].is-collapsible .seo-text{max-height:190px;overflow:hidden}
-[data-collapsible].is-collapsible .seo-text:after{content:'';position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(rgba(247,247,247,0),#f7f7f7)}
+[data-collapsible].is-collapsible .seo-text:after{content:'';position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(rgba(244,244,242,0),#f4f4f2)}
 [data-collapsible].is-open .seo-text{max-height:none}
 [data-collapsible].is-open .seo-text:after{display:none}
 .seo-toggle{margin-top:14px;gap:12px;font-size:10px}
@@ -636,7 +636,9 @@ dialog .dialog-description{font-size:13px;color:var(--muted);line-height:1.75;ma
   .form-end .btn{width:100%}
   .contact-bg{height:40%}
   /* partners + seo */
-  .partners-section{padding-top:56px;padding-bottom:60px}
+  .partners-section{padding-top:56px;padding-bottom:52px}
+  .seo-section{padding-bottom:58px}
+  .seo-block{padding-top:32px}
   .partners-head{display:block;margin-bottom:30px}
   .partners-head .section-title{font-size:34px;letter-spacing:-1.2px}
   .partners-text{font-size:14px}
