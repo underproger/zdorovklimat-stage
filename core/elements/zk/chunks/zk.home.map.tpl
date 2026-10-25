@@ -9,7 +9,7 @@
             <div class="eyebrow">{'zk.map.eyebrow' | lexicon}</div>
             <h2 class="section-title">{'zk.map.title' | lexicon}</h2>
             <p>{'zk.map.text' | lexicon}</p>
-            <a class="btn btn-yellow map-btn" href="{$zk.objects | url}">{'zk.map.cta' | lexicon}<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-yellow map-btn" href="{$zk.objects | url}#map">{'zk.map.cta' | lexicon}<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             <ul class="map-stats">
                 <li><b>{'zk.map.s1.num' | lexicon}</b><span>{'zk.map.s1.text' | lexicon}</span></li>
                 <li><b>{'zk.map.s2.num' | lexicon}</b><span>{'zk.map.s2.text' | lexicon}</span></li>
@@ -17,7 +17,7 @@
             </ul>
         </div>
         <div class="map-visual">
-            <a class="map-art" href="{$zk.objects | url}" aria-label="{'zk.map.cta' | lexicon}">
+            <a class="map-art" href="{$zk.objects | url}#map" aria-label="{'zk.map.cta' | lexicon}">
                 <img src="{$zk.assets}img/ua-map.svg?v={$zk.v}" alt="{'zk.map.alt' | lexicon}" loading="lazy" width="1012" height="696">
             </a>
             <ul class="map-card" aria-hidden="true">

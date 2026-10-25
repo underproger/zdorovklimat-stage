@@ -6,7 +6,7 @@
 {set $res = $_modx->resource}
 {set $title = $res.pagetitle}
 {set $crumb = $res.menutitle ?: $res.pagetitle}
-{set $crumbMid = [('zkb.crumb' | lexicon), ($res.parent | url), ($res.parent | url : ['scheme' => 'full'])]}
+{set $crumbTrail = [[('zkb.crumb' | lexicon), ($res.parent | url), ($res.parent | url : ['scheme' => 'full'])]]}
 {set $lead = ($res.introtext ?: '') | strip_tags | trim}
 {set $content = $res.content | replace : '<h1' : '<h2' | replace : '</h1>' : '</h2>' | ereplace : '~<img(?![^>]*\bloading=)~i' : '<img loading="lazy" decoding="async"'}
 {set $minutes = ((($res.content | strip_tags | length) + 1099) / 1100) | intval}

@@ -30,4 +30,5 @@
 <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M13.8 21.5v-8h2.7l.4-3.2h-3.1V8.4c0-.9.3-1.6 1.6-1.6h1.6V4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.3H7.9v3.2h2.7v8"/></symbol>
 <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="m10.2 9.2 4.6 2.8-4.6 2.8Z"/></symbol>
 <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M4 6.5h16v13.5H4zM4 10.5h16M8.5 4v4M15.5 4v4"/></symbol>
+<symbol id="i-camera" viewBox="0 0 24 24"><path d="M3.5 7.5h4l1.5-2.5h6l1.5 2.5h4v12h-17z"/><circle cx="12" cy="13.2" r="3.6"/></symbol>
 </svg>

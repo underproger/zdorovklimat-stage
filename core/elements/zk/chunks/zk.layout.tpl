@@ -22,13 +22,14 @@
     'maps'     => 'https://www.google.com/maps?cid=13721162408939025155',
     'assets'   => '/assets/templates/zk/',
     'self'     => ($_modx->resource.id | url),
-    'v'        => '20261025h',
+    'v'        => '20261025i',
 ]}
 {set $isHome = $_modx->resource.id in [1, 1288]}
 {set $processNum = '04'}
-{set $crumbMid = false}
+{set $crumbTrail = []}
 {* сторінки з темним першим екраном: шапка прозора поверх нього, на решті — суцільна *}
-{set $darkHero = $isHome || $_modx->resource.id in [$zk.about, $zk.video]}
+{set $darkHero = $isHome || $_modx->resource.id in [$zk.about, $zk.video, $zk.objects]}
+{if $_modx->resource.parent == $zk.objects && $_modx->resource.isfolder}{set $darkHero = true}{/if}
 <!doctype html>
 <html lang="{$ua ? 'uk' : 'ru'}">
 <head>

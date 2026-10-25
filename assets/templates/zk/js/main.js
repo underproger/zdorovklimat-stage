@@ -182,33 +182,48 @@
     }
   }
 
-  /* ---------- projects filter ---------- */
+  /* ---------- projects / objects: фільтр, лічильник, «Показати ще» ---------- */
   var plural = (window.Intl && Intl.PluralRules) ? new Intl.PluralRules(lang) : null;
   $$('[data-projects]').forEach(function (root) {
     var forms = (root.dataset.forms || '').split('|');
-    var counter = $('[data-count]', root);
+    var counter = $('[data-count]', root), more = $('[data-more]', root);
+    var size = parseInt(root.dataset.pageSize || '0', 10), limit = size, current = 'all';
+    var items = $$('[data-category-id]', root), filters = $$('[data-filter]', root);
     function count(n) {
       if (!counter || forms.length < 3) return;
       var cat = plural ? plural.select(n) : 'many';
       var word = cat === 'one' ? forms[0] : (cat === 'few' ? forms[1] : forms[2]);
       counter.textContent = n + ' ' + word;
     }
-    count($$('[data-category-id]', root).length);
-    $$('[data-filter]', root).forEach(function (b) {
+    function apply() {
+      var n = 0;
+      items.forEach(function (x) {
+        var match = current === 'all' || x.dataset.categoryId === current;
+        if (match) n++;
+        x.hidden = !(match && (!size || n <= limit));
+      });
+      count(n);
+      if (more) more.hidden = !size || n <= limit;
+    }
+    filters.forEach(function (b) {
       b.addEventListener('click', function () {
-        $$('[data-filter]', root).forEach(function (x) {
+        filters.forEach(function (x) {
           x.classList.toggle('active', x === b);
           x.setAttribute('aria-pressed', String(x === b));
         });
-        var n = 0;
-        $$('[data-category-id]', root).forEach(function (x) {
-          var show = b.dataset.filter === 'all' || x.dataset.categoryId === b.dataset.filter;
-          x.hidden = !show;
-          if (show) n++;
-        });
-        count(n);
+        current = b.dataset.filter;
+        limit = size;
+        apply();
       });
     });
+    if (more) more.addEventListener('click', function () {
+      var first = items.filter(function (x) { return x.hidden && (current === 'all' || x.dataset.categoryId === current); })[0];
+      limit += size;
+      apply();
+      if (first) first.focus({ preventScroll: true });
+    });
+    apply();
+    root.classList.add('is-ready');
   });
 
   /* ---------- collapsible SEO text ---------- */
