@@ -165,6 +165,64 @@
     });
   });
 
+  /* ---------- logo slider (2 rows, scroll-snap) ---------- */
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  $$('[data-slider]').forEach(function (slider) {
+    var vp = $('[data-slider-viewport]', slider), controls = $('[data-slider-controls]', slider),
+        dotsBox = $('[data-slider-dots]', slider), prev = $('[data-slider-prev]', slider), next = $('[data-slider-next]', slider);
+    if (!vp) return;
+    var pages = 1, timer = null, hover = false;
+    function pageWidth() { return vp.clientWidth || 1; }
+    function current() { return Math.round(vp.scrollLeft / pageWidth()); }
+    function build() {
+      pages = Math.max(1, Math.ceil((vp.scrollWidth - 2) / pageWidth()));
+      controls.hidden = pages < 2;
+      dotsBox.innerHTML = '';
+      for (var i = 0; i < pages; i++) {
+        var d = document.createElement('button');
+        d.type = 'button'; d.className = 'slider-dot'; d.setAttribute('aria-label', String(i + 1));
+        d.addEventListener('click', (function (n) { return function () { go(n); restart(); }; })(i));
+        dotsBox.appendChild(d);
+      }
+      sync();
+    }
+    function sync() {
+      var c = Math.min(current(), pages - 1);
+      $$('.slider-dot', dotsBox).forEach(function (d, i) {
+        d.classList.toggle('is-active', i === c);
+        d.setAttribute('aria-current', i === c ? 'true' : 'false');
+      });
+      if (prev) prev.disabled = vp.scrollLeft <= 2;
+      if (next) next.disabled = vp.scrollLeft + vp.clientWidth >= vp.scrollWidth - 2;
+    }
+    function go(n) {
+      if (n < 0) n = pages - 1;
+      if (n > pages - 1) n = 0;
+      vp.scrollTo({ left: n * pageWidth(), behavior: reduceMotion ? 'auto' : 'smooth' });
+    }
+    function restart() {
+      if (timer) clearInterval(timer);
+      if (reduceMotion || pages < 2) return;
+      timer = setInterval(function () { if (!hover && !document.hidden) go(current() + 1); }, 5000);
+    }
+    if (prev) prev.addEventListener('click', function () { go(current() - 1); restart(); });
+    if (next) next.addEventListener('click', function () { go(current() + 1); restart(); });
+    var raf = 0;
+    vp.addEventListener('scroll', function () { cancelAnimationFrame(raf); raf = requestAnimationFrame(sync); }, { passive: true });
+    slider.addEventListener('mouseenter', function () { hover = true; });
+    slider.addEventListener('mouseleave', function () { hover = false; });
+    slider.addEventListener('focusin', function () { hover = true; });
+    slider.addEventListener('focusout', function () { hover = false; });
+    vp.addEventListener('touchstart', function () { restart(); }, { passive: true });
+    vp.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(current() + 1); restart(); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(current() - 1); restart(); }
+    });
+    var rt = 0;
+    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { build(); restart(); }, 150); });
+    build(); restart();
+  });
+
   /* ---------- forms (AjaxForm + FormIt) ---------- */
   var isProduction = /(^|\.)zdorovklimat\.com\.ua$/.test(location.hostname);
 

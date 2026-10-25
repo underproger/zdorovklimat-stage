@@ -18,11 +18,19 @@
             </div>
             <a class="text-link partners-link" href="{$zk.reviews | url}">{'zk.clients.link' | lexicon}</a>
         </div>
-        <div class="partners-row{if ($logos | length) > 6} is-moving{/if}">
-            <div class="partners-viewport"><div class="partners-track">
-                {foreach $logos as $logo}<div class="partner"><img src="{$logo}" alt="" width="290" height="120" decoding="async"></div>{/foreach}
-                {if ($logos | length) > 6}{foreach $logos as $logo}<div class="partner" aria-hidden="true"><img src="{$logo}" alt="" width="290" height="120" decoding="async"></div>{/foreach}{/if}
-            </div></div>
+        <div class="partners-slider" data-slider>
+            <div class="partners-viewport" data-slider-viewport tabindex="0" aria-label="{'zk.clients.eyebrow' | lexicon}">
+                <div class="partners-grid">
+                    {foreach $logos as $logo}<div class="partner"><img src="{$logo}" alt="" width="290" height="120" loading="lazy" decoding="async"></div>{/foreach}
+                </div>
+            </div>
+            <div class="slider-controls" data-slider-controls hidden>
+                <div class="slider-dots" data-slider-dots></div>
+                <div class="slider-arrows">
+                    <button class="round slider-prev" type="button" data-slider-prev aria-label="{'zk.slider.prev' | lexicon}"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+                    <button class="round slider-next" type="button" data-slider-next aria-label="{'zk.slider.next' | lexicon}"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+                </div>
+            </div>
         </div>
     </div>
 </section>

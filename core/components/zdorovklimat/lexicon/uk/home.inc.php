@@ -98,6 +98,8 @@ $_lang['zk.step4.text'] = 'Супроводжуємо завершення ро�
 $_lang['zk.clients.eyebrow'] = 'Нам довіряють';
 $_lang['zk.clients.title'] = 'Будуємо довіру.';
 $_lang['zk.clients.text'] = 'Довгострокове партнерство починається з результату.';
+$_lang['zk.slider.prev'] = 'Попередні';
+$_lang['zk.slider.next'] = 'Наступні';
 $_lang['zk.clients.link'] = 'Наші партнери';
 
 // Географія
