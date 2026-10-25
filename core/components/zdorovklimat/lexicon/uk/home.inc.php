@@ -19,6 +19,8 @@ $_lang['zk.all_directions'] = 'Усі напрямки роботи';
 $_lang['zk.all_services'] = 'Усі послуги';
 $_lang['zk.lang'] = 'Мова сайту';
 $_lang['zk.close'] = 'Закрити';
+$_lang['zk.breadcrumbs'] = 'Навігаційний ланцюжок';
+$_lang['zk.nav.home'] = 'Головна';
 
 // Перший екран
 $_lang['zk.hero.eyebrow'] = 'Промислове будівництво під ключ';
@@ -166,6 +168,7 @@ $_lang['zk.form.error'] = 'Не вдалося надіслати заявку. 
 $_lang['zk.form.sending'] = 'Надсилаємо…';
 $_lang['zk.form.subject'] = 'Заявка з головної сторінки';
 $_lang['zk.form.subject_dialog'] = 'Заявка з вікна «Обговорити проєкт»';
+$_lang['zk.form.subject_page'] = 'Заявка зі сторінки';
 
 // Діалоги
 $_lang['zk.dialog.eyebrow'] = 'Почнімо з розмови';
@@ -174,6 +177,10 @@ $_lang['zk.dialog.text'] = 'Залиште контактні дані — ми 
 $_lang['zk.video.label'] = 'Відеопрезентація';
 $_lang['zk.video.fallback'] = 'Відео не відтворюється?';
 $_lang['zk.video.open'] = 'Відкрити на YouTube';
+$_lang['zk.gallery.next'] = 'Наступне зображення';
+$_lang['zk.gallery.prev'] = 'Попереднє зображення';
+$_lang['zk.gallery.label'] = 'Перегляд документа';
+$_lang['zk.gallery.open'] = 'Відкрити оригінал';
 
 // Футер
 $_lang['zk.footer.desc'] = 'Проєктування, промислове будівництво та інженерні системи. Від ідеї до введення в експлуатацію.';

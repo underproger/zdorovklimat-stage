@@ -15,7 +15,7 @@
         <div class="hero-bottom">
             <span class="location"><i class="live-dot"></i>{'zk.hero.location' | lexicon}</span>
             <span class="hero-note">{'zk.hero.note' | lexicon}</span>
-            <a class="scroll" href="#services"><span>{'zk.hero.scroll' | lexicon}</span><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+            <a class="scroll" href="{$zk.self}#services"><span>{'zk.hero.scroll' | lexicon}</span><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </div>
     </div>
 </section>

@@ -7,7 +7,7 @@
     "name": "{$ua ? 'Здоровий Клімат' : 'Здоровый Климат'}",
     "image": "[[!++site_url:replace=`ru/==`]]assets/templates/zk/img/hero.webp",
     "logo": "[[!++site_url:replace=`ru/==`]]assets/templates/zk/img/mark.svg",
-    "description": "{'zk.footer.desc' | lexicon | escape : 'js'}",
+    "description": {'zk.footer.desc' | lexicon | escape : 'js'},
     "email": "{$zk.email}",
     "telephone": "+38{$zk.phone1 | ereplace : '/\D+/' : ''}",
     "priceRange": "$$",

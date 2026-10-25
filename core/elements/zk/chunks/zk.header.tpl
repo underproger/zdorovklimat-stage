@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header{$darkHero ? '' : ' solid'}">
     <div class="header-inner wrap">
         <a class="brand" href="{$zk.home | url}" aria-label="{'zk.brand_aria' | lexicon}">
             <img src="{$zk.assets}img/mark.svg" width="48" height="48" alt="">

@@ -18,7 +18,7 @@
 [[!BabelLinks? &tpl=`BabelLink-head` &showCurrent=`1`]]
 <link rel="preload" href="{$zk.assets}fonts/manrope-600.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="{$zk.assets}fonts/manrope-400.woff" as="font" type="font/woff" crossorigin>
-<link rel="preload" as="image" href="{$zk.assets}img/hero.webp">
+{if $isHome}<link rel="preload" as="image" href="{$zk.assets}img/hero.webp">{/if}
 <link rel="stylesheet" href="{$zk.assets}css/main.css?v={$zk.v}">
 {ignore}<script>window.AjaxForm={config:null,initialize:function(c){this.config=c}};</script>{/ignore}
 <script defer src="{$zk.assets}js/main.js?v={$zk.v}"></script>

@@ -1,3 +1,4 @@
+{set $formSubject = $isHome ? ('zk.form.subject' | lexicon) : (('zk.form.subject_page' | lexicon) ~ ' «' ~ ($_modx->resource.menutitle ?: $_modx->resource.pagetitle) ~ '»')}
 <section class="contact-section" id="contact">
     <div class="contact-bg" aria-hidden="true"><img src="{$zk.assets}img/contact-bg.jpg" alt="" loading="lazy"><i class="contact-stripe"></i></div>
     <div class="wrap contact-layout">
@@ -24,10 +25,10 @@
                 &zkId=`lead`
                 &snippet=`FormIt`
                 &hooks=`spam,email,FormItSaveForm`
-                &formName=`{'zk.form.subject' | lexicon}`
+                &formName=`{$formSubject}`
                 &formFields=`name,phone,type,message,title,link`
                 &fieldNames=`name==Ім’я,phone==Телефон,type==Тип об’єкта,message==Повідомлення,title==Сторінка,link==Посилання`
-                &emailSubject=`{'zk.form.subject' | lexicon}`
+                &emailSubject=`{$formSubject}`
                 &emailTo=`[[++form-mail]]`
                 &emailFrom=`no-reply@zdorovklimat.com.ua`
                 &emailFromName=`[[++site_name]]`

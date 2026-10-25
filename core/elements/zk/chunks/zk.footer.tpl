@@ -40,7 +40,7 @@
         <div class="footer-bottom">
             <span>{'zk.footer.copy' | lexicon : ['year' => ('now' | date : 'Y')]}</span>
             <a href="https://impulse-design.com.ua/" target="_blank" rel="noopener">{'zk.footer.design' | lexicon}</a>
-            <a class="top-link" href="#top">{'zk.footer.top' | lexicon}<svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></a>
+            <a class="top-link" href="{$zk.self}#top">{'zk.footer.top' | lexicon}<svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></a>
         </div>
     </div>
 </footer>

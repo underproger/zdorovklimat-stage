@@ -122,6 +122,39 @@
   var projectConsult = projectDialog && $('.project-consult', projectDialog);
   if (projectConsult) projectConsult.addEventListener('click', function () { projectDialog.close(); openConsult(); });
 
+  /* ---------- gallery (ліцензії тощо) ---------- */
+  var gallery = $('#gallery-dialog');
+  if (gallery) {
+    var gImg = $('img', gallery), gItems = [], gIndex = 0;
+    var showItem = function (i) {
+      gIndex = (i + gItems.length) % gItems.length;
+      var b = gItems[gIndex];
+      gImg.src = b.dataset.full;
+      gImg.alt = b.dataset.title || '';
+      $('.gallery-title', gallery).textContent = b.dataset.title || '';
+      $('.gallery-count', gallery).textContent = (gIndex + 1) + ' / ' + gItems.length;
+      $('.gallery-open', gallery).href = b.dataset.full;
+    };
+    $$('[data-gallery]').forEach(function (root) {
+      var items = $$('[data-full]', root);
+      items.forEach(function (b, i) {
+        b.addEventListener('click', function () {
+          gItems = items;
+          gallery.classList.toggle('is-single', items.length < 2);
+          showItem(i);
+          openDialog(gallery);
+        });
+      });
+    });
+    $('.gallery-prev', gallery).addEventListener('click', function () { showItem(gIndex - 1); });
+    $('.gallery-next', gallery).addEventListener('click', function () { showItem(gIndex + 1); });
+    gallery.addEventListener('keydown', function (e) {
+      if (gItems.length < 2) return;
+      if (e.key === 'ArrowLeft') showItem(gIndex - 1);
+      if (e.key === 'ArrowRight') showItem(gIndex + 1);
+    });
+  }
+
   /* ---------- projects filter ---------- */
   var plural = (window.Intl && Intl.PluralRules) ? new Intl.PluralRules(lang) : null;
   $$('[data-projects]').forEach(function (root) {

@@ -19,6 +19,8 @@ $_lang['zk.all_directions'] = 'Все направления работы';
 $_lang['zk.all_services'] = 'Все услуги';
 $_lang['zk.lang'] = 'Язык сайта';
 $_lang['zk.close'] = 'Закрыть';
+$_lang['zk.breadcrumbs'] = 'Навигационная цепочка';
+$_lang['zk.nav.home'] = 'Главная';
 
 // Первый экран
 $_lang['zk.hero.eyebrow'] = 'Промышленное строительство под ключ';
@@ -167,6 +169,7 @@ $_lang['zk.form.error'] = 'Не удалось отправить заявку. 
 $_lang['zk.form.sending'] = 'Отправляем…';
 $_lang['zk.form.subject'] = 'Заявка с главной страницы';
 $_lang['zk.form.subject_dialog'] = 'Заявка из окна «Обсудить проект»';
+$_lang['zk.form.subject_page'] = 'Заявка со страницы';
 
 // Диалоги
 $_lang['zk.dialog.eyebrow'] = 'Начнём с разговора';
@@ -175,6 +178,10 @@ $_lang['zk.dialog.text'] = 'Оставьте контактные данные �
 $_lang['zk.video.label'] = 'Видеопрезентация';
 $_lang['zk.video.fallback'] = 'Видео не воспроизводится?';
 $_lang['zk.video.open'] = 'Открыть на YouTube';
+$_lang['zk.gallery.next'] = 'Следующее изображение';
+$_lang['zk.gallery.prev'] = 'Предыдущее изображение';
+$_lang['zk.gallery.label'] = 'Просмотр документа';
+$_lang['zk.gallery.open'] = 'Открыть оригинал';
 
 // Футер
 $_lang['zk.footer.desc'] = 'Проектирование, промышленное строительство и инженерные системы. От идеи до ввода в эксплуатацию.';

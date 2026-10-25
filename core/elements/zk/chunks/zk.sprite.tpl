@@ -20,4 +20,8 @@
 <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3.5-9 4.8 9 4.8 9-4.8Zm-9 8.4 9 4.8 9-4.8M3 15.6l9 4.8 9-4.8"/></symbol>
 <symbol id="i-buildings" viewBox="0 0 24 24"><path d="M3 20.5h18M5 20.5v-9h4v9m1.5 0v-16h4v16m1.5 0v-6.5h3.5v6.5"/></symbol>
 <symbol id="i-building" viewBox="0 0 70 70"><path d="M7 57V24L34 8l28 15v34H7Zm0-33 27 15 28-16M34 8v31m0 0v18M18 57V32l16-9 17 9v25M18 32l16 10 17-10"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+<symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M10.5 7.8v5.4M7.8 10.5h5.4"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5 9.5 6.5 9.5 6.5-3.5 6.5-9.5 6.5S2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-plot" viewBox="0 0 24 24"><path d="M3 8.5 9 5.5l6 3 6-3v10l-6 3-6-3-6 3Zm6-3v10m6-7v10"/></symbol>
 </svg>
