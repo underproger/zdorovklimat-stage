@@ -7,19 +7,27 @@
         {if $f}{set $logos[] = '/assets/images/design/' ~ $f}{/if}
     {/foreach}
 {/foreach}
-{if $logos}
-<section class="clients-section">
+{set $seo = $_modx->resource.content | trim}
+{if $logos || $seo}
+<section class="partners-section" id="partners">
     <div class="wrap">
-        <div class="clients-intro">
-            <div class="eyebrow">{'zk.clients.eyebrow' | lexicon}</div>
-            <p>{'zk.clients.text' | lexicon}</p>
+        {if $logos}
+        <div class="partners-head">
+            <div>
+                <div class="eyebrow"><span class="num">07</span><span class="sep">/</span>{'zk.clients.eyebrow' | lexicon}</div>
+                <h2 class="section-title">{'zk.clients.title' | lexicon}</h2>
+                <p class="partners-text">{'zk.clients.text' | lexicon}</p>
+            </div>
+            <a class="text-link partners-link" href="{$zk.reviews | url}">{'zk.clients.link' | lexicon}</a>
         </div>
-    </div>
-    <div class="client-marquee">
-        <div class="client-track">
-            {foreach $logos as $logo}<img src="{$logo}" alt="" width="290" height="120" decoding="async">{/foreach}
-            {foreach $logos as $logo}<img src="{$logo}" alt="" loading="lazy" width="290" height="120" aria-hidden="true">{/foreach}
+        <div class="partners-row{if ($logos | length) > 6} is-moving{/if}">
+            <div class="partners-viewport"><div class="partners-track">
+                {foreach $logos as $logo}<div class="partner"><img src="{$logo}" alt="" width="290" height="120" decoding="async"></div>{/foreach}
+                {if ($logos | length) > 6}{foreach $logos as $logo}<div class="partner" aria-hidden="true"><img src="{$logo}" alt="" width="290" height="120" decoding="async"></div>{/foreach}{/if}
+            </div></div>
         </div>
+        {/if}
+        {include 'zk.home.seo'}
     </div>
 </section>
 {/if}

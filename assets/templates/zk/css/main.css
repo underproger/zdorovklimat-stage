@@ -212,16 +212,41 @@ main{min-height:65vh;display:block}
 .step h3{font-size:20px;font-weight:600;letter-spacing:-.6px;margin-bottom:13px}
 .step p{font-size:12.5px;color:#697177;line-height:1.85;max-width:265px}
 
-/* ---------- clients ---------- */
-.clients-section{background:#fff;padding-top:70px;padding-bottom:65px;overflow:hidden}
-.clients-intro{display:flex;align-items:center;justify-content:space-between;gap:25px;margin-bottom:40px}
-.clients-intro p{font-size:11px;color:var(--muted)}
-.client-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.client-track{display:flex;gap:56px;width:max-content;animation:marquee 60s linear infinite}
-.client-marquee:hover .client-track{animation-play-state:paused}
-.client-track img{width:170px;height:70px;object-fit:contain;mix-blend-mode:multiply;filter:grayscale(1);opacity:.62;transition:filter .3s,opacity .3s}
-.client-track img:hover{filter:none;opacity:1}
-@keyframes marquee{to{transform:translateX(calc(-50% - 28px))}}
+/* ---------- partners + SEO text (макет 10.2026) ---------- */
+.partners-section{background:#f7f7f7;padding-top:76px;padding-bottom:90px}
+.partners-head{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;margin-bottom:46px}
+.partners-head .eyebrow{margin-bottom:22px}
+.partners-head .section-title{font-size:clamp(34px,3.5vw,52px);font-weight:700;letter-spacing:-1.8px;line-height:1.08}
+.partners-text{margin-top:12px;font-size:16px;line-height:1.6;color:#6b7075}
+.partners-link{min-width:250px;margin-top:62px;color:#3d4449;border-bottom-color:#cfd2d2;letter-spacing:.6px}
+.partners-link:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.partners-row{border-top:1px solid #dcdedd;border-bottom:1px solid #dcdedd;padding:18px 0}
+.partners-viewport{overflow:hidden}
+.partners-row.is-moving .partners-viewport{-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.partners-track{display:flex}
+.partners-row.is-moving .partners-track{width:max-content;animation:partners 80s linear infinite}
+.partners-row.is-moving:hover .partners-track{animation-play-state:paused}
+.partner{flex:0 0 auto;width:calc((min(100vw,1800px) - 2 * var(--pad)) / 6);height:66px;display:flex;align-items:center;justify-content:center;padding:0 24px;border-left:1px solid #dcdedd}
+.partners-row:not(.is-moving) .partner:first-child{border-left:0}
+.partner img{max-width:150px;max-height:48px;width:auto;height:auto;object-fit:contain;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.05);opacity:.78;transition:filter .3s,opacity .3s}
+.partner img:hover{filter:none;opacity:1}
+@keyframes partners{to{transform:translateX(-50%)}}
+.seo-block{position:relative;padding-top:42px}
+.seo-block:before{content:'';position:absolute;left:0;top:0;width:50px;height:3px;background:var(--yellow)}
+.partners-row+.seo-block{margin-top:18px}
+.seo-text{font-size:14.5px;line-height:1.85;color:#5c666c;position:relative}
+.seo-text h2,.seo-text h3{color:var(--ink);font-size:28px;line-height:1.25;font-weight:700;letter-spacing:-.8px;margin:0 0 18px}
+.seo-text h3{font-size:20px;margin-top:28px;letter-spacing:-.4px}
+.seo-text p{margin:0 0 14px}
+.seo-text ul,.seo-text ol{margin:0 0 14px;padding-left:20px;list-style:disc}
+.seo-text a{text-decoration:underline}
+[data-collapsible].is-collapsible .seo-text{max-height:190px;overflow:hidden}
+[data-collapsible].is-collapsible .seo-text:after{content:'';position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(rgba(247,247,247,0),#f7f7f7)}
+[data-collapsible].is-open .seo-text{max-height:none}
+[data-collapsible].is-open .seo-text:after{display:none}
+.seo-toggle{margin-top:14px;gap:12px;font-size:10px}
+.seo-toggle .icon{width:16px}
+[data-collapsible].is-open .seo-toggle .icon{transform:rotate(180deg)}
 
 /* ---------- map / географія (макет 10.2026) ---------- */
 .map-section{position:relative;overflow:hidden;background:radial-gradient(70% 80% at 62% 45%,#fbfbfa 0%,#f3f3f1 60%,#efefec 100%);isolation:isolate}
@@ -289,24 +314,6 @@ main{min-height:65vh;display:block}
 .blog-foot{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:auto;padding-top:14px}
 .blog-foot .text-link{font-size:10px;padding:9px 0;border-bottom-width:1px;letter-spacing:1.2px}
 .blog-foot .round{width:44px;height:44px;background:#fff}
-
-/* ---------- SEO text ---------- */
-.seo-section{background:#f4f4f2;padding:10px 0 90px}
-.seo-layout{display:grid;grid-template-columns:minmax(200px,.4fr) minmax(0,1fr);gap:60px;border-top:1px solid var(--line);padding-top:46px}
-.seo-body{max-width:900px}
-.seo-text{font-size:14px;line-height:1.85;color:#5c666c;position:relative}
-.seo-text h2,.seo-text h3{color:var(--ink);font-size:24px;line-height:1.3;font-weight:600;letter-spacing:-.6px;margin:0 0 16px}
-.seo-text h3{font-size:19px;margin-top:26px}
-.seo-text p{margin:0 0 14px}
-.seo-text ul,.seo-text ol{margin:0 0 14px;padding-left:20px;list-style:disc}
-.seo-text a{text-decoration:underline}
-[data-collapsible].is-collapsible .seo-text{max-height:150px;overflow:hidden}
-[data-collapsible].is-collapsible .seo-text:after{content:'';position:absolute;left:0;right:0;bottom:0;height:80px;background:linear-gradient(transparent,#f4f4f2)}
-[data-collapsible].is-open .seo-text{max-height:none}
-[data-collapsible].is-open .seo-text:after{display:none}
-.seo-toggle{margin-top:12px;gap:12px;font-size:10px}
-.seo-toggle .icon{width:16px}
-[data-collapsible].is-open .seo-toggle .icon{transform:rotate(180deg)}
 
 /* ---------- contact (макет 10.2026) ---------- */
 .contact-section{position:relative;overflow:hidden;background:#f7f7f5;isolation:isolate}
@@ -508,7 +515,9 @@ dialog .dialog-description{font-size:13px;color:var(--muted);line-height:1.75;ma
   .contact-bg:before{background:linear-gradient(180deg,#f7f7f5 0%,rgba(247,247,245,.35) 40%,rgba(247,247,245,.1))}
   .contact-stripe{left:60%}
   .form-card{max-width:560px}
-  .seo-layout{grid-template-columns:1fr;gap:20px}
+  /* partners */
+  .partner{width:calc((100vw - 2 * var(--pad)) / 4)}
+  .partners-link{margin-top:48px;min-width:200px}
   /* footer */
   .footer-top{grid-template-columns:1fr 1fr;gap:44px 0}
   .footer-brand{grid-column:1/-1;padding-right:0}
@@ -594,11 +603,6 @@ dialog .dialog-description{font-size:13px;color:var(--muted);line-height:1.75;ma
   .step .step-top{margin-bottom:20px}
   .step h3{font-size:17px;margin-bottom:10px}
   .step p{font-size:11.5px;line-height:1.8}
-  .clients-section{padding-top:48px;padding-bottom:45px}
-  .clients-intro{display:block;margin-bottom:26px}
-  .clients-intro p{margin-top:12px;font-size:11px}
-  .client-track{gap:34px}
-  .client-track img{width:120px;height:52px}
   /* map */
   .map-layout{padding-top:58px;padding-bottom:40px}
   .map-copy .eyebrow{margin-bottom:22px}
@@ -617,10 +621,6 @@ dialog .dialog-description{font-size:13px;color:var(--muted);line-height:1.75;ma
   .blog-body{padding:20px}
   .blog-decor{width:200px;opacity:.5}
   .blog-body h3{font-size:20px}
-  /* seo */
-  .seo-section{padding-bottom:58px}
-  .seo-text{font-size:13px}
-  .seo-text h2{font-size:21px}
   /* contact */
   .contact-layout{padding-top:56px;padding-bottom:30px}
   .contact-copy .section-title{font-size:42px;letter-spacing:-1.6px}
@@ -635,6 +635,16 @@ dialog .dialog-description{font-size:13px;color:var(--muted);line-height:1.75;ma
   .form-end{flex-direction:column;align-items:stretch;gap:16px}
   .form-end .btn{width:100%}
   .contact-bg{height:40%}
+  /* partners + seo */
+  .partners-section{padding-top:56px;padding-bottom:60px}
+  .partners-head{display:block;margin-bottom:30px}
+  .partners-head .section-title{font-size:34px;letter-spacing:-1.2px}
+  .partners-text{font-size:14px}
+  .partners-link{margin-top:16px;min-width:0;padding:11px 0;font-size:9.5px}
+  .partner{width:calc((100vw - 2 * var(--pad)) / 2.5);height:58px;padding:0 16px}
+  .partner img{max-width:120px;max-height:40px}
+  .seo-text{font-size:13px}
+  .seo-text h2{font-size:22px}
   /* footer */
   .footer{padding-top:52px;padding-bottom:70px}
   .footer-top{grid-template-columns:1fr;gap:34px;padding-bottom:40px}
@@ -659,5 +669,5 @@ dialog .dialog-description{font-size:13px;color:var(--muted);line-height:1.75;ma
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*:before,*:after{animation:none!important;transition:none!important}
-  .client-marquee{overflow-x:auto}
+  .partners-viewport{overflow-x:auto}
 }

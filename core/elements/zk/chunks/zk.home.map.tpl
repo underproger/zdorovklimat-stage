@@ -6,7 +6,7 @@
     </div>
     <div class="wrap map-layout">
         <div class="map-copy">
-            <div class="eyebrow">{'zk.map.eyebrow' | lexicon}</div>
+            <div class="eyebrow"><span class="num">06</span><span class="sep">/</span>{'zk.map.eyebrow' | lexicon}</div>
             <h2 class="section-title">{'zk.map.title' | lexicon}</h2>
             <p>{'zk.map.text' | lexicon}</p>
             <a class="btn btn-yellow map-btn" href="{$zk.objects | url}">{'zk.map.cta' | lexicon}<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>

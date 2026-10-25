@@ -96,7 +96,9 @@ $_lang['zk.step4.text'] = 'Сопровождаем завершение раб�
 
 // Клиенты
 $_lang['zk.clients.eyebrow'] = 'Нам доверяют';
-$_lang['zk.clients.text'] = 'Строим долгосрочные партнёрства.';
+$_lang['zk.clients.title'] = 'Строим доверие.';
+$_lang['zk.clients.text'] = 'Долгосрочное партнёрство начинается с результата.';
+$_lang['zk.clients.link'] = 'Наши партнёры';
 
 // География
 $_lang['zk.map.eyebrow'] = 'География работы';
