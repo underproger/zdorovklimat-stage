@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => true,
+  'namespace' => 'msoneclick',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'b6f1d5c168fec3b0db6b85b6eac5a5d7',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '340c18c759fb8f9c49321860ad33c0f5',
+  'native_key' => 'msoneclick_payments',
+  'object' => '{"key":"msoneclick_payments","value":"","xtype":"textfield","namespace":"msoneclick","area":"msoneclick","editedon":null}',
+);

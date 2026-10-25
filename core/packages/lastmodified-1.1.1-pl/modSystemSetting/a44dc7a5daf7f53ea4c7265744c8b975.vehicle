@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'lastmodified',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'bf2d0a7f6af4e69c724b8df6632ded8d',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'a44dc7a5daf7f53ea4c7265744c8b975',
+  'native_key' => 'lastmodified.prevent_authorized',
+  'object' => '{"key":"lastmodified.prevent_authorized","value":true,"xtype":"combo-boolean","namespace":"lastmodified","area":"lastmodified.main","editedon":null}',
+);

@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'stercseo',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'd4cf3776f5736473b47f40e5b05e5907',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'c3ac27fefc440eeda0677fa44fc0bb0a',
+  'native_key' => 'stercseo.changefreq',
+  'object' => '{"key":"stercseo.changefreq","value":"weekly","xtype":"textfield","namespace":"stercseo","area":"general","editedon":null}',
+);

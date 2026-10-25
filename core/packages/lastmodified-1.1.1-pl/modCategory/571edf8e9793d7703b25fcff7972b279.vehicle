@@ -1,0 +1,103 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Plugins' => 
+    array (
+      'ae320e0c4ec5e54d86c80eb89e5ac588' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modPlugin',
+        'object' => '{"id":null,"source":1,"property_preprocess":0,"name":"LastModified","description":"MODx Revolution plugin which handles the If-Modified-Since request header.","editor_type":0,"category":0,"cache_type":0,"plugincode":"\\/**\\r\\n * A part of LastModified plugin which handles the If-Modified-Since request header.\\r\\n *\\r\\n * @var modX $modx MODX instance\\r\\n * @var array $preventValues Prevent handling list\\r\\n * @var integer $lastUpdateTime Document last update time\\r\\n * @var integer $lastDownloadTime Document last download time (HTTP_IF_MODIFIED_SINCE)\\r\\n * @var string $cacheControl Cache-control directive (public, private)\\r\\n * @var integer $cacheMaxAge Cache max age in seconds\\r\\n * @var integer $cacheExpires Cache expires in seconds\\r\\n *\\/\\r\\nif ($modx->event->name == \'OnWebPagePrerender\') {\\r\\n    if ($modx->getOption(\'lastmodified.prevent_authorized\') && ($modx->user->get(\'username\') !== $modx->getOption(\'default_username\'))) {\\r\\n        return \'\';\\r\\n    }\\r\\n\\r\\n    if (!empty($modx->getOption(\'lastmodified.exclude\'))) {\\r\\n        $excludeOptionValues = explode(\',\', $modx->getOption(\'lastmodified.exclude\'));\\r\\n\\r\\n        $excludeIds = array_map(function ($value) {\\r\\n            return (int)$value;\\r\\n        }, $excludeOptionValues);\\r\\n\\r\\n        if (in_array($modx->resource->id, $excludeIds, false)) {\\r\\n            return \'\';\\r\\n        }\\r\\n    }\\r\\n\\r\\n    if (!empty($modx->getOption(\'lastmodified.prevent_session\'))) {\\r\\n        $preventOptionValues = explode(\',\', $modx->getOption(\'lastmodified.prevent_session\'));\\r\\n\\r\\n        $preventValues = array_map(function ($value) {\\r\\n            return strtolower(trim($value));\\r\\n        }, $preventOptionValues);\\r\\n\\r\\n        $sessionKeys = array_map(function ($value) {\\r\\n            return strtolower(trim($value));\\r\\n        }, array_keys($_SESSION));\\r\\n\\r\\n        if (count(array_intersect($preventValues, $sessionKeys)) > 0) {\\r\\n            return \'\';\\r\\n        }\\r\\n    }\\r\\n\\r\\n    $lastUpdateTime = $modx->resource->get(\'editedon\')\\r\\n        ? strtotime($modx->resource->get(\'editedon\'))\\r\\n        : strtotime($modx->resource->get(\'createdon\'));\\r\\n\\r\\n    if (empty($lastUpdateTime)) {\\r\\n        return \'\';\\r\\n    }\\r\\n\\r\\n    $cacheControl = trim($modx->getOption(\'lastmodified.response\'));\\r\\n\\r\\n    if (!in_array($cacheControl, [\'private\', \'public\'])) { \\/\\/ \'no-cache\'\\r\\n        $modx->log(xPDO::LOG_LEVEL_ERROR, \'LastModified: wrong \' . $cacheControl . \' response value. Check configuration.\');\\r\\n        return \'\';\\r\\n    }\\r\\n\\r\\n    $cacheMaxAge = ((int)$modx->getOption(\'lastmodified.maxage\') > 0) ? (int)$modx->getOption(\'lastmodified.maxage\') : 3600;\\r\\n    $cacheExpires = ((int)$modx->getOption(\'lastmodified.expires\') > 0) ? (int)$modx->getOption(\'lastmodified.expires\') : 3600;\\r\\n\\r\\n    if (!empty($_SERVER[\'HTTP_IF_MODIFIED_SINCE\'])) { \\/\\/ browser has sent If-Modified-Since request header\\r\\n        $lastDownloadTime = strtotime($_SERVER[\'HTTP_IF_MODIFIED_SINCE\']);\\r\\n        if ($lastUpdateTime <= $lastDownloadTime) {\\r\\n            $protocol = isset($_SERVER[\'SERVER_PROTOCOL\']) ? $_SERVER[\'SERVER_PROTOCOL\'] : \'HTTP\\/1.1\';\\r\\n            header($protocol . \' 304 Not Modified\');\\r\\n            header(\'Last-Modified: \' . gmdate(\'D, d M Y H:i:s\', $lastUpdateTime) . \' GMT\');\\r\\n            header(\'Cache-control: \' . $cacheControl . \', max-age=\' . $cacheMaxAge);\\r\\n            header(\'Expires: \' . gmdate(\'D, d M Y H:i:s\', time() + $cacheExpires));\\r\\n            exit(); \\/\\/ return \'\';\\r\\n        }\\r\\n    }\\r\\n    header(\'Last-Modified: \' . gmdate(\'D, d M Y H:i:s\', $lastUpdateTime) . \' GMT\');\\r\\n    header(\'Cache-control: \' . $cacheControl . \', max-age=\' . $cacheMaxAge);\\r\\n    header(\'Expires: \' . gmdate(\'D, d M Y H:i:s\', time() + $cacheExpires));\\r\\n\\r\\n    return \'\';\\r\\n}\\r\\n\\r\\n\\/**\\r\\n * A part of LastModified plugin which updates the editedon field of dependent resources.\\r\\n *\\r\\n * @var modX $modx MODX instance\\r\\n * @var int $id id of saved document (available on OnDocFormSave)\\r\\n * @var int $startId Site start id\\r\\n * @var modResource $start Site start object\\r\\n * @var int $nesting Nesting level option value\\r\\n * @var array $parentIds current page parents\\r\\n * @var modResource $parent Parent resource object\\r\\n *\\/\\r\\nif ($modx->event->name == \'OnDocFormSave\') {\\r\\n\\r\\n    if ($modx->getOption(\'lastmodified.update_start\')) {\\r\\n\\r\\n        $startId = (int)$modx->getOption(\'site_start\');\\r\\n\\r\\n        if ($startId > 0 && $startId !== $id) {\\r\\n\\r\\n            $start = $modx->getObject(\'modResource\', $startId);\\r\\n\\r\\n            if (!$start instanceof modResource) {\\r\\n                $modx->log(xPDO::LOG_LEVEL_ERROR, \'LastModified: get wrong modResource instance for site start with id \' . $startId . \' for document \' . $id . \'.\');\\r\\n                return \'\';\\r\\n            }\\r\\n\\r\\n            $start->set(\'editedon\', time());\\r\\n            $start->clearCache($resource->context_key);\\r\\n            $start->save();\\r\\n\\r\\n            unset($start);\\r\\n        }\\r\\n\\r\\n        unset($startId);\\r\\n    }\\r\\n\\r\\n    if ($modx->getOption(\'lastmodified.update_parent\')) {\\r\\n        $nesting = (($level = (int)$modx->getOption(\'lastmodified.update_level\')) > 0) ? $level : 1;\\r\\n\\r\\n        $parentIds = $modx->getParentIds($id, $nesting, [\'context\' => $resource->context_key]);\\r\\n\\r\\n        if (empty($parentIds)) {\\r\\n            $modx->log(xPDO::LOG_LEVEL_ERROR, \'LastModified: get empty ParentIds array. Possible context violation.\');\\r\\n            return \'\';\\r\\n        }\\r\\n\\r\\n        foreach ($parentIds as $parentId) {\\r\\n            if ($parentId === 0) {\\r\\n                break;\\r\\n            }\\r\\n\\r\\n            $parent = $modx->getObject(\'modResource\', $parentId);\\r\\n\\r\\n            if (!$parent instanceof modResource) {\\r\\n                $modx->log(xPDO::LOG_LEVEL_ERROR, \'LastModified: get wrong modResource instance for parent with id \' . $parentId . \' for document \' . $id . \'.\');\\r\\n                return \'\';\\r\\n            }\\r\\n\\r\\n            $parent->set(\'editedon\', time());\\r\\n            $parent->clearCache($resource->context_key);\\r\\n            $parent->save();\\r\\n\\r\\n            unset($parent);\\r\\n        }\\r\\n\\r\\n        unset($parentIds);\\r\\n\\r\\n        return \'\';\\r\\n    }\\r\\n}","locked":0,"properties":null,"disabled":0,"moduleguid":"","static":0,"static_file":"core\\/components\\/lastmodified\\/elements\\/plugins\\/plugin.lastmodified.php","content":"\\/**\\r\\n * A part of LastModified plugin which handles the If-Modified-Since request header.\\r\\n *\\r\\n * @var modX $modx MODX instance\\r\\n * @var array $preventValues Prevent handling list\\r\\n * @var integer $lastUpdateTime Document last update time\\r\\n * @var integer $lastDownloadTime Document last download time (HTTP_IF_MODIFIED_SINCE)\\r\\n * @var string $cacheControl Cache-control directive (public, private)\\r\\n * @var integer $cacheMaxAge Cache max age in seconds\\r\\n * @var integer $cacheExpires Cache expires in seconds\\r\\n *\\/\\r\\nif ($modx->event->name == \'OnWebPagePrerender\') {\\r\\n    if ($modx->getOption(\'lastmodified.prevent_authorized\') && ($modx->user->get(\'username\') !== $modx->getOption(\'default_username\'))) {\\r\\n        return \'\';\\r\\n    }\\r\\n\\r\\n    if (!empty($modx->getOption(\'lastmodified.exclude\'))) {\\r\\n        $excludeOptionValues = explode(\',\', $modx->getOption(\'lastmodified.exclude\'));\\r\\n\\r\\n        $excludeIds = array_map(function ($value) {\\r\\n            return (int)$value;\\r\\n        }, $excludeOptionValues);\\r\\n\\r\\n        if (in_array($modx->resource->id, $excludeIds, false)) {\\r\\n            return \'\';\\r\\n        }\\r\\n    }\\r\\n\\r\\n    if (!empty($modx->getOption(\'lastmodified.prevent_session\'))) {\\r\\n        $preventOptionValues = explode(\',\', $modx->getOption(\'lastmodified.prevent_session\'));\\r\\n\\r\\n        $preventValues = array_map(function ($value) {\\r\\n            return strtolower(trim($value));\\r\\n        }, $preventOptionValues);\\r\\n\\r\\n        $sessionKeys = array_map(function ($value) {\\r\\n            return strtolower(trim($value));\\r\\n        }, array_keys($_SESSION));\\r\\n\\r\\n        if (count(array_intersect($preventValues, $sessionKeys)) > 0) {\\r\\n            return \'\';\\r\\n        }\\r\\n    }\\r\\n\\r\\n    $lastUpdateTime = $modx->resource->get(\'editedon\')\\r\\n        ? strtotime($modx->resource->get(\'editedon\'))\\r\\n        : strtotime($modx->resource->get(\'createdon\'));\\r\\n\\r\\n    if (empty($lastUpdateTime)) {\\r\\n        return \'\';\\r\\n    }\\r\\n\\r\\n    $cacheControl = trim($modx->getOption(\'lastmodified.response\'));\\r\\n\\r\\n    if (!in_array($cacheControl, [\'private\', \'public\'])) { \\/\\/ \'no-cache\'\\r\\n        $modx->log(xPDO::LOG_LEVEL_ERROR, \'LastModified: wrong \' . $cacheControl . \' response value. Check configuration.\');\\r\\n        return \'\';\\r\\n    }\\r\\n\\r\\n    $cacheMaxAge = ((int)$modx->getOption(\'lastmodified.maxage\') > 0) ? (int)$modx->getOption(\'lastmodified.maxage\') : 3600;\\r\\n    $cacheExpires = ((int)$modx->getOption(\'lastmodified.expires\') > 0) ? (int)$modx->getOption(\'lastmodified.expires\') : 3600;\\r\\n\\r\\n    if (!empty($_SERVER[\'HTTP_IF_MODIFIED_SINCE\'])) { \\/\\/ browser has sent If-Modified-Since request header\\r\\n        $lastDownloadTime = strtotime($_SERVER[\'HTTP_IF_MODIFIED_SINCE\']);\\r\\n        if ($lastUpdateTime <= $lastDownloadTime) {\\r\\n            $protocol = isset($_SERVER[\'SERVER_PROTOCOL\']) ? $_SERVER[\'SERVER_PROTOCOL\'] : \'HTTP\\/1.1\';\\r\\n            header($protocol . \' 304 Not Modified\');\\r\\n            header(\'Last-Modified: \' . gmdate(\'D, d M Y H:i:s\', $lastUpdateTime) . \' GMT\');\\r\\n            header(\'Cache-control: \' . $cacheControl . \', max-age=\' . $cacheMaxAge);\\r\\n            header(\'Expires: \' . gmdate(\'D, d M Y H:i:s\', time() + $cacheExpires));\\r\\n            exit(); \\/\\/ return \'\';\\r\\n        }\\r\\n    }\\r\\n    header(\'Last-Modified: \' . gmdate(\'D, d M Y H:i:s\', $lastUpdateTime) . \' GMT\');\\r\\n    header(\'Cache-control: \' . $cacheControl . \', max-age=\' . $cacheMaxAge);\\r\\n    header(\'Expires: \' . gmdate(\'D, d M Y H:i:s\', time() + $cacheExpires));\\r\\n\\r\\n    return \'\';\\r\\n}\\r\\n\\r\\n\\/**\\r\\n * A part of LastModified plugin which updates the editedon field of dependent resources.\\r\\n *\\r\\n * @var modX $modx MODX instance\\r\\n * @var int $id id of saved document (available on OnDocFormSave)\\r\\n * @var int $startId Site start id\\r\\n * @var modResource $start Site start object\\r\\n * @var int $nesting Nesting level option value\\r\\n * @var array $parentIds current page parents\\r\\n * @var modResource $parent Parent resource object\\r\\n *\\/\\r\\nif ($modx->event->name == \'OnDocFormSave\') {\\r\\n\\r\\n    if ($modx->getOption(\'lastmodified.update_start\')) {\\r\\n\\r\\n        $startId = (int)$modx->getOption(\'site_start\');\\r\\n\\r\\n        if ($startId > 0 && $startId !== $id) {\\r\\n\\r\\n            $start = $modx->getObject(\'modResource\', $startId);\\r\\n\\r\\n            if (!$start instanceof modResource) {\\r\\n                $modx->log(xPDO::LOG_LEVEL_ERROR, \'LastModified: get wrong modResource instance for site start with id \' . $startId . \' for document \' . $id . \'.\');\\r\\n                return \'\';\\r\\n            }\\r\\n\\r\\n            $start->set(\'editedon\', time());\\r\\n            $start->clearCache($resource->context_key);\\r\\n            $start->save();\\r\\n\\r\\n            unset($start);\\r\\n        }\\r\\n\\r\\n        unset($startId);\\r\\n    }\\r\\n\\r\\n    if ($modx->getOption(\'lastmodified.update_parent\')) {\\r\\n        $nesting = (($level = (int)$modx->getOption(\'lastmodified.update_level\')) > 0) ? $level : 1;\\r\\n\\r\\n        $parentIds = $modx->getParentIds($id, $nesting, [\'context\' => $resource->context_key]);\\r\\n\\r\\n        if (empty($parentIds)) {\\r\\n            $modx->log(xPDO::LOG_LEVEL_ERROR, \'LastModified: get empty ParentIds array. Possible context violation.\');\\r\\n            return \'\';\\r\\n        }\\r\\n\\r\\n        foreach ($parentIds as $parentId) {\\r\\n            if ($parentId === 0) {\\r\\n                break;\\r\\n            }\\r\\n\\r\\n            $parent = $modx->getObject(\'modResource\', $parentId);\\r\\n\\r\\n            if (!$parent instanceof modResource) {\\r\\n                $modx->log(xPDO::LOG_LEVEL_ERROR, \'LastModified: get wrong modResource instance for parent with id \' . $parentId . \' for document \' . $id . \'.\');\\r\\n                return \'\';\\r\\n            }\\r\\n\\r\\n            $parent->set(\'editedon\', time());\\r\\n            $parent->clearCache($resource->context_key);\\r\\n            $parent->save();\\r\\n\\r\\n            unset($parent);\\r\\n        }\\r\\n\\r\\n        unset($parentIds);\\r\\n\\r\\n        return \'\';\\r\\n    }\\r\\n}"}',
+        'guid' => 'edcd93043f1b3bc3635f1c151ea45278',
+        'native_key' => NULL,
+        'signature' => 'bad416737adcda6cc687923f6cf977d7',
+        'related_objects' => 
+        array (
+          'PluginEvents' => 
+          array (
+            'ef002e0fe0f1a4c5ca0d75a52912a588' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnWebPagePrerender","priority":0,"propertyset":0}',
+              'guid' => 'c0290a4db6f9cbfc5ad172b50c177e2a',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnWebPagePrerender',
+              ),
+              'signature' => '49a4a8ca2d5b26766dbfa828fd0b4ef3',
+            ),
+            'c0daa79484f82e651d176a2d0ad8644c' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnDocFormSave","priority":0,"propertyset":0}',
+              'guid' => '6bf948d1b5e84fbb6296604561d4e366',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnDocFormSave',
+              ),
+              'signature' => '73a1ec7c203cc650d61c8efba3579d6b',
+            ),
+          ),
+        ),
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Plugins' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'PluginEvents' => 
+    array (
+      'preserve_keys' => true,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'pluginid',
+        1 => 'event',
+      ),
+    ),
+  ),
+  'namespace' => 'lastmodified',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"lastmodified-1.1.1-pl\\/modCategory\\/571edf8e9793d7703b25fcff7972b279\\/0\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"lastmodified"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '3e79afef02f106b589b33146e92fa9a8',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '571edf8e9793d7703b25fcff7972b279',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"LastModified","rank":0}',
+);

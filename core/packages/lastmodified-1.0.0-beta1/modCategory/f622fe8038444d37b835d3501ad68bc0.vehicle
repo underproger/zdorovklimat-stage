@@ -1,0 +1,69 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Snippets' => 
+    array (
+      '8de7b05bdd2d1ec3b578242005cb3753' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":1,"source":0,"property_preprocess":0,"name":"lastModified","description":"Simple snippet for dealing with browser caching. For example, say you have a stylesheet and you want to make sure everyone has the most recent version.","editor_type":0,"category":0,"cache_type":0,"snippet":"\\/**\\r\\n * lastModified\\r\\n *\\r\\n * Copyright 2016 by demon.devin <demon.devin@gmail.com>\\r\\n * Created on 10-07-2016\\r\\n *\\r\\n * lastModified is free software; you can redistribute it and\\/or modify it under the\\r\\n * terms of the GNU General Public License as published by the Free Software\\r\\n * Foundation; either version 2 of the License, or (at your option) any later\\r\\n * version.\\r\\n *\\r\\n * lastModified is distributed in the hope that it will be useful, but WITHOUT ANY\\r\\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\\r\\n * A PARTICULAR PURPOSE. See the GNU General Public License for more details.\\r\\n *\\r\\n * You should have received a copy of the GNU General Public License along with\\r\\n * countTrackula; if not, write to the Free Software Foundation, Inc., 59 Temple\\r\\n * Place, Suite 330, Boston, MA 02111-1307 USA\\r\\n *\\r\\n * @package lastModified\\r\\n *\\/\\r\\n\\/**\\r\\n * lastModified\\r\\n *\\r\\n * @author     demon.devin\\r\\n * @link       PortableAppz.cu.cc\\/\\r\\n * @copyright  2016\\r\\n * @package    lastMofified\\r\\n * @version    1.0\\r\\n * \\r\\n * With this snippet you will have the ability to deliver the most recent version of any file. \\r\\n * When dealing with a browser\'s cache you can\'t be certain your viewers are getting the most \\r\\n * recent copy. By appending a GET value (the UNIX timestamp) to, for example, a stylesheet, \\r\\n * you can make the browser think the stylesheet is dynamic, thus reloading the stylesheet time \\r\\n * the modification date changes. \\r\\n *\\r\\n * PROPERTIES\\r\\n * &path  |  string  |  required  ->  path to the file to download with trailing slash\\r\\n * &file  |  string  |  required  ->  filename of the document you wish to use\\r\\n *\\r\\n * EXAMPLE:\\r\\n * Specify a path &path=`css\\/` and the file &file=`style`. See OUTPUT below for example.\\r\\n * Don\'t for get to use a trailing slash on &path!\\r\\n *\\r\\n * <link rel=\\"stylesheet\\" type=\\"text\\/css\\" href=\\"[[!lastModified? &path=`css\\/` &file=\'style.css\']]\\" \\/>\\r\\n *\\r\\n * OUTPUT:\\r\\n * <link rel=\\"stylesheet\\" type=\\"text\\/css\\" href=\\"style.css?1477050530\\" \\/>\\r\\n *\\/\\r\\n \\r\\n\\/\\/\\r\\n\\/\\/default settings\\r\\n$path = $modx->getOption(\'path\', $scriptProperties);\\r\\n$file = $modx->getOption(\'file\', $scriptProperties);\\r\\n\\r\\n$lastModified = filemtime($path.$file);\\r\\n$timeStamp = $path.$file.\'?\'.$lastModified;\\r\\n\\r\\nreturn $timeStamp;","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"\\/**\\r\\n * lastModified\\r\\n *\\r\\n * Copyright 2016 by demon.devin <demon.devin@gmail.com>\\r\\n * Created on 10-07-2016\\r\\n *\\r\\n * lastModified is free software; you can redistribute it and\\/or modify it under the\\r\\n * terms of the GNU General Public License as published by the Free Software\\r\\n * Foundation; either version 2 of the License, or (at your option) any later\\r\\n * version.\\r\\n *\\r\\n * lastModified is distributed in the hope that it will be useful, but WITHOUT ANY\\r\\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\\r\\n * A PARTICULAR PURPOSE. See the GNU General Public License for more details.\\r\\n *\\r\\n * You should have received a copy of the GNU General Public License along with\\r\\n * countTrackula; if not, write to the Free Software Foundation, Inc., 59 Temple\\r\\n * Place, Suite 330, Boston, MA 02111-1307 USA\\r\\n *\\r\\n * @package lastModified\\r\\n *\\/\\r\\n\\/**\\r\\n * lastModified\\r\\n *\\r\\n * @author     demon.devin\\r\\n * @link       PortableAppz.cu.cc\\/\\r\\n * @copyright  2016\\r\\n * @package    lastMofified\\r\\n * @version    1.0\\r\\n * \\r\\n * With this snippet you will have the ability to deliver the most recent version of any file. \\r\\n * When dealing with a browser\'s cache you can\'t be certain your viewers are getting the most \\r\\n * recent copy. By appending a GET value (the UNIX timestamp) to, for example, a stylesheet, \\r\\n * you can make the browser think the stylesheet is dynamic, thus reloading the stylesheet time \\r\\n * the modification date changes. \\r\\n *\\r\\n * PROPERTIES\\r\\n * &path  |  string  |  required  ->  path to the file to download with trailing slash\\r\\n * &file  |  string  |  required  ->  filename of the document you wish to use\\r\\n *\\r\\n * EXAMPLE:\\r\\n * Specify a path &path=`css\\/` and the file &file=`style`. See OUTPUT below for example.\\r\\n * Don\'t for get to use a trailing slash on &path!\\r\\n *\\r\\n * <link rel=\\"stylesheet\\" type=\\"text\\/css\\" href=\\"[[!lastModified? &path=`css\\/` &file=\'style.css\']]\\" \\/>\\r\\n *\\r\\n * OUTPUT:\\r\\n * <link rel=\\"stylesheet\\" type=\\"text\\/css\\" href=\\"style.css?1477050530\\" \\/>\\r\\n *\\/\\r\\n \\r\\n\\/\\/\\r\\n\\/\\/default settings\\r\\n$path = $modx->getOption(\'path\', $scriptProperties);\\r\\n$file = $modx->getOption(\'file\', $scriptProperties);\\r\\n\\r\\n$lastModified = filemtime($path.$file);\\r\\n$timeStamp = $path.$file.\'?\'.$lastModified;\\r\\n\\r\\nreturn $timeStamp;"}',
+        'guid' => '46453c748f8e8d7808af46d6f4a3b1c9',
+        'native_key' => 1,
+        'signature' => '06186b32cc1ce0f49e74814fca85d4a0',
+      ),
+    ),
+    'PropertySets' => 
+    array (
+      '7c5a686c42fce1963f8e34aa26f2ba5f' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modPropertySet',
+        'object' => '{"id":1,"name":"PropertySet1","category":0,"description":"Description for PropertySet1","properties":null}',
+        'guid' => '18bb509c041b00f3db1821cb6d55b396',
+        'native_key' => 1,
+        'signature' => '4b33bade7f980371dea594573bec537a',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'PropertySets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+  ),
+  'namespace' => 'lastmodified',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"lastmodified-1.0.0-beta1\\/modCategory\\/f622fe8038444d37b835d3501ad68bc0\\/0\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"lastmodified"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '45fa3a256d1b451096f91cd3fcda678d',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => 'f622fe8038444d37b835d3501ad68bc0',
+  'native_key' => 1,
+  'object' => '{"id":1,"parent":0,"category":"lastModified","rank":0}',
+);

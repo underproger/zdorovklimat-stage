@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'easycomm',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '03553c3e3ed0e29d3fe7965f77884b43',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'b13eac1872093fa72c4e4d869e8aaf3f',
+  'native_key' => 'ec_mail_from_name',
+  'object' => '{"key":"ec_mail_from_name","value":"","xtype":"textfield","namespace":"easycomm","area":"ec_mail","editedon":null}',
+);

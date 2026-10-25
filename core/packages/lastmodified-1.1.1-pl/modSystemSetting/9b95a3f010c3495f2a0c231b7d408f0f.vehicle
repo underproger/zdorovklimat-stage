@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'lastmodified',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'd11cd6e75e296d67418de23508aadb4a',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '9b95a3f010c3495f2a0c231b7d408f0f',
+  'native_key' => 'lastmodified.update_level',
+  'object' => '{"key":"lastmodified.update_level","value":"1","xtype":"textfield","namespace":"lastmodified","area":"lastmodified.main","editedon":null}',
+);

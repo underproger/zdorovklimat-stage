@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => true,
+  'namespace' => 'msoneclick',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '7661c1a493d3662329c2ca170965c741',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '8943cf2b60e7f38977c42c16462a488c',
+  'native_key' => 'msoneclick_required_fields',
+  'object' => '{"key":"msoneclick_required_fields","value":"receiver,email,phone","xtype":"textfield","namespace":"msoneclick","area":"msoneclick","editedon":null}',
+);

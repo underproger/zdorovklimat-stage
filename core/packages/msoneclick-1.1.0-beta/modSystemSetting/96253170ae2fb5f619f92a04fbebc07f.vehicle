@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => true,
+  'namespace' => 'msoneclick',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '5c61d6b6853f35300859e40c1f618d5c',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '96253170ae2fb5f619f92a04fbebc07f',
+  'native_key' => 'msoneclick_frontend_css',
+  'object' => '{"key":"msoneclick_frontend_css","value":"[[+cssUrl]]web\\/default.css","xtype":"textfield","namespace":"msoneclick","area":"msoneclick","editedon":null}',
+);

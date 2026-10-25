@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'lastmodified',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '6408588ec121bb7484291e97cd3081e6',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'c9843458bf3c55497db464e1ca04b723',
+  'native_key' => 'lastmodified.response',
+  'object' => '{"key":"lastmodified.response","value":"private","xtype":"textfield","namespace":"lastmodified","area":"lastmodified.main","editedon":null}',
+);

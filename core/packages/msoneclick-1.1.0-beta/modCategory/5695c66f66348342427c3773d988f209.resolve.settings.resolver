@@ -1,0 +1,78 @@
+<?php
+
+/** @var xPDOTransport $transport */
+/** @var array $options */
+/** @var modX $modx */
+if ($transport->xpdo) {
+    $modx =& $transport->xpdo;
+    switch ($options[xPDOTransport::PACKAGE_ACTION]) {
+        case xPDOTransport::ACTION_INSTALL:
+        case xPDOTransport::ACTION_UPGRADE:
+
+            $modelPath = $modx->getOption('minishop2.core_path', null,
+                    $modx->getOption('core_path') . 'components/minishop2/') . 'model/';
+            $modx->addPackage('minishop2', $modelPath);
+            $lang = $modx->getOption('manager_language') == 'en' ? 1 : 0;
+
+            $modx->log(modX::LOG_LEVEL_INFO, "install setting <b>{$package_name}</b> and  <b>msOneClick</b> ");
+
+            /** @var msDelivery $delivery */
+            if (!$delivery = $modx->getObject('msDelivery', array('name' => 'Быстрый заказ'))) {
+                $delivery = $modx->newObject('msDelivery');
+                $delivery->fromArray(array(
+                    'name' => !$lang ? 'Быстрый заказ' : 'Self-delivery',
+                    'price' => 0,
+                    'weight_price' => 0,
+                    'distance_price' => 0,
+                    'active' => 0,
+                    'requires' => 'email,receiver',
+                    'rank' => 0,
+                ), '', true);
+                $delivery->save();
+            }
+
+            /** @var msPayment $payment */
+            if (!$payment = $modx->getObject('msPayment', array('name' => 'Быстрый заказ'))) {
+                $payment = $modx->newObject('msPayment');
+                $payment->fromArray(array(
+                    'name' => !$lang ? 'Быстрый заказ' : 'Cash',
+                    'active' => 0,
+                    'rank' => 0,
+                ), '', true);
+                $payment->save();
+            }
+
+
+            /** @var msDeliveryMember $member */
+            if (!$member = $modx->getObject('msDeliveryMember', array('payment_id' => 1, 'delivery_id' => 1))) {
+                $member = $modx->newObject('msDeliveryMember');
+                $member->fromArray(array(
+                    'payment_id' => $payment->get('id'),
+                    'delivery_id' => $delivery->get('id'),
+                ), '', true);
+                $member->save();
+            }
+
+            if ($setting = $modx->getObject('modSystemSetting', array('key' => 'msoneclick_deliverys'))) {
+                $value = $setting->get('value');
+                $setting->set('value', $delivery->get('id'));
+                $setting->save();
+            }
+
+            if ($setting = $modx->getObject('modSystemSetting', array('key' => 'msoneclick_payments'))) {
+                $value = $setting->get('value');
+                $setting->set('value', $payment->get('id'));
+                $setting->save();
+            }
+
+
+            break;
+
+        case xPDOTransport::ACTION_UNINSTALL:
+            $modx->removeCollection('modSystemSetting', array(
+                'namespace' => 'msoneclick',
+            ));
+            break;
+    }
+}
+return true;

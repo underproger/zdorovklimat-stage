@@ -1,0 +1,258 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Snippets' => 
+    array (
+      '956fee2033cd2e857ff64af82f3c53cd' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"StercSeoSiteMap","description":"Outputs the sitemap based on the resource settings made in SEO Tab","editor_type":0,"category":0,"cache_type":0,"snippet":"require_once $modx->getOption(\'stercseo.core_path\', null, $modx->getOption(\'core_path\').\'components\\/stercseo\\/\').\'model\\/stercseo\\/stercseo.class.php\';\\n$stercseo       = new StercSeo($modx, $scriptProperties);\\n$allowSymlinks  = (isset($allowSymlinks)) ? $allowSymlinks : 0;\\n$contexts       = (isset($contexts)) ? explode(\',\',str_replace(\' \', \'\', $contexts)) : array($modx->resource->get(\'context_key\'));\\n$outerTpl       = (isset($outerTpl)) ? $outerTpl : \'sitemap\\/outertpl\';\\n$rowTpl         = (isset($rowTpl)) ? $rowTpl : \'sitemap\\/rowtpl\';\\n\\nreturn $stercseo->sitemap($contexts, $rowTpl, $outerTpl, $allowSymlinks);","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"require_once $modx->getOption(\'stercseo.core_path\', null, $modx->getOption(\'core_path\').\'components\\/stercseo\\/\').\'model\\/stercseo\\/stercseo.class.php\';\\n$stercseo       = new StercSeo($modx, $scriptProperties);\\n$allowSymlinks  = (isset($allowSymlinks)) ? $allowSymlinks : 0;\\n$contexts       = (isset($contexts)) ? explode(\',\',str_replace(\' \', \'\', $contexts)) : array($modx->resource->get(\'context_key\'));\\n$outerTpl       = (isset($outerTpl)) ? $outerTpl : \'sitemap\\/outertpl\';\\n$rowTpl         = (isset($rowTpl)) ? $rowTpl : \'sitemap\\/rowtpl\';\\n\\nreturn $stercseo->sitemap($contexts, $rowTpl, $outerTpl, $allowSymlinks);"}',
+        'guid' => '25de3553ac94f199f4fb4e132888f4c1',
+        'native_key' => NULL,
+        'signature' => '406d7dcf059df2adf9e9d5fc3df8c154',
+      ),
+    ),
+    'Plugins' => 
+    array (
+      '5081583efc25fc44e8b68e344485114d' => 
+      array (
+        'unique_key' => 'name',
+        'preserve_keys' => false,
+        'update_object' => true,
+        'related_objects' => 
+        array (
+          'PluginEvents' => 
+          array (
+            '6defa55a8b8a2d292b22dc004b0bf0c9' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnDocFormPrerender","priority":0,"propertyset":0}',
+              'guid' => '4f1e48cdd533f8b41c38b3c1fda1094a',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnDocFormPrerender',
+              ),
+              'signature' => '7720e8edd171168a8c0590fc0e970cfe',
+            ),
+            'fb8603d81f631468c8addad35ce8ece5' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnBeforeDocFormSave","priority":0,"propertyset":0}',
+              'guid' => 'bdbe0821fe03a034b6c24cb73967644b',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnBeforeDocFormSave',
+              ),
+              'signature' => '5bd52fec2c758ce58fbb91a353108a01',
+            ),
+            '8236a58976e670c1cb950faf50338b97' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnLoadWebDocument","priority":0,"propertyset":0}',
+              'guid' => '689aaea5a87ededc5ae734cf17fe0918',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnLoadWebDocument',
+              ),
+              'signature' => '29e248a27d1429f37ac3fe5dd7fe144c',
+            ),
+            'fb8db38ffc9e71cd0bef4ba7208bdfc4' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnPageNotFound","priority":0,"propertyset":0}',
+              'guid' => 'e8c7d34101d9df9214896a1da5c3506a',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnPageNotFound',
+              ),
+              'signature' => '39ca623ca28e66f3876c7fc4566a50b9',
+            ),
+            'd00b20fc3a54b63e50440909dd2de94a' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnResourceDuplicate","priority":0,"propertyset":0}',
+              'guid' => 'ab407f743f61fc62785fe59af83855d0',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnResourceDuplicate',
+              ),
+              'signature' => '50f7f371075dd81a90abd80a192f25d6',
+            ),
+            '15e27afccb5493540d9f953417579752' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnManagerPageBeforeRender","priority":0,"propertyset":0}',
+              'guid' => '22d641ecad4b8f35dc96ade10daff7fa',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnManagerPageBeforeRender',
+              ),
+              'signature' => '8901effc57b3b96500c1d4f429146890',
+            ),
+            '7d2c68470172a4366f0e03d18acf8f40' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnResourceBeforeSort","priority":0,"propertyset":0}',
+              'guid' => '19c4f44cf94b122e95325c5044b70346',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnResourceBeforeSort',
+              ),
+              'signature' => 'cf7d984725c7c705ce33c8d677faa830',
+            ),
+            '8778e4a279c995eab645e562b8f919da' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnDocFormSave","priority":0,"propertyset":0}',
+              'guid' => '313c6e55f1dcf4bb17474581bc55af07',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnDocFormSave',
+              ),
+              'signature' => 'bc8994503afe83050f4b79fb383ecf00',
+            ),
+            'aac351521ffb19cae27de3d635d27a5d' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnEmptyTrash","priority":0,"propertyset":0}',
+              'guid' => 'a929420b8796d99e2b3f2321072b4b7a',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnEmptyTrash',
+              ),
+              'signature' => '7de56ec99ea5db3cec3a51d05c8d5e19',
+            ),
+          ),
+        ),
+        'related_object_attributes' => 
+        array (
+          'PluginEvents' => 
+          array (
+            'preserve_keys' => true,
+            'update_object' => false,
+            'unique_key' => 
+            array (
+              0 => 'pluginid',
+              1 => 'event',
+            ),
+          ),
+        ),
+        'class' => 'modPlugin',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"StercSEO","description":"Plugin to render SEO Tab and save all the data.","editor_type":0,"category":0,"cache_type":0,"plugincode":"\\/**\\n * SEO Tab\\n *\\n * Copyright 2013 by Sterc internet & marketing <modx@sterc.nl>\\n *\\n * This file is part of SEO Tab.\\n *\\n * SEO Tab is free software; you can redistribute it and\\/or modify it under the\\n * terms of the GNU General Public License as published by the Free Software\\n * Foundation; either version 2 of the License, or (at your option) any later\\n * version.\\n *\\n * SEO Tab is distributed in the hope that it will be useful, but WITHOUT ANY\\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\\n * A PARTICULAR PURPOSE. See the GNU General Public License for more details.\\n *\\n * You should have received a copy of the GNU General Public License along with\\n * SEO Tab; if not, write to the Free Software Foundation, Inc., 59 Temple Place,\\n * Suite 330, Boston, MA 02111-1307 USA\\n *\\n * @package stercseo\\n *\\/\\n\\/**\\n * SEO Tab Plugin\\n *\\n *\\n * Events:\\n * OnDocFormPrerender,OnDocFormSave,OnHandleRequest,OnPageNotFound, OnResourceDuplicate, OnEmptyThrash, OnResourceBeforeSort\\n *\\n * @author Sterc internet & marketing <modx@sterc.nl>\\n *\\n * @package stercseo\\n *\\n *\\/\\n$stercseo = $modx->getService(\'stercseo\', \'StercSEO\', $modx->getOption(\'stercseo.core_path\', null, $modx->getOption(\'core_path\').\'components\\/stercseo\\/\').\'model\\/stercseo\\/\', array());\\n\\nif (!($stercseo instanceof StercSEO)) {\\n    return;\\n}\\n\\nswitch ($modx->event->name) {\\n    case \'OnDocFormPrerender\':\\n        if (!$stercseo->checkUserAccess()) {\\n            return;\\n        }\\n\\n        $resource =& $modx->event->params[\'resource\'];\\n        if ($resource) {\\n            \\/\\/First check if SEO Tab is allowed in this context\\n            if (!$stercseo->isAllowed($resource->get(\'context_key\'))) {\\n                return;\\n            }\\n            $properties = $resource->getProperties(\'stercseo\');\\n            $urls = $modx->getCollection(\'seoUrl\', array(\'resource\' => $resource->get(\'id\')));\\n        }\\n\\n        if (empty($properties)) {\\n            $properties = array(\\n                \'index\' => $modx->getOption(\'stercseo.index\', null, \'1\'),\\n                \'follow\' => $modx->getOption(\'stercseo.follow\', null, \'1\'),\\n                \'sitemap\' => $modx->getOption(\'stercseo.sitemap\', null, \'1\'),\\n                \'priority\' => $modx->getOption(\'stercseo.priority\', null, \'0.5\'),\\n                \'changefreq\' => $modx->getOption(\'stercseo.changefreq\', null, \'weekly\')\\n            );\\n        }\\n        $properties[\'urls\'] = \'\';\\n        \\/\\/ Fetch urls from seoUrl collection\\n        if ($urls && is_object($urls)) {\\n            foreach ($urls as $url) {\\n                $properties[\'urls\'][][\'url\'] = urldecode($url->get(\'url\'));\\n            }\\n        }\\n\\n        $modx->regClientStartupHTMLBlock(\'<script type=\\"text\\/javascript\\">\\n        Ext.onReady(function() {\\n            StercSEO.config = \'.$modx->toJSON($stercseo->config).\';\\n            StercSEO.config.connector_url = \\"\'.$stercseo->config[\'connectorUrl\'].\'\\";\\n            StercSEO.record = \'.$modx->toJSON($properties).\';\\n        });\\n        <\\/script>\');\\n        $version = $modx->getVersionData();\\n\\n        \\/* include CSS and JS*\\/\\n        if ($version[\'version\'] == 2 && $version[\'major_version\'] == 2) {\\n            $modx->regClientCSS($stercseo->config[\'cssUrl\'].\'stercseo.css\');\\n        }\\n        $modx->regClientStartupScript($stercseo->config[\'jsUrl\'].\'mgr\\/stercseo.js\');\\n        $modx->regClientStartupScript($stercseo->config[\'jsUrl\'].\'mgr\\/sections\\/resource.js\');\\n        $modx->regClientStartupScript($stercseo->config[\'jsUrl\'].\'mgr\\/widgets\\/resource.grid.js\');\\n        $modx->regClientStartupScript($stercseo->config[\'jsUrl\'].\'mgr\\/widgets\\/resource.vtabs.js\');\\n\\n        \\/\\/add lexicon\\n        $modx->controller->addLexiconTopic(\'stercseo:default\');\\n\\n        break;\\n\\n    case \'OnBeforeDocFormSave\':\\n        $oldResource = ($mode == \'upd\') ? $modx->getObject(\'modResource\', $resource->get(\'id\')) : $resource;\\n        if (!$stercseo->isAllowed($oldResource->get(\'context_key\'))) {\\n            return;\\n        }\\n        $properties = $oldResource->getProperties(\'stercseo\');\\n\\n        if (isset($_POST[\'urls\'])) {\\n            $urls = $modx->fromJSON($_POST[\'urls\']);\\n            foreach ($urls as $url) {\\n                $check = $modx->getObject(\'seoUrl\', array( \'url\' => urlencode($url[\'url\']), \'resource\' => $oldResource->get(\'id\'), \'context_key\' => $oldResource->get(\'context_key\')));\\n                if (!$check) {\\n                    $redirect = $modx->newObject(\'seoUrl\');\\n                    $data = array(\\n                        \'url\' => urlencode($url[\'url\']),\\n                        \'resource\' => $oldResource->get(\'id\'),\\n                        \'context_key\' => $oldResource->get(\'context_key\'),\\n                    );\\n                    $redirect->fromArray($data);\\n                    $redirect->save();\\n                }\\n            }\\n        }\\n\\n        if ($mode == \'upd\') {\\n            $newProperties = array(\\n                \'index\' => (isset($_POST[\'index\']) ? $_POST[\'index\'] : $properties[\'index\']),\\n                \'follow\' => (isset($_POST[\'follow\']) ? $_POST[\'follow\'] : $properties[\'follow\']),\\n                \'sitemap\' => (isset($_POST[\'sitemap\']) ? $_POST[\'sitemap\'] : $properties[\'sitemap\']),\\n                \'priority\' => (isset($_POST[\'priority\']) ? $_POST[\'priority\'] : $properties[\'priority\']),\\n                \'changefreq\' => (isset($_POST[\'changefreq\']) ? $_POST[\'changefreq\'] : $properties[\'changefreq\'])\\n            );\\n        } else {\\n            $newProperties = array(\\n                \'index\' => (isset($_POST[\'index\']) ? $_POST[\'index\'] : $modx->getOption(\'stercseo.index\', null, \'1\')),\\n                \'follow\' => (isset($_POST[\'follow\']) ? $_POST[\'follow\'] : $modx->getOption(\'stercseo.follow\', null, \'1\')),\\n                \'sitemap\' => (isset($_POST[\'sitemap\']) ? $_POST[\'sitemap\'] : $modx->getOption(\'stercseo.sitemap\', null, \'1\')),\\n                \'priority\' => (isset($_POST[\'priority\']) ? $_POST[\'priority\'] : $modx->getOption(\'stercseo.priority\', null, \'0.5\')),\\n                \'changefreq\' => (isset($_POST[\'changefreq\']) ? $_POST[\'changefreq\'] : $modx->getOption(\'stercseo.changefreq\', null, \'weekly\'))\\n            );\\n        }\\n\\n        \\/\\/ If uri is changed or alias (with freeze uri off) has changed, add a new redirect\\n        if (($oldResource->get(\'uri\') != $resource->get(\'uri\') ||\\n                ($oldResource->get(\'uri_override\') == 0 && $oldResource->get(\'alias\') != $resource->get(\'alias\'))) &&\\n            $oldResource->get(\'uri\') != \'\') {\\n            $url = urlencode($modx->getOption(\'site_url\').$oldResource->get(\'uri\'));\\n            if (!$modx->getCount(\'seoUrl\', array(\'url\' => $url))) {\\n                $data = array(\\n                    \'url\' => $url,\\n                    \'resource\' => $resource->get(\'id\'),\\n                    \'context_key\' => $resource->get(\'context_key\'),\\n                );\\n                $redirect = $modx->newObject(\'seoUrl\');\\n                $redirect->fromArray($data);\\n                $redirect->save();\\n            }\\n            \\/\\/ Recursive set all children resources as redirects\\n            if ($modx->getOption(\'use_alias_path\')) {\\n                $resourceOldBasePath = $oldResource->getAliasPath($oldResource->get(\'alias\'), $oldResource->toArray() + array(\'isfolder\' => 1));\\n                $resourceNewBasePath = $resource->getAliasPath($resource->get(\'alias\'), $resource->toArray() + array(\'isfolder\' => 1));\\n                $childResources = $modx->getIterator(\'modResource\', array(\\n                    \'uri:LIKE\' => $resourceOldBasePath . \'%\',\\n                    \'uri_override\' => \'0\',\\n                    \'published\' => \'1\',\\n                    \'deleted\' => \'0\',\\n                    \'context_key\' => $resource->get(\'context_key\')\\n                ));\\n                foreach ($childResources as $childResource) {\\n                    $url = urlencode($modx->getOption(\'site_url\').$childResource->get(\'uri\'));\\n                    if (!$modx->getCount(\'seoUrl\', array(\'url\' => $url))) {\\n                        $data = array(\\n                            \'url\' => $url,\\n                            \'resource\' => $childResource->get(\'id\'),\\n                            \'context_key\' => $resource->get(\'context_key\'),\\n                        );\\n                        $redirect = $modx->newObject(\'seoUrl\');\\n                        $redirect->fromArray($data);\\n                        $redirect->save();\\n                    }\\n                }\\n            }\\n        }\\n        $resource->setProperties($newProperties, \'stercseo\');\\n        break;\\n\\n    case \'OnDocFormSave\':\\n        if (!$stercseo->isAllowed($resource->context_key)) {\\n            return;\\n        }\\n\\n        $url       = urlencode($modx->makeUrl($resource->id, $resource->context_key, \'\', \'full\'));\\n        $urlExists = $modx->getObject(\'seoUrl\', array(\\n            \'url\'         => $url,\\n            \'context_key\' => $resource->context_key\\n        ));\\n\\n        if ($urlExists) {\\n            $modx->removeObject(\'seoUrl\', array(\\n                \'url\'         => $url,\\n                \'context_key\' => $resource->context_key\\n            ));\\n        }\\n        break;\\n\\n    case \'OnLoadWebDocument\':\\n        if ($modx->resource) {\\n            if (!$stercseo->isAllowed($modx->resource->get(\'context_key\'))) {\\n                return;\\n            }\\n            $properties = $modx->resource->getProperties(\'stercseo\');\\n            if (empty($properties)) {\\n                \\/\\/ Properties not available\\n                \\/\\/ This means an this resource has nog SEO Tab properties, which means it is a pre-SEO Tab resource\\n                \\/\\/ Fallback to system defaults\\n                $properties = array(\\n                    \'index\' => $modx->getOption(\'stercseo.index\', null, 1),\\n                    \'follow\' => $modx->getOption(\'stercseo.follow\', null, 1)\\n                );\\n            }\\n            $metaContent = array(\'noodp\', \'noydir\');\\n            $metaContent[] = (intval($properties[\'index\']) ? \'index\' : \'noindex\');\\n            $metaContent[] = (intval($properties[\'follow\']) ? \'follow\' : \'nofollow\');\\n\\n            $modx->setPlaceholder(\'seoTab.robotsTag\', implode(\',\', $metaContent));\\n        }\\n        break;\\n\\n    case \'OnPageNotFound\':\\n        $options      = array();\\n        $url          = $modx->getOption(\'server_protocol\').\':\\/\\/\'.$_SERVER[\'HTTP_HOST\'].$_SERVER[\'REQUEST_URI\'];\\n        $convertedUrl = urlencode($url);\\n\\n        $w = array(\\n            \'url\' => $convertedUrl\\n        );\\n\\n        if ($modx->getOption(\'stercseo.context-aware-alias\', null, \'0\')) {\\n            $w[\'context_key\'] = $modx->context->key;\\n        }\\n\\n        $alreadyExists = $modx->getObject(\'seoUrl\', $w);\\n\\n        if (isset($alreadyExists) && ($modx->context->key !== $alreadyExists->get(\'context_key\'))) {\\n            $q = $modx->newQuery(\'modContextSetting\');\\n            $q->where(array(\\n                \'context_key\' => $alreadyExists->get(\'context_key\'),\\n                \'key\'         => \'site_url\'\\n            ));\\n            $q->prepare();\\n\\n            $siteUrl = $modx->getObject(\'modContextSetting\', $q);\\n            if ($siteUrl) {\\n                $options[\'site_url\'] = $siteUrl->get(\'value\');\\n            }\\n        }\\n\\n        if ($alreadyExists) {\\n            $url = $modx->makeUrl($alreadyExists->get(\'resource\'), $alreadyExists->get(\'context_key\'), \'\', \'full\', $options);\\n\\n            $modx->sendRedirect($url, 0, \'REDIRECT_HEADER\', \'HTTP\\/1.1 301 Moved Permanently\');\\n        }\\n        break;\\n\\n    case \'OnResourceBeforeSort\':\\n        list($sourceCtx, $resource) = explode(\'_\', $modx->getOption(\'source\', $_POST));\\n        list($targetCtx, $target) = explode(\'_\', $modx->getOption(\'target\', $_POST));\\n        switch ($modx->getOption(\'point\', $_POST)) {\\n            case \'above\':\\n            case \'below\':\\n                $tmpRes = $modx->getObject(\'modResource\', $target);\\n                $target = $tmpRes->get(\'parent\');\\n                unset($tmpRes);\\n                break;\\n        }\\n        $oldResource = $modx->getObject(\'modResource\', $resource);\\n        $resource = $modx->getObject(\'modResource\', $resource);\\n        $resource->set(\'parent\', $target);\\n        $resource->set(\'uri\', \'\');\\n        $uriChanged = false;\\n        if ($oldResource->get(\'uri\') != $resource->get(\'uri\') && $oldResource->get(\'uri\') != \'\') {\\n            $uriChanged              = true;\\n        }\\n\\n        \\/\\/ Recursive set redirects for drag\\/dropped resource, and its children (where uri_override is not set)\\n        if ($uriChanged && $modx->getOption(\'use_alias_path\')) {\\n            $oldResource->set(\'isfolder\', true);\\n            $resourceOldBasePath = $oldResource->getAliasPath(\\n                $oldResource->get(\'alias\'),\\n                $oldResource->toArray()\\n            );\\n            $resourceNewBasePath = $resource->getAliasPath(\\n                $resource->get(\'alias\'),\\n                $resource->toArray() + array(\'isfolder\' => 1)\\n            );\\n            $cond = $modx->newQuery(\'modResource\');\\n            $cond->where(array(\\n                array(\\n                    \'uri:LIKE\'     => $resourceOldBasePath . \'%\',\\n                    \'OR:id:=\' => $oldResource->id\\n                ),\\n                \'uri_override\' => \'0\',\\n                \'published\' => \'1\',\\n                \'deleted\' => \'0\',\\n                \'context_key\' => $resource->get(\'context_key\')\\n            ));\\n\\n            $childResources = $modx->getIterator(\'modResource\', $cond);\\n            foreach ($childResources as $childResource) {\\n                $url = urlencode($modx->getOption(\'site_url\').$childResource->get(\'uri\'));\\n                if (!$modx->getCount(\'seoUrl\', array(\'url\' => $url))) {\\n                    $data = array(\\n                        \'url\' => $url,\\n                        \'resource\' => $childResource->get(\'id\'),\\n                        \'context_key\' => $targetCtx\\n                    );\\n                    $redirect = $modx->newObject(\'seoUrl\');\\n                    $redirect->fromArray($data);\\n                    $redirect->save();\\n                }\\n            }\\n        }\\n        break;\\n\\n    case \'OnResourceDuplicate\':\\n        if (!$stercseo->isAllowed($newResource->get(\'context_key\'))) {\\n            return;\\n        }\\n        $props = $newResource->getProperties(\'stercseo\');\\n        $newResource->setProperties($props, \'stercseo\');\\n        $newResource->save();\\n        break;\\n\\n    case \'OnManagerPageBeforeRender\':\\n        if (!$stercseo->checkUserAccess()) {\\n            return;\\n        }\\n        \\/\\/ If migration status is false, show migrate alert message bar in manager\\n        if (!$stercseo->redirectMigrationStatus()) {\\n            $modx->regClientStartupHTMLBlock($stercseo->getChunk(\'migrate\\/alert\', array(\'message\' => $modx->lexicon(\'stercseo.migrate_alert\'))));\\n            $modx->regClientCSS($stercseo->config[\'cssUrl\'].\'migrate.css\');\\n        }\\n        break;\\n\\n    case \'OnEmptyTrash\':\\n        if (count($ids) > 0) {\\n            foreach ($ids as $id) {\\n                $modx->removeCollection(\'seoUrl\', array(\\n                    \'resource\' => $id\\n                ));\\n            }\\n        }\\n}\\nreturn;","locked":0,"properties":"a:0:{}","disabled":0,"moduleguid":"","static":0,"static_file":"","content":"\\/**\\n * SEO Tab\\n *\\n * Copyright 2013 by Sterc internet & marketing <modx@sterc.nl>\\n *\\n * This file is part of SEO Tab.\\n *\\n * SEO Tab is free software; you can redistribute it and\\/or modify it under the\\n * terms of the GNU General Public License as published by the Free Software\\n * Foundation; either version 2 of the License, or (at your option) any later\\n * version.\\n *\\n * SEO Tab is distributed in the hope that it will be useful, but WITHOUT ANY\\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\\n * A PARTICULAR PURPOSE. See the GNU General Public License for more details.\\n *\\n * You should have received a copy of the GNU General Public License along with\\n * SEO Tab; if not, write to the Free Software Foundation, Inc., 59 Temple Place,\\n * Suite 330, Boston, MA 02111-1307 USA\\n *\\n * @package stercseo\\n *\\/\\n\\/**\\n * SEO Tab Plugin\\n *\\n *\\n * Events:\\n * OnDocFormPrerender,OnDocFormSave,OnHandleRequest,OnPageNotFound, OnResourceDuplicate, OnEmptyThrash, OnResourceBeforeSort\\n *\\n * @author Sterc internet & marketing <modx@sterc.nl>\\n *\\n * @package stercseo\\n *\\n *\\/\\n$stercseo = $modx->getService(\'stercseo\', \'StercSEO\', $modx->getOption(\'stercseo.core_path\', null, $modx->getOption(\'core_path\').\'components\\/stercseo\\/\').\'model\\/stercseo\\/\', array());\\n\\nif (!($stercseo instanceof StercSEO)) {\\n    return;\\n}\\n\\nswitch ($modx->event->name) {\\n    case \'OnDocFormPrerender\':\\n        if (!$stercseo->checkUserAccess()) {\\n            return;\\n        }\\n\\n        $resource =& $modx->event->params[\'resource\'];\\n        if ($resource) {\\n            \\/\\/First check if SEO Tab is allowed in this context\\n            if (!$stercseo->isAllowed($resource->get(\'context_key\'))) {\\n                return;\\n            }\\n            $properties = $resource->getProperties(\'stercseo\');\\n            $urls = $modx->getCollection(\'seoUrl\', array(\'resource\' => $resource->get(\'id\')));\\n        }\\n\\n        if (empty($properties)) {\\n            $properties = array(\\n                \'index\' => $modx->getOption(\'stercseo.index\', null, \'1\'),\\n                \'follow\' => $modx->getOption(\'stercseo.follow\', null, \'1\'),\\n                \'sitemap\' => $modx->getOption(\'stercseo.sitemap\', null, \'1\'),\\n                \'priority\' => $modx->getOption(\'stercseo.priority\', null, \'0.5\'),\\n                \'changefreq\' => $modx->getOption(\'stercseo.changefreq\', null, \'weekly\')\\n            );\\n        }\\n        $properties[\'urls\'] = \'\';\\n        \\/\\/ Fetch urls from seoUrl collection\\n        if ($urls && is_object($urls)) {\\n            foreach ($urls as $url) {\\n                $properties[\'urls\'][][\'url\'] = urldecode($url->get(\'url\'));\\n            }\\n        }\\n\\n        $modx->regClientStartupHTMLBlock(\'<script type=\\"text\\/javascript\\">\\n        Ext.onReady(function() {\\n            StercSEO.config = \'.$modx->toJSON($stercseo->config).\';\\n            StercSEO.config.connector_url = \\"\'.$stercseo->config[\'connectorUrl\'].\'\\";\\n            StercSEO.record = \'.$modx->toJSON($properties).\';\\n        });\\n        <\\/script>\');\\n        $version = $modx->getVersionData();\\n\\n        \\/* include CSS and JS*\\/\\n        if ($version[\'version\'] == 2 && $version[\'major_version\'] == 2) {\\n            $modx->regClientCSS($stercseo->config[\'cssUrl\'].\'stercseo.css\');\\n        }\\n        $modx->regClientStartupScript($stercseo->config[\'jsUrl\'].\'mgr\\/stercseo.js\');\\n        $modx->regClientStartupScript($stercseo->config[\'jsUrl\'].\'mgr\\/sections\\/resource.js\');\\n        $modx->regClientStartupScript($stercseo->config[\'jsUrl\'].\'mgr\\/widgets\\/resource.grid.js\');\\n        $modx->regClientStartupScript($stercseo->config[\'jsUrl\'].\'mgr\\/widgets\\/resource.vtabs.js\');\\n\\n        \\/\\/add lexicon\\n        $modx->controller->addLexiconTopic(\'stercseo:default\');\\n\\n        break;\\n\\n    case \'OnBeforeDocFormSave\':\\n        $oldResource = ($mode == \'upd\') ? $modx->getObject(\'modResource\', $resource->get(\'id\')) : $resource;\\n        if (!$stercseo->isAllowed($oldResource->get(\'context_key\'))) {\\n            return;\\n        }\\n        $properties = $oldResource->getProperties(\'stercseo\');\\n\\n        if (isset($_POST[\'urls\'])) {\\n            $urls = $modx->fromJSON($_POST[\'urls\']);\\n            foreach ($urls as $url) {\\n                $check = $modx->getObject(\'seoUrl\', array( \'url\' => urlencode($url[\'url\']), \'resource\' => $oldResource->get(\'id\'), \'context_key\' => $oldResource->get(\'context_key\')));\\n                if (!$check) {\\n                    $redirect = $modx->newObject(\'seoUrl\');\\n                    $data = array(\\n                        \'url\' => urlencode($url[\'url\']),\\n                        \'resource\' => $oldResource->get(\'id\'),\\n                        \'context_key\' => $oldResource->get(\'context_key\'),\\n                    );\\n                    $redirect->fromArray($data);\\n                    $redirect->save();\\n                }\\n            }\\n        }\\n\\n        if ($mode == \'upd\') {\\n            $newProperties = array(\\n                \'index\' => (isset($_POST[\'index\']) ? $_POST[\'index\'] : $properties[\'index\']),\\n                \'follow\' => (isset($_POST[\'follow\']) ? $_POST[\'follow\'] : $properties[\'follow\']),\\n                \'sitemap\' => (isset($_POST[\'sitemap\']) ? $_POST[\'sitemap\'] : $properties[\'sitemap\']),\\n                \'priority\' => (isset($_POST[\'priority\']) ? $_POST[\'priority\'] : $properties[\'priority\']),\\n                \'changefreq\' => (isset($_POST[\'changefreq\']) ? $_POST[\'changefreq\'] : $properties[\'changefreq\'])\\n            );\\n        } else {\\n            $newProperties = array(\\n                \'index\' => (isset($_POST[\'index\']) ? $_POST[\'index\'] : $modx->getOption(\'stercseo.index\', null, \'1\')),\\n                \'follow\' => (isset($_POST[\'follow\']) ? $_POST[\'follow\'] : $modx->getOption(\'stercseo.follow\', null, \'1\')),\\n                \'sitemap\' => (isset($_POST[\'sitemap\']) ? $_POST[\'sitemap\'] : $modx->getOption(\'stercseo.sitemap\', null, \'1\')),\\n                \'priority\' => (isset($_POST[\'priority\']) ? $_POST[\'priority\'] : $modx->getOption(\'stercseo.priority\', null, \'0.5\')),\\n                \'changefreq\' => (isset($_POST[\'changefreq\']) ? $_POST[\'changefreq\'] : $modx->getOption(\'stercseo.changefreq\', null, \'weekly\'))\\n            );\\n        }\\n\\n        \\/\\/ If uri is changed or alias (with freeze uri off) has changed, add a new redirect\\n        if (($oldResource->get(\'uri\') != $resource->get(\'uri\') ||\\n                ($oldResource->get(\'uri_override\') == 0 && $oldResource->get(\'alias\') != $resource->get(\'alias\'))) &&\\n            $oldResource->get(\'uri\') != \'\') {\\n            $url = urlencode($modx->getOption(\'site_url\').$oldResource->get(\'uri\'));\\n            if (!$modx->getCount(\'seoUrl\', array(\'url\' => $url))) {\\n                $data = array(\\n                    \'url\' => $url,\\n                    \'resource\' => $resource->get(\'id\'),\\n                    \'context_key\' => $resource->get(\'context_key\'),\\n                );\\n                $redirect = $modx->newObject(\'seoUrl\');\\n                $redirect->fromArray($data);\\n                $redirect->save();\\n            }\\n            \\/\\/ Recursive set all children resources as redirects\\n            if ($modx->getOption(\'use_alias_path\')) {\\n                $resourceOldBasePath = $oldResource->getAliasPath($oldResource->get(\'alias\'), $oldResource->toArray() + array(\'isfolder\' => 1));\\n                $resourceNewBasePath = $resource->getAliasPath($resource->get(\'alias\'), $resource->toArray() + array(\'isfolder\' => 1));\\n                $childResources = $modx->getIterator(\'modResource\', array(\\n                    \'uri:LIKE\' => $resourceOldBasePath . \'%\',\\n                    \'uri_override\' => \'0\',\\n                    \'published\' => \'1\',\\n                    \'deleted\' => \'0\',\\n                    \'context_key\' => $resource->get(\'context_key\')\\n                ));\\n                foreach ($childResources as $childResource) {\\n                    $url = urlencode($modx->getOption(\'site_url\').$childResource->get(\'uri\'));\\n                    if (!$modx->getCount(\'seoUrl\', array(\'url\' => $url))) {\\n                        $data = array(\\n                            \'url\' => $url,\\n                            \'resource\' => $childResource->get(\'id\'),\\n                            \'context_key\' => $resource->get(\'context_key\'),\\n                        );\\n                        $redirect = $modx->newObject(\'seoUrl\');\\n                        $redirect->fromArray($data);\\n                        $redirect->save();\\n                    }\\n                }\\n            }\\n        }\\n        $resource->setProperties($newProperties, \'stercseo\');\\n        break;\\n\\n    case \'OnDocFormSave\':\\n        if (!$stercseo->isAllowed($resource->context_key)) {\\n            return;\\n        }\\n\\n        $url       = urlencode($modx->makeUrl($resource->id, $resource->context_key, \'\', \'full\'));\\n        $urlExists = $modx->getObject(\'seoUrl\', array(\\n            \'url\'         => $url,\\n            \'context_key\' => $resource->context_key\\n        ));\\n\\n        if ($urlExists) {\\n            $modx->removeObject(\'seoUrl\', array(\\n                \'url\'         => $url,\\n                \'context_key\' => $resource->context_key\\n            ));\\n        }\\n        break;\\n\\n    case \'OnLoadWebDocument\':\\n        if ($modx->resource) {\\n            if (!$stercseo->isAllowed($modx->resource->get(\'context_key\'))) {\\n                return;\\n            }\\n            $properties = $modx->resource->getProperties(\'stercseo\');\\n            if (empty($properties)) {\\n                \\/\\/ Properties not available\\n                \\/\\/ This means an this resource has nog SEO Tab properties, which means it is a pre-SEO Tab resource\\n                \\/\\/ Fallback to system defaults\\n                $properties = array(\\n                    \'index\' => $modx->getOption(\'stercseo.index\', null, 1),\\n                    \'follow\' => $modx->getOption(\'stercseo.follow\', null, 1)\\n                );\\n            }\\n            $metaContent = array(\'noodp\', \'noydir\');\\n            $metaContent[] = (intval($properties[\'index\']) ? \'index\' : \'noindex\');\\n            $metaContent[] = (intval($properties[\'follow\']) ? \'follow\' : \'nofollow\');\\n\\n            $modx->setPlaceholder(\'seoTab.robotsTag\', implode(\',\', $metaContent));\\n        }\\n        break;\\n\\n    case \'OnPageNotFound\':\\n        $options      = array();\\n        $url          = $modx->getOption(\'server_protocol\').\':\\/\\/\'.$_SERVER[\'HTTP_HOST\'].$_SERVER[\'REQUEST_URI\'];\\n        $convertedUrl = urlencode($url);\\n\\n        $w = array(\\n            \'url\' => $convertedUrl\\n        );\\n\\n        if ($modx->getOption(\'stercseo.context-aware-alias\', null, \'0\')) {\\n            $w[\'context_key\'] = $modx->context->key;\\n        }\\n\\n        $alreadyExists = $modx->getObject(\'seoUrl\', $w);\\n\\n        if (isset($alreadyExists) && ($modx->context->key !== $alreadyExists->get(\'context_key\'))) {\\n            $q = $modx->newQuery(\'modContextSetting\');\\n            $q->where(array(\\n                \'context_key\' => $alreadyExists->get(\'context_key\'),\\n                \'key\'         => \'site_url\'\\n            ));\\n            $q->prepare();\\n\\n            $siteUrl = $modx->getObject(\'modContextSetting\', $q);\\n            if ($siteUrl) {\\n                $options[\'site_url\'] = $siteUrl->get(\'value\');\\n            }\\n        }\\n\\n        if ($alreadyExists) {\\n            $url = $modx->makeUrl($alreadyExists->get(\'resource\'), $alreadyExists->get(\'context_key\'), \'\', \'full\', $options);\\n\\n            $modx->sendRedirect($url, 0, \'REDIRECT_HEADER\', \'HTTP\\/1.1 301 Moved Permanently\');\\n        }\\n        break;\\n\\n    case \'OnResourceBeforeSort\':\\n        list($sourceCtx, $resource) = explode(\'_\', $modx->getOption(\'source\', $_POST));\\n        list($targetCtx, $target) = explode(\'_\', $modx->getOption(\'target\', $_POST));\\n        switch ($modx->getOption(\'point\', $_POST)) {\\n            case \'above\':\\n            case \'below\':\\n                $tmpRes = $modx->getObject(\'modResource\', $target);\\n                $target = $tmpRes->get(\'parent\');\\n                unset($tmpRes);\\n                break;\\n        }\\n        $oldResource = $modx->getObject(\'modResource\', $resource);\\n        $resource = $modx->getObject(\'modResource\', $resource);\\n        $resource->set(\'parent\', $target);\\n        $resource->set(\'uri\', \'\');\\n        $uriChanged = false;\\n        if ($oldResource->get(\'uri\') != $resource->get(\'uri\') && $oldResource->get(\'uri\') != \'\') {\\n            $uriChanged              = true;\\n        }\\n\\n        \\/\\/ Recursive set redirects for drag\\/dropped resource, and its children (where uri_override is not set)\\n        if ($uriChanged && $modx->getOption(\'use_alias_path\')) {\\n            $oldResource->set(\'isfolder\', true);\\n            $resourceOldBasePath = $oldResource->getAliasPath(\\n                $oldResource->get(\'alias\'),\\n                $oldResource->toArray()\\n            );\\n            $resourceNewBasePath = $resource->getAliasPath(\\n                $resource->get(\'alias\'),\\n                $resource->toArray() + array(\'isfolder\' => 1)\\n            );\\n            $cond = $modx->newQuery(\'modResource\');\\n            $cond->where(array(\\n                array(\\n                    \'uri:LIKE\'     => $resourceOldBasePath . \'%\',\\n                    \'OR:id:=\' => $oldResource->id\\n                ),\\n                \'uri_override\' => \'0\',\\n                \'published\' => \'1\',\\n                \'deleted\' => \'0\',\\n                \'context_key\' => $resource->get(\'context_key\')\\n            ));\\n\\n            $childResources = $modx->getIterator(\'modResource\', $cond);\\n            foreach ($childResources as $childResource) {\\n                $url = urlencode($modx->getOption(\'site_url\').$childResource->get(\'uri\'));\\n                if (!$modx->getCount(\'seoUrl\', array(\'url\' => $url))) {\\n                    $data = array(\\n                        \'url\' => $url,\\n                        \'resource\' => $childResource->get(\'id\'),\\n                        \'context_key\' => $targetCtx\\n                    );\\n                    $redirect = $modx->newObject(\'seoUrl\');\\n                    $redirect->fromArray($data);\\n                    $redirect->save();\\n                }\\n            }\\n        }\\n        break;\\n\\n    case \'OnResourceDuplicate\':\\n        if (!$stercseo->isAllowed($newResource->get(\'context_key\'))) {\\n            return;\\n        }\\n        $props = $newResource->getProperties(\'stercseo\');\\n        $newResource->setProperties($props, \'stercseo\');\\n        $newResource->save();\\n        break;\\n\\n    case \'OnManagerPageBeforeRender\':\\n        if (!$stercseo->checkUserAccess()) {\\n            return;\\n        }\\n        \\/\\/ If migration status is false, show migrate alert message bar in manager\\n        if (!$stercseo->redirectMigrationStatus()) {\\n            $modx->regClientStartupHTMLBlock($stercseo->getChunk(\'migrate\\/alert\', array(\'message\' => $modx->lexicon(\'stercseo.migrate_alert\'))));\\n            $modx->regClientCSS($stercseo->config[\'cssUrl\'].\'migrate.css\');\\n        }\\n        break;\\n\\n    case \'OnEmptyTrash\':\\n        if (count($ids) > 0) {\\n            foreach ($ids as $id) {\\n                $modx->removeCollection(\'seoUrl\', array(\\n                    \'resource\' => $id\\n                ));\\n            }\\n        }\\n}\\nreturn;"}',
+        'guid' => '90f80dfd7d34176b87ef9454af8126e4',
+        'native_key' => NULL,
+        'signature' => '334e91a1cc4c0c5cf351ebbc631f600d',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Children' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'parent',
+        1 => 'category',
+      ),
+    ),
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Templates' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'templatename',
+    ),
+    'TemplateVars' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Plugins' => 
+    array (
+      'unique_key' => 'name',
+      'preserve_keys' => false,
+      'update_object' => true,
+      'related_objects' => true,
+      'related_object_attributes' => 
+      array (
+        'PluginEvents' => 
+        array (
+          'preserve_keys' => true,
+          'update_object' => false,
+          'unique_key' => 
+          array (
+            0 => 'pluginid',
+            1 => 'event',
+          ),
+        ),
+      ),
+    ),
+  ),
+  'namespace' => 'stercseo',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"stercseo-2.0.1-pl\\/modCategory\\/84f5a47e14d12c6c680f91ed6443795c\\/0\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"stercseo"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"stercseo-2.0.1-pl\\/modCategory\\/84f5a47e14d12c6c680f91ed6443795c\\/1\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"stercseo"}',
+    ),
+    2 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"stercseo-2.0.1-pl\\/modCategory\\/84f5a47e14d12c6c680f91ed6443795c.gpm.resolve.tables.resolver","type":"php","name":"gpm.resolve.tables"}',
+    ),
+    3 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"stercseo-2.0.1-pl\\/modCategory\\/84f5a47e14d12c6c680f91ed6443795c.setupoptions.resolver.resolver","type":"php","name":"setupoptions.resolver"}',
+    ),
+    4 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"stercseo-2.0.1-pl\\/modCategory\\/84f5a47e14d12c6c680f91ed6443795c.stercextra.resolver.resolver","type":"php","name":"stercextra.resolver"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '44f151d0713e36a8c02854195d08207d',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '84f5a47e14d12c6c680f91ed6443795c',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"StercSEO","rank":0}',
+);

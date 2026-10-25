@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'easycomm',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '4e03cc07c9dba9c6fe7798c498fb7090',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'ee1faab254efbdf248e12e7a792453aa',
+  'native_key' => 'ec_rating_wilson_confidence',
+  'object' => '{"key":"ec_rating_wilson_confidence","value":"1.6","xtype":"numberfield","namespace":"easycomm","area":"ec_rating","editedon":null}',
+);

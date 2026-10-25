@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'easycomm',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'f67c137831cc5fcc749431d143807d1d',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '43ee7f375fce18945cd586c9d62a0536',
+  'native_key' => 'ec_recaptcha2_api',
+  'object' => '{"key":"ec_recaptcha2_api","value":"https:\\/\\/www.google.com\\/recaptcha\\/api.js?onload=easyCommReCaptchaCallback&render=explicit&hl=[[+cultureKey]]","xtype":"textfield","namespace":"easycomm","area":"ec_antispam","editedon":null}',
+);

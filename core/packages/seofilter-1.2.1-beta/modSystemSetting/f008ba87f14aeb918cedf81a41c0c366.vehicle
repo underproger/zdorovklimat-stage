@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'seofilter',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '935c450aa21f28e9fc616b584cfd1c3e',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'f008ba87f14aeb918cedf81a41c0c366',
+  'native_key' => 'seofilter_morpher_username',
+  'object' => '{"key":"seofilter_morpher_username","value":"","xtype":"textfield","namespace":"seofilter","area":"seofilter_main","editedon":null}',
+);

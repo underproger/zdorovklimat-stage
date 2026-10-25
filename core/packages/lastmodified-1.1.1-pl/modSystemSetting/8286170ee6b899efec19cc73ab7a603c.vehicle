@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'lastmodified',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '7c48b7e1dafe56c69d2484678bb41bc3',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '8286170ee6b899efec19cc73ab7a603c',
+  'native_key' => 'lastmodified.prevent_session',
+  'object' => '{"key":"lastmodified.prevent_session","value":"minishop2","xtype":"textfield","namespace":"lastmodified","area":"lastmodified.main","editedon":null}',
+);

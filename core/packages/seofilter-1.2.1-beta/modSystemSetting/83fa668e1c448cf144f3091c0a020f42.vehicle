@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'seofilter',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '51025ac3c98a526103601e78086f49af',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '83fa668e1c448cf144f3091c0a020f42',
+  'native_key' => 'seofilter_morpher_password',
+  'object' => '{"key":"seofilter_morpher_password","value":"","xtype":"text-password","namespace":"seofilter","area":"seofilter_main","editedon":null}',
+);

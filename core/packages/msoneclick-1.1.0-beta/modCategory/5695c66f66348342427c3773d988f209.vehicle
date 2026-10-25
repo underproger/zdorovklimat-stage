@@ -1,0 +1,204 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Chunks' => 
+    array (
+      '08a4956501dfe7f1e3adc73e52545cc5' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":0,"source":1,"property_preprocess":0,"name":"tpl.msOneClick.btn","description":"\\u041a\\u043d\\u043e\\u043f\\u043a\\u0430 \\u043a\\u0443\\u043f\\u0438\\u0442\\u044c \\u0432 \\u043e\\u0434\\u0438\\u043d \\u043a\\u043b\\u0438\\u043a","editor_type":0,"category":0,"cache_type":0,"snippet":"<a href=\\"[[~[[+id]]]]#[[+selector]]\\" id=\\"[[+selector]]\\" class=\\"btn_one_click\\" data-hash=\\"[[+hash]]\\" data-product=\\"[[+id]]\\">[[%msoc_btn_one_click]]<\\/a>","locked":0,"properties":null,"static":0,"static_file":"msOneClick\\/core\\/components\\/msoneclick\\/elements\\/chunks\\/chunk.tpl.msoneclick.btn.tpl","content":"<a href=\\"[[~[[+id]]]]#[[+selector]]\\" id=\\"[[+selector]]\\" class=\\"btn_one_click\\" data-hash=\\"[[+hash]]\\" data-product=\\"[[+id]]\\">[[%msoc_btn_one_click]]<\\/a>"}',
+        'guid' => '65501d80d88e3f203d79bac5d2ecee82',
+        'native_key' => 0,
+        'signature' => '0070dbd62c6a0f3f4c2e03b7176c6c2d',
+      ),
+      '749e751a6abc0753b742a4656662a445' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":0,"source":1,"property_preprocess":0,"name":"tpl.msOneClick.form","description":"\\u0447\\u0430\\u043d\\u043a \\u0441 \\u0444\\u043e\\u0440\\u043c\\u043e\\u0439 \\u043e\\u0444\\u043e\\u0440\\u043c\\u043b\\u0435\\u043d\\u0438\\u044f \\u0437\\u0430\\u043a\\u0430\\u0437\\u0430","editor_type":0,"category":0,"cache_type":0,"snippet":"<form name=\\"formSendCart\\" id=\\"[[+formid]]\\" method=\\"post\\" >\\r\\n\\r\\n    <div class=\\"forder-popup__goods clearfix\\">\\r\\n        <div class=\\"row-fluid\\" id=\\"msCart\\">\\r\\n            <div class=\\"col-xs-12\\">\\r\\n                <div class=\\"row msoc_product_line\\" id=\\"[[+key]]\\">\\r\\n                    <div class=\\"col-xs-3 text-center msoc_product_line_image\\">\\r\\n                        <img src=\\"[[+thumb]]\\" \\/>\\r\\n                    <\\/div>\\r\\n                    <div class=\\"col-xs-5 msoc_product_line_pagetitle\\">\\r\\n                        <h4 class=\\"product-name\\">[[+pagetitle]]<\\/h4>\\r\\n                    <\\/div>\\r\\n                    <div class=\\"col-xs-4 msoc_product_line_count\\">\\r\\n                        <div class=\\"product__add-cart \\">\\r\\n                            <div class=\\"text-right\\">\\r\\n                                <span class=\\"forder-popup__price\\"><span id=\\"price_cou\\">[[+price]]<\\/span> \\u0440\\u0443\\u0431.<\\/span>\\r\\n                            <\\/div>\\r\\n                            <div class=\\"text-right\\">\\r\\n                                <input type=\\"hidden\\" name=\\"price\\" value=\\"[[+price]]\\">\\r\\n                                <input type=\\"hidden\\" name=\\"product_id\\" value=\\"[[+product_id]]\\">\\r\\n                                <div class=\\"input-group input-prepend col-md-6 pull-right\\">\\r\\n                                    <input type=\\"number\\" name=\\"count\\" autocomplete=\\"off\\" value=\\"[[+count]]\\" placeholder=\\"0\\" class=\\"input-sm form-control\\">\\r\\n                                <\\/div>\\r\\n                            <\\/div>\\r\\n\\r\\n                        <\\/div>\\r\\n                    <\\/div>\\r\\n                <\\/div>\\r\\n            <\\/div>\\r\\n        <\\/div>\\r\\n    <\\/div>\\r\\n\\r\\n\\r\\n\\r\\n    <div class=\\"form-horizontal msoneclick_form\\">\\r\\n        <input type=\\"hidden\\" name=\\"hash\\" value=\\"[[+hash]]\\">\\r\\n        <input type=\\"hidden\\" name=\\"price\\" value=\\"[[+price]]\\">\\r\\n        <input type=\\"hidden\\" name=\\"id\\" value=\\"[[+id]]\\">\\r\\n\\r\\n        <div class=\\"forder-popup__block forder-popup__block--grey\\">\\r\\n            <div class=\\"form-group\\">\\r\\n                <label for=\\"msoc_city\\" class=\\"col-sm-2 control-label [[+city_required]]\\">[[%msoc_field_city]]<\\/label>\\r\\n                <div class=\\"col-sm-10\\">\\r\\n                    <input type=\\"text\\" value=\\"[[!+city:default=``]]\\" name=\\"city\\" class=\\"forder-popup__input form-control\\" id=\\"msoc_city\\" placeholder=\\"[[%msoc_field_city_ple]]\\">\\r\\n                <\\/div>\\r\\n            <\\/div>\\r\\n            <div class=\\"form-group\\">\\r\\n                <label for=\\"msoc_addr_country\\" class=\\"col-sm-2 control-label [[+addr_country_required]]\\">\\u0421\\u0442\\u0440\\u0430\\u043d\\u0430<\\/label>\\r\\n                <div class=\\"col-sm-10\\">\\r\\n                    <input type=\\"text\\" value=\\"[[!+addr_country:default=``]]\\" name=\\"addr_country\\" class=\\"forder-popup__input form-control\\" id=\\"msoc_addr_country\\" placeholder=\\"\\u0420\\u043e\\u0441\\u0441\\u0438\\u044f\\">\\r\\n                <\\/div>\\r\\n            <\\/div>\\r\\n        <\\/div>\\r\\n        <div class=\\"forder-popup__block forder-popup__block--grey\\">\\r\\n            <div class=\\"form-group\\">\\r\\n                <label for=\\"msoc_receiver\\" class=\\"col-sm-2 control-label [[+receiver_required]]\\">[[%msoc_field_receiver]]<\\/label>\\r\\n                <div class=\\"col-sm-10\\">\\r\\n                    <input type=\\"text\\" value=\\"[[!+receiver:default=``]]\\" name=\\"receiver\\" class=\\"forder-popup__input form-control\\" id=\\"msoc_receiver\\" placeholder=\\"[[%msoc_field_receiver_ple]]\\">\\r\\n                <\\/div>\\r\\n            <\\/div>\\r\\n            <div class=\\"form-group\\">\\r\\n                <label for=\\"msoc_phone\\" class=\\"col-sm-2 control-label [[+receiver_required]]\\">[[%msoc_field_phone]]<\\/label>\\r\\n                <div class=\\"col-sm-10\\">\\r\\n                    <input type=\\"text\\" name=\\"phone\\" value=\\"[[!+phone:default=``]]\\" autocomplete=\\"off\\" class=\\"forder-popup__input form-control\\" id=\\"msoc_phone\\" placeholder=\\"[[%msoc_field_phone_ple]]\\">\\r\\n                <\\/div>\\r\\n            <\\/div>\\r\\n\\r\\n            <div class=\\"form-group\\">\\r\\n                <label for=\\"msoc_email\\" class=\\"col-sm-2 control-label [[+receiver_required]]\\">[[%msoc_field_email]]<\\/label>\\r\\n                <div class=\\"col-sm-10\\">\\r\\n                    <input type=\\"email\\" name=\\"email\\" value=\\"[[!+email:default=``]]\\" class=\\"forder-popup__input form-control\\" id=\\"msoc_email\\" placeholder=\\"[[%msoc_field_email_ple]]\\">\\r\\n                <\\/div>\\r\\n            <\\/div>\\r\\n        <\\/div>\\r\\n\\r\\n        <div class=\\"forder-popup__block forder-popup__block--grey\\">\\r\\n            <div class=\\"form-group\\">\\r\\n                <label for=\\"msoc_comment\\" class=\\"col-sm-2 control-label\\">[[%msoc_field_comment]]<\\/label>\\r\\n                <div class=\\"col-sm-10\\">\\r\\n                    <textarea autocomplete=\\"off\\" placeholder=\\"[[%msoc_field_comment_ple]]\\" id=\\"msoc_comment\\" name=\\"comment\\" class=\\"forder-popup__textarea form-control\\" title=\\"\\">[[!+comment:default=``]]<\\/textarea>\\r\\n                <\\/div>\\r\\n            <\\/div>\\r\\n        <\\/div>\\r\\n\\r\\n        <div class=\\"modal-footer\\">\\r\\n            <button type=\\"submit\\"  name=\\"msoc_send_from\\" class=\\"btn btn-success btn-lg\\">[[%msoc.button]]<\\/button>\\r\\n            <br><br>\\r\\n            <p class=\\"text-muted\\">\\r\\n                [[%msoc_form_footer_text]]\\r\\n            <\\/p>\\r\\n        <\\/div>\\r\\n    <\\/div>\\r\\n<\\/form>","locked":0,"properties":null,"static":0,"static_file":"msOneClick\\/core\\/components\\/msoneclick\\/elements\\/chunks\\/chunk.tpl.msoneclick.form.tpl","content":"<form name=\\"formSendCart\\" id=\\"[[+formid]]\\" method=\\"post\\" >\\r\\n\\r\\n    <div class=\\"forder-popup__goods clearfix\\">\\r\\n        <div class=\\"row-fluid\\" id=\\"msCart\\">\\r\\n            <div class=\\"col-xs-12\\">\\r\\n                <div class=\\"row msoc_product_line\\" id=\\"[[+key]]\\">\\r\\n                    <div class=\\"col-xs-3 text-center msoc_product_line_image\\">\\r\\n                        <img src=\\"[[+thumb]]\\" \\/>\\r\\n                    <\\/div>\\r\\n                    <div class=\\"col-xs-5 msoc_product_line_pagetitle\\">\\r\\n                        <h4 class=\\"product-name\\">[[+pagetitle]]<\\/h4>\\r\\n                    <\\/div>\\r\\n                    <div class=\\"col-xs-4 msoc_product_line_count\\">\\r\\n                        <div class=\\"product__add-cart \\">\\r\\n                            <div class=\\"text-right\\">\\r\\n                                <span class=\\"forder-popup__price\\"><span id=\\"price_cou\\">[[+price]]<\\/span> \\u0440\\u0443\\u0431.<\\/span>\\r\\n                            <\\/div>\\r\\n                            <div class=\\"text-right\\">\\r\\n                                <input type=\\"hidden\\" name=\\"price\\" value=\\"[[+price]]\\">\\r\\n                                <input type=\\"hidden\\" name=\\"product_id\\" value=\\"[[+product_id]]\\">\\r\\n                                <div class=\\"input-group input-prepend col-md-6 pull-right\\">\\r\\n                                    <input type=\\"number\\" name=\\"count\\" autocomplete=\\"off\\" value=\\"[[+count]]\\" placeholder=\\"0\\" class=\\"input-sm form-control\\">\\r\\n                                <\\/div>\\r\\n                            <\\/div>\\r\\n\\r\\n                        <\\/div>\\r\\n                    <\\/div>\\r\\n                <\\/div>\\r\\n            <\\/div>\\r\\n        <\\/div>\\r\\n    <\\/div>\\r\\n\\r\\n\\r\\n\\r\\n    <div class=\\"form-horizontal msoneclick_form\\">\\r\\n        <input type=\\"hidden\\" name=\\"hash\\" value=\\"[[+hash]]\\">\\r\\n        <input type=\\"hidden\\" name=\\"price\\" value=\\"[[+price]]\\">\\r\\n        <input type=\\"hidden\\" name=\\"id\\" value=\\"[[+id]]\\">\\r\\n\\r\\n        <div class=\\"forder-popup__block forder-popup__block--grey\\">\\r\\n            <div class=\\"form-group\\">\\r\\n                <label for=\\"msoc_city\\" class=\\"col-sm-2 control-label [[+city_required]]\\">[[%msoc_field_city]]<\\/label>\\r\\n                <div class=\\"col-sm-10\\">\\r\\n                    <input type=\\"text\\" value=\\"[[!+city:default=``]]\\" name=\\"city\\" class=\\"forder-popup__input form-control\\" id=\\"msoc_city\\" placeholder=\\"[[%msoc_field_city_ple]]\\">\\r\\n                <\\/div>\\r\\n            <\\/div>\\r\\n            <div class=\\"form-group\\">\\r\\n                <label for=\\"msoc_addr_country\\" class=\\"col-sm-2 control-label [[+addr_country_required]]\\">\\u0421\\u0442\\u0440\\u0430\\u043d\\u0430<\\/label>\\r\\n                <div class=\\"col-sm-10\\">\\r\\n                    <input type=\\"text\\" value=\\"[[!+addr_country:default=``]]\\" name=\\"addr_country\\" class=\\"forder-popup__input form-control\\" id=\\"msoc_addr_country\\" placeholder=\\"\\u0420\\u043e\\u0441\\u0441\\u0438\\u044f\\">\\r\\n                <\\/div>\\r\\n            <\\/div>\\r\\n        <\\/div>\\r\\n        <div class=\\"forder-popup__block forder-popup__block--grey\\">\\r\\n            <div class=\\"form-group\\">\\r\\n                <label for=\\"msoc_receiver\\" class=\\"col-sm-2 control-label [[+receiver_required]]\\">[[%msoc_field_receiver]]<\\/label>\\r\\n                <div class=\\"col-sm-10\\">\\r\\n                    <input type=\\"text\\" value=\\"[[!+receiver:default=``]]\\" name=\\"receiver\\" class=\\"forder-popup__input form-control\\" id=\\"msoc_receiver\\" placeholder=\\"[[%msoc_field_receiver_ple]]\\">\\r\\n                <\\/div>\\r\\n            <\\/div>\\r\\n            <div class=\\"form-group\\">\\r\\n                <label for=\\"msoc_phone\\" class=\\"col-sm-2 control-label [[+receiver_required]]\\">[[%msoc_field_phone]]<\\/label>\\r\\n                <div class=\\"col-sm-10\\">\\r\\n                    <input type=\\"text\\" name=\\"phone\\" value=\\"[[!+phone:default=``]]\\" autocomplete=\\"off\\" class=\\"forder-popup__input form-control\\" id=\\"msoc_phone\\" placeholder=\\"[[%msoc_field_phone_ple]]\\">\\r\\n                <\\/div>\\r\\n            <\\/div>\\r\\n\\r\\n            <div class=\\"form-group\\">\\r\\n                <label for=\\"msoc_email\\" class=\\"col-sm-2 control-label [[+receiver_required]]\\">[[%msoc_field_email]]<\\/label>\\r\\n                <div class=\\"col-sm-10\\">\\r\\n                    <input type=\\"email\\" name=\\"email\\" value=\\"[[!+email:default=``]]\\" class=\\"forder-popup__input form-control\\" id=\\"msoc_email\\" placeholder=\\"[[%msoc_field_email_ple]]\\">\\r\\n                <\\/div>\\r\\n            <\\/div>\\r\\n        <\\/div>\\r\\n\\r\\n        <div class=\\"forder-popup__block forder-popup__block--grey\\">\\r\\n            <div class=\\"form-group\\">\\r\\n                <label for=\\"msoc_comment\\" class=\\"col-sm-2 control-label\\">[[%msoc_field_comment]]<\\/label>\\r\\n                <div class=\\"col-sm-10\\">\\r\\n                    <textarea autocomplete=\\"off\\" placeholder=\\"[[%msoc_field_comment_ple]]\\" id=\\"msoc_comment\\" name=\\"comment\\" class=\\"forder-popup__textarea form-control\\" title=\\"\\">[[!+comment:default=``]]<\\/textarea>\\r\\n                <\\/div>\\r\\n            <\\/div>\\r\\n        <\\/div>\\r\\n\\r\\n        <div class=\\"modal-footer\\">\\r\\n            <button type=\\"submit\\"  name=\\"msoc_send_from\\" class=\\"btn btn-success btn-lg\\">[[%msoc.button]]<\\/button>\\r\\n            <br><br>\\r\\n            <p class=\\"text-muted\\">\\r\\n                [[%msoc_form_footer_text]]\\r\\n            <\\/p>\\r\\n        <\\/div>\\r\\n    <\\/div>\\r\\n<\\/form>"}',
+        'guid' => 'a11df2d62e6c3ad8b09f8fb547881fb4',
+        'native_key' => 0,
+        'signature' => 'f71dcee63777126c9e69d755081f30ee',
+      ),
+      '506761bf99da9fbb975462ca952042c7' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":0,"source":1,"property_preprocess":0,"name":"tpl.msOneClick.modal","description":"\\u0428\\u0430\\u0431\\u043b\\u043e\\u043d \\u043c\\u043e\\u0434\\u0435\\u043b\\u044c\\u043d\\u043e\\u0433\\u043e \\u043e\\u043a\\u043d\\u0430","editor_type":0,"category":0,"cache_type":0,"snippet":"<div id=\\"[[+selector]]_modal\\" class=\\"modal fade msoneclick_modal\\" tabindex=\\"-1\\" role=\\"dialog\\">\\r\\n    <div class=\\"modal-dialog\\" role=\\"document\\">\\r\\n        <div class=\\"modal-content\\">\\r\\n            <div class=\\"modal-header\\">\\r\\n                <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\" aria-label=\\"Close\\"><span aria-hidden=\\"true\\">&times;<\\/span><\\/button>\\r\\n                <h4 class=\\"modal-title\\">[[%msoc]]<\\/h4>\\r\\n            <\\/div>\\r\\n            <div class=\\"modal-body\\" id=\\"[[+selector]]_body\\"><\\/div>\\r\\n\\r\\n        <\\/div><!-- \\/.modal-content -->\\r\\n    <\\/div><!-- \\/.modal-dialog -->\\r\\n<\\/div><!-- \\/.modal -->","locked":0,"properties":null,"static":0,"static_file":"msOneClick\\/core\\/components\\/msoneclick\\/elements\\/chunks\\/chunk.tpl.msoneclick.modal.tpl","content":"<div id=\\"[[+selector]]_modal\\" class=\\"modal fade msoneclick_modal\\" tabindex=\\"-1\\" role=\\"dialog\\">\\r\\n    <div class=\\"modal-dialog\\" role=\\"document\\">\\r\\n        <div class=\\"modal-content\\">\\r\\n            <div class=\\"modal-header\\">\\r\\n                <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\" aria-label=\\"Close\\"><span aria-hidden=\\"true\\">&times;<\\/span><\\/button>\\r\\n                <h4 class=\\"modal-title\\">[[%msoc]]<\\/h4>\\r\\n            <\\/div>\\r\\n            <div class=\\"modal-body\\" id=\\"[[+selector]]_body\\"><\\/div>\\r\\n\\r\\n        <\\/div><!-- \\/.modal-content -->\\r\\n    <\\/div><!-- \\/.modal-dialog -->\\r\\n<\\/div><!-- \\/.modal -->"}',
+        'guid' => 'a78cfa3a551f50f2d08aa38be4ca67d2',
+        'native_key' => 0,
+        'signature' => '12dbfaf286da8091f15b718584121202',
+      ),
+      '44324c0896b56ea4c8e920c513f187ff' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":0,"source":1,"property_preprocess":0,"name":"tpl.msOneClick.MS.send","description":"\\u0421\\u043e\\u043e\\u0431\\u0449\\u0435\\u043d\\u0438\\u0435 \\u043f\\u043e\\u0441\\u043b\\u0435 \\u043e\\u0442\\u043f\\u0440\\u0430\\u0432\\u043a\\u0438 \\u0437\\u0430\\u043a\\u0430\\u0437\\u0430 \\u0432 minishop2","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"forder-popup__block text-center msoneclickSuccess\\">\\r\\n    <h1>[[%msoc_form_send_h1]]<\\/h1>\\r\\n    <p>[[%msoc_form_send_text]]<\\/p>\\r\\n    <h2><p>[[%msoc_form_send_num]]<\\/p>\\r\\n        <span class=\\"label label-default\\">[[+num]]<\\/span>\\r\\n    <\\/h2>\\r\\n    <br>\\r\\n    <button type=\\"button\\" class=\\"btn btn-default\\" data-dismiss=\\"modal\\">[[%msoc_close_modal]]<\\/button>\\r\\n<\\/div>","locked":0,"properties":null,"static":0,"static_file":"msOneClick\\/core\\/components\\/msoneclick\\/elements\\/chunks\\/chunk.tpl.msOneClick.MS.send.tpl","content":"<div class=\\"forder-popup__block text-center msoneclickSuccess\\">\\r\\n    <h1>[[%msoc_form_send_h1]]<\\/h1>\\r\\n    <p>[[%msoc_form_send_text]]<\\/p>\\r\\n    <h2><p>[[%msoc_form_send_num]]<\\/p>\\r\\n        <span class=\\"label label-default\\">[[+num]]<\\/span>\\r\\n    <\\/h2>\\r\\n    <br>\\r\\n    <button type=\\"button\\" class=\\"btn btn-default\\" data-dismiss=\\"modal\\">[[%msoc_close_modal]]<\\/button>\\r\\n<\\/div>"}',
+        'guid' => '12db6a9e821e9101d6e3e5b9b06dab0e',
+        'native_key' => 0,
+        'signature' => 'c87f8b3f284772eb9c0876f3c180827c',
+      ),
+      '1b6d6a1d9bf153e95d466109405ee153' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":0,"source":1,"property_preprocess":0,"name":"tpl.msoneclick.MAIL.send","description":"\\u0427\\u0430\\u043d\\u043a \\u0441\\u043e\\u043e\\u0431\\u0449\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u0441\\u043b\\u0435 \\u043e\\u0442\\u043f\\u0440\\u0430\\u0432\\u043a\\u0438 \\u0437\\u0430\\u043a\\u0430\\u0437\\u0430 \\u043c\\u0435\\u0442\\u043e\\u0434\\u043e\\u043c MAIL","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"forder-popup__block text-center msoneclickSuccess\\">\\r\\n    <h1>[[%msoc_form_send_h1]]<\\/h1>\\r\\n    <p>[[%msoc_form_send_text]]<\\/p>\\r\\n    <br>\\r\\n    <button type=\\"button\\" class=\\"btn btn-default\\" data-dismiss=\\"modal\\">[[%msoc_close_modal]]<\\/button>\\r\\n<\\/div>","locked":0,"properties":null,"static":0,"static_file":"msOneClick\\/core\\/components\\/msoneclick\\/elements\\/chunks\\/chunk.tpl.msoneclick.MAIL.send.tpl","content":"<div class=\\"forder-popup__block text-center msoneclickSuccess\\">\\r\\n    <h1>[[%msoc_form_send_h1]]<\\/h1>\\r\\n    <p>[[%msoc_form_send_text]]<\\/p>\\r\\n    <br>\\r\\n    <button type=\\"button\\" class=\\"btn btn-default\\" data-dismiss=\\"modal\\">[[%msoc_close_modal]]<\\/button>\\r\\n<\\/div>"}',
+        'guid' => '50b23500b1f45da7cf4e0a0c86a9a881',
+        'native_key' => 0,
+        'signature' => '08cb3324129c230b795ecc599a7fd19f',
+      ),
+      '124675585e2ac2995fa7274689916c65' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":0,"source":1,"property_preprocess":0,"name":"tpl.msoneclick.email.message","description":"\\u0427\\u0430\\u043d\\u043a \\u0441\\u043e\\u043e\\u0431\\u0449\\u0435\\u043d\\u0438\\u044f \\u0435\\u043c\\u0430\\u0438\\u043b \\u0441\\u043e\\u043e\\u0431\\u0449\\u0435\\u043d\\u0438\\u044f \\u043c\\u0435\\u043d\\u0435\\u0434\\u0436\\u0435\\u0440\\u0443","editor_type":0,"category":0,"cache_type":0,"snippet":"[[+subject:is=`1`:then=`\\u0411\\u044b\\u0441\\u0442\\u0440\\u044b\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043d\\u0430 \\u0441\\u0430\\u0439\\u0442\\u0435`]]\\r\\n[[+body:is=`1`:then=`\\r\\n\\u0411\\u044b\\u043b \\u043e\\u0444\\u043e\\u0440\\u043c\\u043b\\u0435\\u043d \\u0431\\u044b\\u0441\\u0442\\u0440\\u044b\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043d\\u0430 \\u0441\\u0430\\u0439\\u0442\\u0435: <br><br>\\r\\n    \\u0422\\u043e\\u0432\\u0430\\u0440: <a href=\\"[[+siteUrl]]\\/index.php?id=4[[+product_id]]\\"><\\/a>[[+pagetitle]]<br>\\r\\n    \\u0421\\u0442\\u043e\\u0438\\u043c\\u043e\\u0441\\u0442\\u044c: [[+price]]<br>\\r\\n    \\u041a\\u043e\\u043b\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u043e \\u0442\\u043e\\u0432\\u0430\\u0440\\u043e\\u0432: [[+count]]<br>\\r\\n    \\u0424\\u0418\\u041e: [[+receiver]]<br>\\r\\n    \\u0422\\u0435\\u043b\\u0435\\u0444\\u043e\\u043d: [[+phone]]<br>\\r\\n    E-mail: [[+email]]<br>\\r\\n    \\u0413\\u043e\\u0440\\u043e\\u0434: [[+city]]<br>\\r\\n`]]","locked":0,"properties":null,"static":0,"static_file":"msOneClick\\/core\\/components\\/msoneclick\\/elements\\/chunks\\/chunk.tpl.msoneclick.email.message.tpl","content":"[[+subject:is=`1`:then=`\\u0411\\u044b\\u0441\\u0442\\u0440\\u044b\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043d\\u0430 \\u0441\\u0430\\u0439\\u0442\\u0435`]]\\r\\n[[+body:is=`1`:then=`\\r\\n\\u0411\\u044b\\u043b \\u043e\\u0444\\u043e\\u0440\\u043c\\u043b\\u0435\\u043d \\u0431\\u044b\\u0441\\u0442\\u0440\\u044b\\u0439 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043d\\u0430 \\u0441\\u0430\\u0439\\u0442\\u0435: <br><br>\\r\\n    \\u0422\\u043e\\u0432\\u0430\\u0440: <a href=\\"[[+siteUrl]]\\/index.php?id=4[[+product_id]]\\"><\\/a>[[+pagetitle]]<br>\\r\\n    \\u0421\\u0442\\u043e\\u0438\\u043c\\u043e\\u0441\\u0442\\u044c: [[+price]]<br>\\r\\n    \\u041a\\u043e\\u043b\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u043e \\u0442\\u043e\\u0432\\u0430\\u0440\\u043e\\u0432: [[+count]]<br>\\r\\n    \\u0424\\u0418\\u041e: [[+receiver]]<br>\\r\\n    \\u0422\\u0435\\u043b\\u0435\\u0444\\u043e\\u043d: [[+phone]]<br>\\r\\n    E-mail: [[+email]]<br>\\r\\n    \\u0413\\u043e\\u0440\\u043e\\u0434: [[+city]]<br>\\r\\n`]]"}',
+        'guid' => '403955354032195dccc01f84fd92f34c',
+        'native_key' => 0,
+        'signature' => 'c6baeed6d892432f93ff06d5286338aa',
+      ),
+    ),
+    'Snippets' => 
+    array (
+      '3608967743bb9f6aee1333fd289873bd' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":0,"source":1,"property_preprocess":0,"name":"msOneClick","description":"\\u0421\\u043d\\u0438\\u043f\\u043f\\u0435\\u0442 \\u043a\\u043d\\u043e\\u043f\\u043a\\u0438 \\u0417\\u0430\\u043a\\u0430\\u0437 \\u0432 \\u043e\\u0434\\u0438\\u043d \\u043a\\u043b\\u0438\\u043a","editor_type":0,"category":0,"cache_type":0,"snippet":"$selector   = $modx->getOption(\'selector\', \'oneClick\', $scriptProperties[\'selector\']);\\r\\n$tplBtn     = $modx->getOption(\'tplBtn\', \'tpl.msOneClick.btn\', $scriptProperties[\'tplBtn\']);\\r\\n\\r\\n\\r\\n\\/* @var msOneClick $msOneClick*\\/\\r\\nif (!isset($modx->msoneclick)) {\\r\\n\\tif (!$msOneClick = $modx->getService(\'msoneclick\')) {\\r\\n\\t\\treturn \'Could not load msOneClick class!\';\\r\\n\\t}\\r\\n\\t$msOneClick->initialize(\'web\', $scriptProperties);\\r\\n\\t$modx->msoneclick = $msOneClick;\\r\\n} else {\\r\\n\\t$msOneClick = $modx->msoneclick;\\r\\n}\\r\\n\\r\\n\\r\\n\\/* @var pdoFetch $pdoFetch *\\/\\r\\nif (!$modx->loadClass(\'pdofetch\', MODX_CORE_PATH . \'components\\/pdotools\\/model\\/pdotools\\/\', false, true)) {return false;}\\r\\n$pdoFetch = new pdoFetch($modx, $scriptProperties);\\r\\n\\r\\n\\r\\nif (empty($id)) {\\r\\n\\tif ($modx->resource->class_key == \'msProduct\') {\\r\\n\\t\\t$id = $modx->resource->id;\\r\\n\\t}\\r\\n}\\r\\n\\r\\nif (!empty($id)) $id = (int)$id;\\r\\n\\r\\nif (empty($id)) return \'\\u0443\\u043a\\u0430\\u0436\\u0438\\u0442\\u0435 id \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430!\';\\r\\nif (empty($tplBtn)) return \'\\u0427\\u0430\\u043d\\u043a \\"tplBtn\\" \\u0434\\u043b\\u044f \\u043a\\u043d\\u043e\\u043f\\u043a\\u0438 \\u043d\\u0435 \\u0443\\u043a\\u0430\\u0437\\u0430\\u043d\';\\r\\n\\r\\n\\r\\n\\r\\n$hash = $msOneClick->getHastBtn($scriptProperties);\\r\\nif (empty($hash)) return \'\\u041d\\u0435 \\u0443\\u0434\\u0430\\u043b\\u043e\\u0441\\u044c \\u043f\\u043e\\u043b\\u0443\\u0447\\u0438\\u0442\\u044c hash \\u043a\\u043d\\u043e\\u043f\\u043a\\u0438\';\\r\\n\\r\\n$data = array(\\r\\n\\t\'id\' \\t\\t=> $id,\\r\\n\\t\'selector\' \\t=> $selector,\\r\\n);\\r\\n$msOneClick->setConfig($hash, $scriptProperties, $data);\\r\\n$data[\'hash\'] = $hash;\\r\\n\\r\\nif (!isset($_SESSION[\'msOneClickConfig\'][$hash])) {\\r\\n\\t$msOneClick->setConfig($hash, $scriptProperties, $data);\\r\\n}\\r\\n\\r\\n\\/\\/ out btn\\r\\n$output = $pdoFetch->getChunk($tplBtn, $data, $pdoFetch->config[\'fastMode\']);\\r\\n\\r\\nreturn $output;","locked":0,"properties":"a:11:{s:8:\\"selector\\";a:7:{s:4:\\"name\\";s:8:\\"selector\\";s:4:\\"desc\\";s:24:\\"msoneclick_prop_selector\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:8:\\"oneClick\\";s:7:\\"lexicon\\";s:21:\\"msoneclick:properties\\";s:4:\\"area\\";s:0:\\"\\";}s:6:\\"tplBtn\\";a:7:{s:4:\\"name\\";s:6:\\"tplBtn\\";s:4:\\"desc\\";s:22:\\"msoneclick_prop_tplBtn\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:18:\\"tpl.msOneClick.btn\\";s:7:\\"lexicon\\";s:21:\\"msoneclick:properties\\";s:4:\\"area\\";s:0:\\"\\";}s:8:\\"tplModal\\";a:7:{s:4:\\"name\\";s:8:\\"tplModal\\";s:4:\\"desc\\";s:24:\\"msoneclick_prop_tplModal\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:20:\\"tpl.msOneClick.modal\\";s:7:\\"lexicon\\";s:21:\\"msoneclick:properties\\";s:4:\\"area\\";s:0:\\"\\";}s:7:\\"tplForm\\";a:7:{s:4:\\"name\\";s:7:\\"tplForm\\";s:4:\\"desc\\";s:23:\\"msoneclick_prop_tplForm\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:19:\\"tpl.msOneClick.form\\";s:7:\\"lexicon\\";s:21:\\"msoneclick:properties\\";s:4:\\"area\\";s:0:\\"\\";}s:16:\\"tplSendSuccessMS\\";a:7:{s:4:\\"name\\";s:16:\\"tplSendSuccessMS\\";s:4:\\"desc\\";s:32:\\"msoneclick_prop_tplSendSuccessMS\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:22:\\"tpl.msOneClick.MS.send\\";s:7:\\"lexicon\\";s:21:\\"msoneclick:properties\\";s:4:\\"area\\";s:0:\\"\\";}s:18:\\"tplSendSuccessMAIL\\";a:7:{s:4:\\"name\\";s:18:\\"tplSendSuccessMAIL\\";s:4:\\"desc\\";s:34:\\"msoneclick_prop_tplSendSuccessMAIL\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:24:\\"tpl.msoneclick.MAIL.send\\";s:7:\\"lexicon\\";s:21:\\"msoneclick:properties\\";s:4:\\"area\\";s:0:\\"\\";}s:14:\\"tplMAILmessage\\";a:7:{s:4:\\"name\\";s:14:\\"tplMAILmessage\\";s:4:\\"desc\\";s:30:\\"msoneclick_prop_tplMAILmessage\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:28:\\"tpl.msoneclick.email.message\\";s:7:\\"lexicon\\";s:21:\\"msoneclick:properties\\";s:4:\\"area\\";s:0:\\"\\";}s:12:\\"create_order\\";a:7:{s:4:\\"name\\";s:12:\\"create_order\\";s:4:\\"desc\\";s:28:\\"msoneclick_prop_create_order\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:2:\\"MS\\";s:7:\\"lexicon\\";s:21:\\"msoneclick:properties\\";s:4:\\"area\\";s:0:\\"\\";}s:14:\\"default_images\\";a:7:{s:4:\\"name\\";s:14:\\"default_images\\";s:4:\\"desc\\";s:30:\\"msoneclick_prop_default_images\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:50:\\"\\/assets\\/components\\/minishop2\\/img\\/web\\/ms2_small.png\\";s:7:\\"lexicon\\";s:21:\\"msoneclick:properties\\";s:4:\\"area\\";s:0:\\"\\";}s:20:\\"field_required_class\\";a:7:{s:4:\\"name\\";s:20:\\"field_required_class\\";s:4:\\"desc\\";s:36:\\"msoneclick_prop_field_required_class\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:20:\\"msoc_field__required\\";s:7:\\"lexicon\\";s:21:\\"msoneclick:properties\\";s:4:\\"area\\";s:0:\\"\\";}s:17:\\"email_method_mail\\";a:7:{s:4:\\"name\\";s:17:\\"email_method_mail\\";s:4:\\"desc\\";s:33:\\"msoneclick_prop_email_method_mail\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:0:\\"\\";s:7:\\"lexicon\\";s:21:\\"msoneclick:properties\\";s:4:\\"area\\";s:0:\\"\\";}}","moduleguid":"","static":0,"static_file":"msOneClick\\/core\\/components\\/msoneclick\\/elements\\/snippets\\/snippet.msoneclick.php","content":"$selector   = $modx->getOption(\'selector\', \'oneClick\', $scriptProperties[\'selector\']);\\r\\n$tplBtn     = $modx->getOption(\'tplBtn\', \'tpl.msOneClick.btn\', $scriptProperties[\'tplBtn\']);\\r\\n\\r\\n\\r\\n\\/* @var msOneClick $msOneClick*\\/\\r\\nif (!isset($modx->msoneclick)) {\\r\\n\\tif (!$msOneClick = $modx->getService(\'msoneclick\')) {\\r\\n\\t\\treturn \'Could not load msOneClick class!\';\\r\\n\\t}\\r\\n\\t$msOneClick->initialize(\'web\', $scriptProperties);\\r\\n\\t$modx->msoneclick = $msOneClick;\\r\\n} else {\\r\\n\\t$msOneClick = $modx->msoneclick;\\r\\n}\\r\\n\\r\\n\\r\\n\\/* @var pdoFetch $pdoFetch *\\/\\r\\nif (!$modx->loadClass(\'pdofetch\', MODX_CORE_PATH . \'components\\/pdotools\\/model\\/pdotools\\/\', false, true)) {return false;}\\r\\n$pdoFetch = new pdoFetch($modx, $scriptProperties);\\r\\n\\r\\n\\r\\nif (empty($id)) {\\r\\n\\tif ($modx->resource->class_key == \'msProduct\') {\\r\\n\\t\\t$id = $modx->resource->id;\\r\\n\\t}\\r\\n}\\r\\n\\r\\nif (!empty($id)) $id = (int)$id;\\r\\n\\r\\nif (empty($id)) return \'\\u0443\\u043a\\u0430\\u0436\\u0438\\u0442\\u0435 id \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430!\';\\r\\nif (empty($tplBtn)) return \'\\u0427\\u0430\\u043d\\u043a \\"tplBtn\\" \\u0434\\u043b\\u044f \\u043a\\u043d\\u043e\\u043f\\u043a\\u0438 \\u043d\\u0435 \\u0443\\u043a\\u0430\\u0437\\u0430\\u043d\';\\r\\n\\r\\n\\r\\n\\r\\n$hash = $msOneClick->getHastBtn($scriptProperties);\\r\\nif (empty($hash)) return \'\\u041d\\u0435 \\u0443\\u0434\\u0430\\u043b\\u043e\\u0441\\u044c \\u043f\\u043e\\u043b\\u0443\\u0447\\u0438\\u0442\\u044c hash \\u043a\\u043d\\u043e\\u043f\\u043a\\u0438\';\\r\\n\\r\\n$data = array(\\r\\n\\t\'id\' \\t\\t=> $id,\\r\\n\\t\'selector\' \\t=> $selector,\\r\\n);\\r\\n$msOneClick->setConfig($hash, $scriptProperties, $data);\\r\\n$data[\'hash\'] = $hash;\\r\\n\\r\\nif (!isset($_SESSION[\'msOneClickConfig\'][$hash])) {\\r\\n\\t$msOneClick->setConfig($hash, $scriptProperties, $data);\\r\\n}\\r\\n\\r\\n\\/\\/ out btn\\r\\n$output = $pdoFetch->getChunk($tplBtn, $data, $pdoFetch->config[\'fastMode\']);\\r\\n\\r\\nreturn $output;"}',
+        'guid' => 'a25d525f9de40372d5f8ec1ebe400016',
+        'native_key' => 0,
+        'signature' => 'd284b8c6a3a7c0901ac0473ebe343cf5',
+      ),
+    ),
+    'Plugins' => 
+    array (
+      'a9498e857abeed0ddddb3595177f37e8' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modPlugin',
+        'object' => '{"id":0,"source":1,"property_preprocess":0,"name":"msOneClick","description":"","editor_type":0,"category":0,"cache_type":0,"plugincode":"\\/** @var modX $modx *\\/\\nswitch ($modx->event->name) {\\n\\n    case \'OnHandleRequest\':\\n\\n        $isAjax = !empty($_SERVER[\'HTTP_X_REQUESTED_WITH\']) && $_SERVER[\'HTTP_X_REQUESTED_WITH\'] == \'XMLHttpRequest\';\\n\\n        if (empty($_REQUEST[\'msc_action\']) ||  (!$isAjax && $modx->event->name != \'OnHandleRequest\')) {return;}\\n        $action = trim($_REQUEST[\'msc_action\']);\\n\\n        $ctx = !empty($_REQUEST[\'ctx\']) ? (string) $_REQUEST[\'ctx\'] : \'web\';\\n        if ($ctx != \'web\') {$modx->switchContext($ctx);}\\n\\n        if ($ctx != \'web\' or !isset($_REQUEST[\'msc_action\'])) return;\\n\\n        if (!empty($_REQUEST[\'pageId\']) && $resource = $modx->getObject(\'modResource\', $_REQUEST[\'pageId\'])) {\\n            $ctx = $resource->get(\'context_key\');\\n        }\\n        else {\\n            $ctx = !empty($_REQUEST[\'ctx\']) ? $_REQUEST[\'ctx\'] : \'web\';\\n        }\\n        if ($ctx != \'web\') {\\n            $modx->switchContext($ctx);\\n            $modx->user = null;\\n            $modx->getUser($ctx);\\n        }\\n\\n        \\/* @var msOneClick $msOneClick *\\/\\n        $msOneClick = $modx->getService(\'msoneclick\');\\n        if (!($msOneClick instanceof msOneClick)) {\\n            @session_write_close();\\n            exit(\'Could not initialize msOneClick\');\\n        }\\n\\n        $action = $_REQUEST[\'msc_action\'];\\n        unset($_REQUEST[\'msc_action\']);\\n        switch ($action){\\n            case \'form\\/sendform\':\\n                $response = $msOneClick->loadAction($action, $_REQUEST);\\n                break;\\n            case \'form\\/get\':\\n                $response = $msOneClick->loadAction($action, array(\'pageId\' => @$_POST[\'pageId\'], \'hash\' => @$_POST[\'hash\'], \'product_id\' => @$_POST[\'product_id\'],\'ctx\' => @$_POST[\'ctx\']));\\n                break;\\n            case \'form\\/add\':\\n                $response = $msOneClick->loadAction($action, array(\'field\' => @$_POST[\'field\'], \'value\' => @$_POST[\'value\']));\\n                break;\\n            default:\\n\\n                $response = $modx->toJSON(array(\\n                    \'success\' => false\\n                    ,\'message\' => $modx->lexicon(\'msoc_err_action_nf\')\\n                ));\\n\\n                break;\\n        }\\n\\n        if (!empty($action)) {\\n\\n            if ($isAjax) {\\n                if (is_array($response)) {\\n                    $response = $modx->toJSON($response);\\n                }\\n                @session_write_close();\\n                exit($response);\\n            }\\n\\n        }\\n\\n        break;\\n\\n}","locked":0,"properties":null,"disabled":0,"moduleguid":"","static":0,"static_file":"msOneClick\\/core\\/components\\/msoneclick\\/elements\\/plugins\\/plugin.msoneclick.php","content":"\\/** @var modX $modx *\\/\\nswitch ($modx->event->name) {\\n\\n    case \'OnHandleRequest\':\\n\\n        $isAjax = !empty($_SERVER[\'HTTP_X_REQUESTED_WITH\']) && $_SERVER[\'HTTP_X_REQUESTED_WITH\'] == \'XMLHttpRequest\';\\n\\n        if (empty($_REQUEST[\'msc_action\']) ||  (!$isAjax && $modx->event->name != \'OnHandleRequest\')) {return;}\\n        $action = trim($_REQUEST[\'msc_action\']);\\n\\n        $ctx = !empty($_REQUEST[\'ctx\']) ? (string) $_REQUEST[\'ctx\'] : \'web\';\\n        if ($ctx != \'web\') {$modx->switchContext($ctx);}\\n\\n        if ($ctx != \'web\' or !isset($_REQUEST[\'msc_action\'])) return;\\n\\n        if (!empty($_REQUEST[\'pageId\']) && $resource = $modx->getObject(\'modResource\', $_REQUEST[\'pageId\'])) {\\n            $ctx = $resource->get(\'context_key\');\\n        }\\n        else {\\n            $ctx = !empty($_REQUEST[\'ctx\']) ? $_REQUEST[\'ctx\'] : \'web\';\\n        }\\n        if ($ctx != \'web\') {\\n            $modx->switchContext($ctx);\\n            $modx->user = null;\\n            $modx->getUser($ctx);\\n        }\\n\\n        \\/* @var msOneClick $msOneClick *\\/\\n        $msOneClick = $modx->getService(\'msoneclick\');\\n        if (!($msOneClick instanceof msOneClick)) {\\n            @session_write_close();\\n            exit(\'Could not initialize msOneClick\');\\n        }\\n\\n        $action = $_REQUEST[\'msc_action\'];\\n        unset($_REQUEST[\'msc_action\']);\\n        switch ($action){\\n            case \'form\\/sendform\':\\n                $response = $msOneClick->loadAction($action, $_REQUEST);\\n                break;\\n            case \'form\\/get\':\\n                $response = $msOneClick->loadAction($action, array(\'pageId\' => @$_POST[\'pageId\'], \'hash\' => @$_POST[\'hash\'], \'product_id\' => @$_POST[\'product_id\'],\'ctx\' => @$_POST[\'ctx\']));\\n                break;\\n            case \'form\\/add\':\\n                $response = $msOneClick->loadAction($action, array(\'field\' => @$_POST[\'field\'], \'value\' => @$_POST[\'value\']));\\n                break;\\n            default:\\n\\n                $response = $modx->toJSON(array(\\n                    \'success\' => false\\n                    ,\'message\' => $modx->lexicon(\'msoc_err_action_nf\')\\n                ));\\n\\n                break;\\n        }\\n\\n        if (!empty($action)) {\\n\\n            if ($isAjax) {\\n                if (is_array($response)) {\\n                    $response = $modx->toJSON($response);\\n                }\\n                @session_write_close();\\n                exit($response);\\n            }\\n\\n        }\\n\\n        break;\\n\\n}"}',
+        'guid' => '7cb9f77c69b3aa004a6ad24e53791606',
+        'native_key' => 0,
+        'signature' => 'a9c6287756cc1b52c5247c26d47f5aeb',
+        'related_objects' => 
+        array (
+          'PluginEvents' => 
+          array (
+            '7cfbb1c2d49edbab270b77a0412d5955' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnHandleRequest","priority":0,"propertyset":0}',
+              'guid' => '6f95892b890e5e6818075679f5a15064',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnHandleRequest',
+              ),
+              'signature' => '6804b1b1c5646a94debb8997a96aeed9',
+            ),
+          ),
+        ),
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Plugins' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'PluginEvents' => 
+    array (
+      'preserve_keys' => true,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'pluginid',
+        1 => 'event',
+      ),
+    ),
+  ),
+  'namespace' => 'msoneclick',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"msoneclick-1.1.0-beta\\/modCategory\\/5695c66f66348342427c3773d988f209\\/0\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"msoneclick"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"msoneclick-1.1.0-beta\\/modCategory\\/5695c66f66348342427c3773d988f209\\/1\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"msoneclick"}',
+    ),
+    2 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"msoneclick-1.1.0-beta\\/modCategory\\/5695c66f66348342427c3773d988f209.resolve.chunks.resolver","type":"php","name":"resolve.chunks"}',
+    ),
+    3 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"msoneclick-1.1.0-beta\\/modCategory\\/5695c66f66348342427c3773d988f209.resolve.setup.resolver","type":"php","name":"resolve.setup"}',
+    ),
+    4 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"msoneclick-1.1.0-beta\\/modCategory\\/5695c66f66348342427c3773d988f209.resolve.extension.resolver","type":"php","name":"resolve.extension"}',
+    ),
+    5 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"msoneclick-1.1.0-beta\\/modCategory\\/5695c66f66348342427c3773d988f209.resolve.settings.resolver","type":"php","name":"resolve.settings"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '8ad04728b64e2b318d6ba9bb1a35edef',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '5695c66f66348342427c3773d988f209',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"msOneClick","rank":0}',
+);

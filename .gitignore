@@ -1,0 +1,31 @@
+# --- Конфиги окружения (у каждого сервера свои, кладутся вручную) ---
+/core/config/config.inc.php
+/config.core.php
+/connectors/config.core.php
+/impulsemanager/config.core.php
+
+# Файл с доступами к Bitrix24 CRM (репозиторий публичный)
+/rest.php
+
+# --- Кэш и логи MODX ---
+/core/cache/*
+!/core/cache/.gitkeep
+/core/export/*
+/core/import/*
+*.log
+error_log
+
+# --- Фото и загружаемые файлы (переносятся отдельно, не через git) ---
+/assets/images/
+/assets/files/
+/assets/uploads/
+/assets/cache/
+/assets/components/phpthumbof/cache/*
+!/assets/components/phpthumbof/cache/index.html
+
+# --- Мусор ОС/IDE ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

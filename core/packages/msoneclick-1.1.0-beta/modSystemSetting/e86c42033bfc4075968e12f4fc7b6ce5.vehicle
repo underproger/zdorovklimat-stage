@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => true,
+  'namespace' => 'msoneclick',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '131a23da1d3ffd3f966e5c31e4263de9',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'e86c42033bfc4075968e12f4fc7b6ce5',
+  'native_key' => 'msoneclick_mask_phone_format',
+  'object' => '{"key":"msoneclick_mask_phone_format","value":"+9 (999) 999-9999","xtype":"textfield","namespace":"msoneclick","area":"msoneclick","editedon":null,"type":"textfield"}',
+);

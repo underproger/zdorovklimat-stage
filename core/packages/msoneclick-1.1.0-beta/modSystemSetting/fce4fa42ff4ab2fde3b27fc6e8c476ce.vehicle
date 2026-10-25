@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => true,
+  'namespace' => 'msoneclick',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'fd2fdb74ae2c522d814de9ee6fd81588',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'fce4fa42ff4ab2fde3b27fc6e8c476ce',
+  'native_key' => 'msoneclick_deliverys',
+  'object' => '{"key":"msoneclick_deliverys","value":"","xtype":"textfield","namespace":"msoneclick","area":"msoneclick","editedon":null}',
+);
