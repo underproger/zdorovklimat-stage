@@ -20,6 +20,7 @@ error_log
 /assets/files/
 /assets/uploads/
 /assets/cache/
+/assets/image-cache/
 /assets/components/phpthumbof/cache/*
 !/assets/components/phpthumbof/cache/index.html
 
