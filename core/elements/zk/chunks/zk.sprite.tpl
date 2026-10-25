@@ -24,4 +24,9 @@
 <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M10.5 7.8v5.4M7.8 10.5h5.4"/></symbol>
 <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5 9.5 6.5 9.5 6.5-3.5 6.5-9.5 6.5S2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
 <symbol id="i-plot" viewBox="0 0 24 24"><path d="M3 8.5 9 5.5l6 3 6-3v10l-6 3-6-3-6 3Zm6-3v10m6-7v10"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+<symbol id="i-telegram" viewBox="0 0 24 24"><path d="M21 4 3.2 10.9c-.8.3-.8 1.4 0 1.7l4.3 1.5 1.7 5.2c.2.6 1 .8 1.5.3l2.4-2.3 4.6 3.4c.6.4 1.4.1 1.5-.6L22.2 5.2c.2-.8-.5-1.5-1.2-1.2ZM8 13.9l9.5-6.4-6.9 7.3"/></symbol>
+<symbol id="i-viber" viewBox="0 0 24 24"><path d="M12 2.8c5.4 0 8.7 1.8 8.7 7.6 0 5.9-3.3 7.5-8.7 7.5h-1l-3.6 3.3v-3.8C4.9 16.4 3.3 14.6 3.3 10.4c0-5.8 3.3-7.6 8.7-7.6Z"/><path d="M9.2 7.2c.5 2.8 2.5 4.8 5.3 5.4l.8-1 1.7.8-.4 1.7c-3.9-.2-7.2-3.5-7.4-7.4l1.6-.4.8 1.6Z"/></symbol>
+<symbol id="i-facebook" viewBox="0 0 24 24"><path d="M13.8 21.5v-8h2.7l.4-3.2h-3.1V8.4c0-.9.3-1.6 1.6-1.6h1.6V4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.3H7.9v3.2h2.7v8"/></symbol>
+<symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="m10.2 9.2 4.6 2.8-4.6 2.8Z"/></symbol>
 </svg>

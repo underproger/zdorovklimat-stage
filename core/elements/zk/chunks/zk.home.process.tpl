@@ -2,7 +2,7 @@
     <div class="wrap">
         <div class="section-head">
             <div>
-                <div class="eyebrow"><span class="num">04</span><span class="sep">/</span>{'zk.process.eyebrow' | lexicon}</div>
+                <div class="eyebrow">{if $processNum}<span class="num">{$processNum}</span><span class="sep">/</span>{/if}{'zk.process.eyebrow' | lexicon}</div>
                 <h2 class="section-title">{'zk.process.title' | lexicon}</h2>
             </div>
             <p class="section-description">{'zk.process.text' | lexicon}</p>

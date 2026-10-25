@@ -15,13 +15,19 @@
     'phone1'   => (($_modx->getPlaceholder('+phone-1') ?: $_modx->config['phone-1']) | strip_tags | trim),
     'phone2'   => (($_modx->getPlaceholder('+phone-2') ?: $_modx->config['phone-2']) | strip_tags | trim),
     'email'    => (($_modx->getPlaceholder('+e-mail') ?: $_modx->config['e-mail']) | lower | trim),
+    'youtube'  => (($_modx->getPlaceholder('+youtube') ?: $_modx->config['youtube']) | trim),
+    'facebook' => (($_modx->getPlaceholder('+facebook') ?: $_modx->config['facebook']) | trim),
+    'viber'    => 'viber://chat?number=%2B380963977621',
+    'telegram' => 'https://telegram.me/zdorovklimat',
+    'maps'     => 'https://www.google.com/maps?cid=13721162408939025155',
     'assets'   => '/assets/templates/zk/',
     'self'     => ($_modx->resource.id | url),
-    'v'        => '20261025e',
+    'v'        => '20261025f',
 ]}
 {set $isHome = $_modx->resource.id in [1, 1288]}
+{set $processNum = '04'}
 {* сторінки з темним першим екраном: шапка прозора поверх нього, на решті — суцільна *}
-{set $darkHero = $isHome || $_modx->resource.id == $zk.about}
+{set $darkHero = $isHome || $_modx->resource.id in [$zk.about, $zk.video]}
 <!doctype html>
 <html lang="{$ua ? 'uk' : 'ru'}">
 <head>

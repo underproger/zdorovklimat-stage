@@ -1,4 +1,3 @@
-{set $formSubject = $isHome ? ('zk.form.subject' | lexicon) : (('zk.form.subject_page' | lexicon) ~ ' «' ~ ($_modx->resource.menutitle ?: $_modx->resource.pagetitle) ~ '»')}
 <section class="contact-section" id="contact">
     <div class="contact-bg" aria-hidden="true"><img src="{$zk.assets}img/contact-bg.jpg" alt="" loading="lazy"><i class="contact-stripe"></i></div>
     <div class="wrap contact-layout">
@@ -17,29 +16,6 @@
                 </a>
             </div>
         </div>
-        <div class="form-card">
-            <h3 class="form-title">{'zk.form.title' | lexicon}</h3>
-            <p class="form-subtitle">{'zk.form.subtitle' | lexicon}</p>
-            [[!AjaxForm?
-                &form=`zk.form.lead`
-                &zkId=`lead`
-                &snippet=`FormIt`
-                &hooks=`spam,email,FormItSaveForm`
-                &formName=`{$formSubject}`
-                &formFields=`name,phone,type,message,title,link`
-                &fieldNames=`name==Ім’я,phone==Телефон,type==Тип об’єкта,message==Повідомлення,title==Сторінка,link==Посилання`
-                &emailSubject=`{$formSubject}`
-                &emailTo=`[[++form-mail]]`
-                &emailFrom=`no-reply@zdorovklimat.com.ua`
-                &emailFromName=`[[++site_name]]`
-                &emailTpl=`zk.email.lead`
-                &spamCheckIp=`true`
-                &validate=`name:required,phone:required,type:required,workemail:blank`
-                &validationErrorMessage=`{'zk.form.required' | lexicon}`
-                &successMessage=`{'zk.form.success' | lexicon}`
-                &frontend_css=``
-                &frontend_js=``
-            ]]
-        </div>
+        {include 'zk.form.card'}
     </div>
 </section>

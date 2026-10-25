@@ -4,9 +4,7 @@
     <div class="page-hero-lines" aria-hidden="true"><i></i><i></i></div>
     <div class="wrap page-hero-layout">
         <div class="page-hero-copy">
-            <nav class="breadcrumbs" aria-label="{'zk.breadcrumbs' | lexicon}">
-                <a href="{$zk.home | url}">{'zk.nav.home' | lexicon}</a><span aria-hidden="true">/</span><span aria-current="page">{$crumb}</span>
-            </nav>
+            {include 'zk.crumbs'}
             <div class="eyebrow">{'zka.hero.eyebrow' | lexicon}</div>
             <h1>{'zka.hero.title' | lexicon}</h1>
             <p class="page-hero-text">{'zka.hero.text' | lexicon}</p>
@@ -23,7 +21,7 @@
             <ul>
                 {foreach [['design', 'i-design'], ['contract', 'i-helmet'], ['supervision', 'i-eye'], ['site', 'i-plot']] as $i => $p}
                 <li>
-                    <a href="{$zk.self}#{$p[0]}">
+                    <a class="point-row" href="{$zk.self}#{$p[0]}">
                         <i class="point-icon"><svg aria-hidden="true"><use href="#{$p[1]}"/></svg></i>
                         <div><span><b>0{$i + 1}</b> / {('zka.hero.f' ~ ($i + 1) ~ '.title') | lexicon}</span>{('zka.hero.f' ~ ($i + 1) ~ '.text') | lexicon}</div>
                     </a>
@@ -33,13 +31,3 @@
         </div>
     </div>
 </section>
-{ignore}<script type="application/ld+json">{/ignore}
-{
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": {'zk.nav.home' | lexicon | escape : 'js'}, "item": "{$zk.home | url : ['scheme' => 'full']}" },
-        { "@type": "ListItem", "position": 2, "name": {$crumb | escape : 'js'}, "item": "{$_modx->resource.id | url : ['scheme' => 'full']}" }
-    ]
-}
-{ignore}</script>{/ignore}
