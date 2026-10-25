@@ -15,7 +15,7 @@
     'phone2'   => (($_modx->getPlaceholder('+phone-2') ?: $_modx->config['phone-2']) | strip_tags | trim),
     'email'    => (($_modx->getPlaceholder('+e-mail') ?: $_modx->config['e-mail']) | lower | trim),
     'assets'   => '/assets/templates/zk/',
-    'v'        => '20261025b',
+    'v'        => '20261025c',
 ]}
 <!doctype html>
 <html lang="{$ua ? 'uk' : 'ru'}">

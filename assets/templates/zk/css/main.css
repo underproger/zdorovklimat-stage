@@ -221,7 +221,7 @@ main{min-height:65vh;display:block}
 .partners-link{min-width:250px;margin-top:62px;color:#3d4449;border-bottom-color:#cfd2d2;letter-spacing:.6px}
 .partners-link:hover{color:var(--ink);border-bottom-color:var(--ink)}
 .partners-slider{--cols:6;position:relative}
-.partners-viewport{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;border-top:1px solid #dcdedd;border-bottom:1px solid #dcdedd;outline-offset:4px;clip-path:inset(0 0 0 3px)}
+.partners-viewport{background:#f7f7f7;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;border-top:1px solid #dcdedd;border-bottom:1px solid #dcdedd;outline-offset:4px;clip-path:inset(0 0 0 3px)}
 .partners-viewport::-webkit-scrollbar{display:none}
 .partners-grid{display:grid;grid-auto-flow:column;grid-template-rows:repeat(2,auto);grid-auto-columns:calc(100% / var(--cols))}
 .partner{position:relative;height:96px;display:flex;align-items:center;justify-content:center;padding:0 24px;scroll-snap-align:start}
