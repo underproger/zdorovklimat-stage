@@ -155,6 +155,33 @@
     });
   }
 
+  /* ---------- article: зміст за заголовками h2 ---------- */
+  var article = $('[data-article]'), toc = $('[data-toc]');
+  if (article && toc) {
+    var heads = $$('h2', article).filter(function (h) { return h.textContent.trim(); });
+    if (heads.length > 1) {
+      var list = $('ol', toc), links = [];
+      heads.forEach(function (h, i) {
+        if (!h.id) h.id = 'section-' + (i + 1);
+        var li = document.createElement('li'), a = document.createElement('a');
+        // через <base href> відносне #id веде на головну — беремо повний шлях сторінки
+        a.href = location.pathname + location.search + '#' + h.id;
+        a.textContent = h.textContent.trim();
+        li.appendChild(a); list.appendChild(li); links.push(a);
+      });
+      toc.hidden = false;
+      if ('IntersectionObserver' in window) {
+        var setActive = function (id) {
+          links.forEach(function (a) { a.classList.toggle('is-active', a.hash === '#' + id); });
+        };
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) setActive(en.target.id); });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+        heads.forEach(function (h) { io.observe(h); });
+      }
+    }
+  }
+
   /* ---------- projects filter ---------- */
   var plural = (window.Intl && Intl.PluralRules) ? new Intl.PluralRules(lang) : null;
   $$('[data-projects]').forEach(function (root) {

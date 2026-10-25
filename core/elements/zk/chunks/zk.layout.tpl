@@ -22,10 +22,11 @@
     'maps'     => 'https://www.google.com/maps?cid=13721162408939025155',
     'assets'   => '/assets/templates/zk/',
     'self'     => ($_modx->resource.id | url),
-    'v'        => '20261025g',
+    'v'        => '20261025h',
 ]}
 {set $isHome = $_modx->resource.id in [1, 1288]}
 {set $processNum = '04'}
+{set $crumbMid = false}
 {* сторінки з темним першим екраном: шапка прозора поверх нього, на решті — суцільна *}
 {set $darkHero = $isHome || $_modx->resource.id in [$zk.about, $zk.video]}
 <!doctype html>
