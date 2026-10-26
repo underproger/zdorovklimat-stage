@@ -428,4 +428,65 @@
       });
     });
   });
+
+  /* ---------- відгуки: «Читати повністю», оцінка, форма easyComm ---------- */
+  $$('.review-more').forEach(function (btn) {
+    var text = btn.previousElementSibling;
+    btn.addEventListener('click', function () {
+      var open = text.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  });
+  $$('form.review-form').forEach(function (form) {
+    var result = $('.form-result', form), success = form.parentNode.querySelector('.review-success');
+    var nameBox = $('.rating-name', form), names = nameBox ? (nameBox.dataset.names || '').split('|') : [];
+    function say(msg, isError) {
+      result.textContent = msg || '';
+      result.classList.toggle('is-error', !!isError);
+      result.hidden = !msg;
+    }
+    $$('input[name="rating"]', form).forEach(function (r) {
+      r.addEventListener('change', function () { if (nameBox) nameBox.textContent = names[r.value - 1] || ''; });
+    });
+    $$('input, textarea', form).forEach(function (el) {
+      el.addEventListener('input', function () { var f = el.closest('.field'); if (f) f.classList.remove('is-invalid'); });
+    });
+    var ta = $('textarea', form);
+    if (ta) ta.addEventListener('input', function () { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 320) + 'px'; });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      say('');
+      var bad = null;
+      $$('.field', form).forEach(function (f) { f.classList.remove('is-invalid'); });
+      $$('[required]', form).forEach(function (el) {
+        if (!String(el.value || '').trim()) { el.closest('.field').classList.add('is-invalid'); bad = bad || el; }
+      });
+      if (bad) { say(form.dataset.msgRequired, true); bad.focus(); return; }
+      var btn = $('[type="submit"]', form), label = btn.firstChild.nodeValue;
+      var fd = new FormData(form);
+      fd.append('action', 'message/create');
+      btn.setAttribute('aria-busy', 'true');
+      btn.firstChild.nodeValue = form.dataset.msgSending || label;
+      fetch(form.dataset.action, { method: 'POST', body: fd, credentials: 'same-origin', headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (res && res.success) {
+            form.reset();
+            form.hidden = true;
+            form.parentNode.classList.add('is-sent');
+            if (success) { success.hidden = false; success.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+            if (window.dataLayer) window.dataLayer.push({ event: 'review_submit' });
+            return;
+          }
+          var errs = (res && Array.isArray(res.data)) ? res.data : [];
+          errs.forEach(function (er) {
+            var el = form.elements[er.field], f = el && el.closest ? el.closest('.field') : null;
+            if (f) f.classList.add('is-invalid');
+          });
+          say((errs[0] && errs[0].message) || (res && res.message) || form.dataset.msgError, true);
+        })
+        .catch(function () { say(form.dataset.msgError, true); })
+        .then(function () { btn.removeAttribute('aria-busy'); btn.firstChild.nodeValue = label; });
+    });
+  });
 })();

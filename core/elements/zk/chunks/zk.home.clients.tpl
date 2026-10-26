@@ -16,7 +16,7 @@
                 <h2 class="section-title">{'zk.clients.title' | lexicon}</h2>
                 <p class="partners-text">{'zk.clients.text' | lexicon}</p>
             </div>
-            <a class="text-link partners-link" href="{$zk.reviews | url}">{'zk.clients.link' | lexicon}</a>
+            {if $_modx->resource.id != $zk.reviews}<a class="text-link partners-link" href="{$zk.reviews | url}">{'zk.clients.link' | lexicon}</a>{/if}
         </div>
         <div class="partners-slider" data-slider>
             <div class="partners-viewport" data-slider-viewport tabindex="0" aria-label="{'zk.clients.eyebrow' | lexicon}">
