@@ -14,6 +14,7 @@ $_lang['zko.hero.all'] = 'Усі об’єкти';
 $_lang['zko.list.eyebrow'] = 'Портфоліо';
 $_lang['zko.list.title'] = 'Від магазину<br>до виробничого комплексу.';
 $_lang['zko.list.text'] = 'Оберіть напрям і відкрийте об’єкт, щоб переглянути фото та деталі.';
+$_lang['zko.cats.title'] = 'Об’єкти за напрямами';
 $_lang['zko.more'] = 'Показати ще';
 $_lang['zko.cat.eyebrow'] = 'Наші об’єкти';
 $_lang['zko.cat.list'] = 'Об’єкти напряму';

@@ -38,6 +38,7 @@
 {set $gridTitle = $catName ?: $res.menutitle}
 {set $gridFilter = false}
 {include 'zk.objects.grid'}
+{include 'zk.objects.cats'}
 {include 'zk.home.seo'}
 {include 'zk.home.contact'}
 {/block}

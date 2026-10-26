@@ -4,8 +4,8 @@
  */
 
 $_lang['zkc.crumb'] = 'Контакты';
-$_lang['zkc.hero.eyebrow'] = 'Контакты';
-$_lang['zkc.hero.title'] = 'Начнём с<br><em>вашей идеи.</em>';
+$_lang['zkc.hero.eyebrow'] = 'Начнём с вашей идеи';
+$_lang['zkc.hero.title'] = 'Контакты';
 $_lang['zkc.hero.text'] = 'Позвоните, напишите или оставьте заявку — обсудим ваш объект, сроки и удобный формат сотрудничества.';
 $_lang['zkc.phones'] = 'Телефоны';
 $_lang['zkc.email'] = 'Email';

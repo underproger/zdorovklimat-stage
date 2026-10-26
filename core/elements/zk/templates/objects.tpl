@@ -34,6 +34,7 @@
 {set $gridTitle = 'zko.list.title' | lexicon}
 {set $gridFilter = true}
 {include 'zk.objects.grid'}
+{include 'zk.objects.cats'}
 {include 'zk.objects.map'}
 {include 'zk.home.clients'}
 {include 'zk.home.contact'}
