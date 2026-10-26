@@ -273,12 +273,21 @@ main{min-height:65vh;display:block}
 
 /* ---------- process ---------- */
 .process-section{background:#eeefeb}
-.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:60px}
-.step{border-top:1px solid #c5c8c8;padding-top:20px}
-.step .step-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:31px}
-.step .step-top .icon{width:20px}
-.step h3{font-size:20px;font-weight:600;letter-spacing:-.6px;margin-bottom:13px}
-.step p{font-size:12.5px;color:#697177;line-height:1.85;max-width:265px}
+.process-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:58px}
+/* етап: жовта плитка з іконкою, номер, лінія і стрілка; між етапами — вертикальні лінії */
+.step{padding:0 30px;border-left:1px solid #d5d6d1}
+.step:first-child{padding-left:0;border-left:0}
+.step:last-child{padding-right:0}
+.step .step-top{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.step-ico{display:grid;place-items:center;width:54px;height:54px;flex-shrink:0;background:#fcebb4;color:var(--ink);transition:background .3s}
+.step .step-ico .icon{width:33px;height:33px;stroke-width:1.45}
+.step:hover .step-ico{background:var(--yellow)}
+.step-num{font-size:11px;font-weight:500;letter-spacing:.6px;color:#8b9297}
+.step-line{flex:1;height:1px;background:#cfd1cc}
+.step .step-arr{width:20px;height:20px;color:var(--ink);transition:transform .3s var(--ease)}
+.step:hover .step-arr{transform:translateX(4px)}
+.step h3{font-size:19px;font-weight:600;letter-spacing:-.5px;margin-bottom:12px}
+.step p{font-size:13px;color:#697177;line-height:1.75;max-width:290px}
 
 /* ---------- partners + SEO text (макет 10.2026) ---------- */
 .partners-section{background:#f7f7f7;padding-top:76px;padding-bottom:84px}
@@ -548,7 +557,9 @@ dialog .dialog-description{font-size:13px;color:var(--muted);line-height:1.75;ma
   .section{padding-top:75px;padding-bottom:75px}
   .section-head{flex-wrap:wrap}.section-head .section-description{max-width:350px}.section-head .text-link{margin-left:auto}
   .section-title{font-size:42px}
-  .process-grid{gap:22px;grid-template-columns:repeat(2,1fr);margin-top:40px}.step{padding-bottom:15px}
+  .process-grid{row-gap:44px;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:44px}
+  .step:nth-child(odd){padding-left:0;border-left:0}
+  .step:nth-child(even){padding-right:0}
   .project-grid{grid-template-columns:repeat(2,1fr)}.project-photo{height:260px}
   /* мобільне меню: біла панель праворуч (на телефоні — на весь екран) */
   .mobile-menu{display:block;position:fixed;inset:0;z-index:60;background:#0b1217a6;animation:mm-fade .25s ease}
@@ -719,10 +730,13 @@ dialog .dialog-description{font-size:13px;color:var(--muted);line-height:1.75;ma
   .filter-row{flex-wrap:nowrap;overflow-x:auto;gap:7px;padding-bottom:7px;margin-bottom:20px;scrollbar-width:thin}
   .filter{white-space:nowrap;font-size:10px;padding:10px 12px}
   .project-count{display:none}
-  .process-grid{grid-template-columns:1fr 1fr;gap:26px 20px;margin-top:30px}
-  .step .step-top{margin-bottom:20px}
-  .step h3{font-size:17px;margin-bottom:10px}
-  .step p{font-size:11.5px;line-height:1.8}
+  .process-grid{grid-template-columns:1fr;row-gap:34px;margin-top:32px}
+  .step,.step:nth-child(even){padding:0;border-left:0}
+  .step .step-top{margin-bottom:18px}
+  .step-ico{width:48px;height:48px}
+  .step .step-ico .icon{width:29px;height:29px}
+  .step h3{font-size:17px;margin-bottom:8px}
+  .step p{font-size:12.5px;line-height:1.75;max-width:none}
   /* map */
   .map-layout{padding-top:58px;padding-bottom:40px}
   .map-copy .eyebrow{margin-bottom:22px}

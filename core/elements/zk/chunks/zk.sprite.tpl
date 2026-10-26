@@ -39,4 +39,8 @@
 <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="m10.2 9.2 4.6 2.8-4.6 2.8Z"/></symbol>
 <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M4 6.5h16v13.5H4zM4 10.5h16M8.5 4v4M15.5 4v4"/></symbol>
 <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3.5 7.5h4l1.5-2.5h6l1.5 2.5h4v12h-17z"/><circle cx="12" cy="13.2" r="3.6"/></symbol>
+<symbol id="i-talk" viewBox="0 0 24 24"><path d="M3 4.5h12v8.5H8.5L5 16v-3H3Z"/><path d="M15 8.5h6v8.5h-2v3l-3.5-3H10V13"/><path d="M6.5 8h5M6.5 10.3h3"/></symbol>
+<symbol id="i-blueprint" viewBox="0 0 24 24"><path d="M13 20.5H3.5v-17h13V10"/><path d="M7 7.5v8M7 11.5h5.5M12.5 7.5v8"/><path d="m14.6 20.4 6-6a1.5 1.5 0 0 0-2.1-2.1l-6 6-.6 2.7Z"/></symbol>
+<symbol id="i-crane" viewBox="0 0 24 24"><path d="M2.5 21h19M6.5 21V3.5M3.5 6h17M6.5 3.5 3.5 6M6.5 9.5 10 6M6.5 13 10 9.5M6.5 16.5 10 13"/><path d="M16.5 6v3.5M15 9.5h3l-.5 2h-2Z"/><path d="M13 21v-6l3.5-2 3.5 2v6M15.5 21v-3h2v3"/></symbol>
+<symbol id="i-handover" viewBox="0 0 24 24"><path d="M3 21h9.5M4.5 21V5.5L11 3v18M11 8.5h5.5v4"/><path d="M7 7.5h1.5M7 10.5h1.5M7 13.5h1.5M7 16.5h1.5"/><circle cx="17" cy="17.3" r="4.2"/><path d="m15.2 17.4 1.3 1.3 2.4-2.5"/></symbol>
 </svg>
