@@ -26,7 +26,7 @@
             {set $label = ('zka.lic.item' | lexicon) ~ ' ' ~ ($i + 1)}
             <button class="lic-doc" type="button" data-full="{$lic.full}" data-title="{$label}" aria-label="{'zka.lic.open' | lexicon}: {$label}">
                 <span class="lic-paper"><img src="{$lic.thumb}" alt="{$label}" loading="lazy" width="520" height="720"></span>
-                <span class="lic-meta"><i class="round"><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg></i></span>
+                <span class="lic-meta"><span>{'zka.lic.view' | lexicon}</span><i class="round"><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg></i></span>
             </button>
             {/foreach}
         </div>

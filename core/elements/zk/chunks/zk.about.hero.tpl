@@ -5,8 +5,8 @@
     <div class="wrap page-hero-layout">
         <div class="page-hero-copy">
             {include 'zk.crumbs'}
-            <div class="eyebrow">{'zka.hero.eyebrow' | lexicon}</div>
-            <h1>{'zka.hero.title' | lexicon}</h1>
+            {* H1 — оригінальна назва сторінки («Компанія Здоровий клімат»), назва компанії виділена *}
+            <h1>{$_modx->resource.pagetitle | escape | ereplace : '/^(\S+)\s+(.+)$/u' : '$1 <br><em>$2</em>'}</h1>
             <p class="page-hero-text">{'zka.hero.text' | lexicon}</p>
             <div class="hero-actions">
                 <button class="btn btn-yellow btn-glow" type="button" data-consult>{'zka.hero.cta' | lexicon}<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
