@@ -82,6 +82,7 @@ $_lang['zk.projects.eyebrow'] = 'Наши объекты';
 $_lang['zk.projects.title'] = 'За словами<br>стоят объекты.';
 $_lang['zk.projects.text'] = 'Производственные помещения, склады, магазины и инженерные системы. Решения, которые уже работают.';
 $_lang['zk.projects.all'] = 'Все объекты';
+$_lang['zk.projects.more'] = 'Смотреть все работы';
 $_lang['zk.projects.forms'] = 'объект|объекта|объектов';
 $_lang['zk.projects.view'] = 'Посмотреть';
 $_lang['zk.projects.consult'] = 'Обсудить похожий проект';

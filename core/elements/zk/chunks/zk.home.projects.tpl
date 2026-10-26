@@ -21,51 +21,43 @@
 {set $rows = $_modx->runSnippet('pdoResources', $params) | fromJSON}
 {set $cats = []}
 {foreach $rows as $row}{set $cats[$row.parent] = ('zk.cat.' ~ $row.parent) | lexicon}{/foreach}
+{* «Наші об’єкти» на головній (макет 10.2026): заголовок і опис через вертикальну лінію, білі картки з фото, кнопка «Дивитися всі роботи» *}
 <section class="projects-section section" id="projects">
     <div class="wrap">
-        <div class="section-head">
+        <div class="hp-head">
             <div>
                 <div class="eyebrow">{'zk.projects.eyebrow' | lexicon}</div>
                 <h2 class="section-title">{'zk.projects.title' | lexicon}</h2>
             </div>
-            <p class="section-description">{'zk.projects.text' | lexicon}</p>
-            <a class="text-link" href="{$zk.objects | url}">{'zk.projects.all' | lexicon}<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <p class="hp-text">{'zk.projects.text' | lexicon}</p>
         </div>
-        <div data-projects data-forms="{'zk.projects.forms' | lexicon}">
-            <div class="filter-row">
-                <button class="filter active" type="button" data-filter="all" aria-pressed="true">{'zk.projects.all' | lexicon}</button>
-                {foreach $cats as $catId => $catName}
-                <button class="filter" type="button" data-filter="{$catId}" aria-pressed="false">{$catName}</button>
-                {/foreach}
-                <span class="project-count" data-count aria-live="polite"></span>
-            </div>
-            <div class="project-grid">
-                {foreach $rows as $row}
-                {set $src = $row['tv.object-img'] | replace : 'ru/' : ''}
-                {if !$src}
-                    {set $thumb = ''}{set $big = ''}
-                {elseif $src | ematch : '/[^\x20-\x7E]/'}
-                    {* pThumb ламає кириличні імена файлів — віддаємо оригінал *}
-                    {set $thumb = '/' ~ ($src | ereplace : '~^/+~' : '')}{set $big = $thumb}
-                {else}
-                    {set $thumb = $_modx->runSnippet('pthumb', ['input' => $src, 'options' => 'w=760&h=520&zc=1&q=78&f=jpg']) | ereplace : $zkUrlRe : '/'}
-                    {set $big = $_modx->runSnippet('pthumb', ['input' => $src, 'options' => 'w=1600&h=1100&q=80&f=jpg']) | ereplace : $zkUrlRe : '/'}
-                {/if}
-                {set $title = ($row.menutitle ?: $row.pagetitle) | escape}
-                <button class="project-card" type="button" data-project data-category-id="{$row.parent}" data-image="{$big}" data-title="{$title}" data-category="{$cats[$row.parent] | escape}" data-url="{$row.id | url}" aria-label="{'zk.projects.view' | lexicon}: {$title}">
-                    <div class="project-photo">
-                        {if $thumb}<img src="{$thumb}" alt="{$title}" loading="lazy" width="760" height="520">{/if}
-                        <span class="round"><svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span>
-                    </div>
-                    <div class="project-info">
-                        <div>
-                            <h3>{$title}</h3>
-                            <p class="project-meta">{$cats[$row.parent]}</p>
-                        </div>
-                    </div>
-                </button>
-                {/foreach}
-            </div>
+        <div class="hp-grid">
+            {foreach $rows as $row}
+            {set $src = $row['tv.object-img'] | replace : 'ru/' : ''}
+            {if !$src}
+                {set $thumb = ''}{set $big = ''}
+            {elseif $src | ematch : '/[^\x20-\x7E]/'}
+                {* pThumb ламає кириличні імена файлів — віддаємо оригінал *}
+                {set $thumb = '/' ~ ($src | ereplace : '~^/+~' : '')}{set $big = $thumb}
+            {else}
+                {set $thumb = $_modx->runSnippet('pthumb', ['input' => $src, 'options' => 'w=800&h=460&zc=1&q=80&f=jpg']) | ereplace : $zkUrlRe : '/'}
+                {set $big = $_modx->runSnippet('pthumb', ['input' => $src, 'options' => 'w=1600&h=1100&q=80&f=jpg']) | ereplace : $zkUrlRe : '/'}
+            {/if}
+            {set $title = ($row.menutitle ?: $row.pagetitle) | escape}
+            <button class="hp-card" type="button" data-project data-image="{$big}" data-title="{$title}" data-category="{$cats[$row.parent] | escape}" data-url="{$row.id | url}" aria-label="{'zk.projects.view' | lexicon}: {$title}">
+                <span class="hp-photo">{if $thumb}<img src="{$thumb}" alt="{$title}" loading="lazy" width="800" height="460">{/if}</span>
+                <span class="hp-body">
+                    <span class="hp-info">
+                        <span class="hp-title">{$title}</span>
+                        <span class="hp-cat">{$cats[$row.parent]}</span>
+                    </span>
+                    <span class="hp-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+                </span>
+            </button>
+            {/foreach}
+        </div>
+        <div class="hp-more">
+            <a class="btn btn-yellow" href="{$zk.objects | url}">{'zk.projects.more' | lexicon}<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
     </div>
 </section>
