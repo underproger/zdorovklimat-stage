@@ -17,9 +17,9 @@
             </ul>
         </div>
         <div class="map-visual">
-            <a class="map-art" href="{$zk.objects | url}#map" aria-label="{'zk.map.cta' | lexicon}">
+            <div class="map-art">
                 <img src="{$zk.assets}img/ua-map.svg?v={$zk.v}" alt="{'zk.map.alt' | lexicon}" loading="lazy" width="1012" height="696">
-            </a>
+            </div>
             <ul class="map-card" aria-hidden="true">
                 <li><i><svg aria-hidden="true"><use href="#i-pin"/></svg></i><div><b>{'zk.map.s1.num' | lexicon}</b><span>{'zk.map.s1.text' | lexicon | replace : '<br>' : ' '}</span></div></li>
                 <li><i><svg aria-hidden="true"><use href="#i-layers"/></svg></i><div><b>{'zk.map.s2.num' | lexicon}</b><span>{'zk.map.s2.text' | lexicon | replace : '<br>' : ' '}</span></div></li>

@@ -346,9 +346,8 @@ main{min-height:65vh;display:block}
 .map-stats b{display:block;font-size:27px;font-weight:700;color:var(--ink);letter-spacing:-.6px;margin-bottom:6px}
 .map-stats .icon{width:26px;height:26px;color:var(--ink);margin-bottom:8px;stroke-width:1.4;display:block}
 .map-visual{position:relative;align-self:stretch;display:flex;align-items:center;justify-content:center;min-height:520px}
-.map-art{display:block;width:min(108%,880px);margin:40px -2% 0 -6%;transition:transform .6s var(--ease)}
+.map-art{display:block;width:min(108%,880px);margin:40px -2% 0 -6%}
 .map-art img{width:100%;height:auto}
-.map-art:hover{transform:translateY(-4px)}
 .map-card{position:absolute;top:22px;right:0;width:248px;background:#fff;box-shadow:0 30px 60px -24px rgba(17,26,32,.28),0 2px 6px rgba(17,26,32,.05);padding:10px 22px;border-radius:4px}
 .map-card li{display:flex;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid #ededea}
 .map-card li:last-child{border-bottom:0}
@@ -366,7 +365,7 @@ main{min-height:65vh;display:block}
 .map-cross:before{left:50%;top:-9px;bottom:-9px;width:1px}
 .map-cross:after{top:50%;left:-9px;right:-9px;height:1px}
 .map-side,.map-corner{position:absolute;font-size:8.5px;font-weight:600;letter-spacing:2.4px;line-height:1.75;text-transform:uppercase;color:#a3a8ab}
-.map-side{left:calc(44% + 22px);top:110px}
+.map-side{left:calc(44% + 22px);top:118px;transform:translateY(calc(-100% - 14px))}
 .map-corner{right:var(--pad);bottom:34px;text-align:left;padding-left:44px}
 .map-corner:before{content:'';position:absolute;left:0;top:7px;width:30px;height:1px;background:#b9bcbc}
 
