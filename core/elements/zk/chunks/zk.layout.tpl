@@ -22,7 +22,7 @@
     'maps'     => 'https://www.google.com/maps?cid=13721162408939025155',
     'assets'   => '/assets/templates/zk/',
     'self'     => ($_modx->resource.id | url),
-    'v'        => '20261025i',
+    'v'        => '20261026a',
 ]}
 {set $isHome = $_modx->resource.id in [1, 1288]}
 {set $processNum = '04'}
@@ -30,6 +30,9 @@
 {* сторінки з темним першим екраном: шапка прозора поверх нього, на решті — суцільна *}
 {set $darkHero = $isHome || $_modx->resource.id in [$zk.about, $zk.video, $zk.objects]}
 {if $_modx->resource.parent == $zk.objects && $_modx->resource.isfolder}{set $darkHero = true}{/if}
+{set $zkParents = $_modx->getParentIds($_modx->resource.id)}
+{if $_modx->resource.id == $zk.services}{set $darkHero = true}{/if}
+{if $zk.services in $zkParents}{set $darkHero = true}{/if}
 <!doctype html>
 <html lang="{$ua ? 'uk' : 'ru'}">
 <head>
