@@ -4,12 +4,16 @@
 [[Canonical]]
 <title>[[*longtitle:default=`[[*pagetitle]]`]]</title>
 <meta name="robots" content="[[+seoTab.robotsTag]]">
-[[*description:notempty=`<meta name="description" content="[[*description]]">`]]
-[[+seoPro.keywords:notempty=`<meta name="keywords" content="[[+seoPro.keywords]]">`]]
+{* лапки в заголовках/описах ламали атрибути, а «0» у ключових словах SEO Pro друкувався на сторінці — тому через Fenom з екрануванням *}
+{set $zkMetaTitle = ($_modx->resource.longtitle ?: $_modx->resource.pagetitle) | escape}
+{set $zkMetaDesc = $_modx->resource.description | trim | escape}
+{set $zkKeywords = $_modx->getPlaceholder('seoPro.keywords') | trim}
+{if $zkMetaDesc}<meta name="description" content="{$zkMetaDesc}">{/if}
+{if $zkKeywords && $zkKeywords != '0'}<meta name="keywords" content="{$zkKeywords | escape}">{/if}
 <meta name="theme-color" content="#111a20">
 <meta property="og:type" content="website">
-<meta property="og:title" content="[[*longtitle:default=`[[*pagetitle]]`]]">
-[[*description:notempty=`<meta property="og:description" content="[[*description]]">`]]
+<meta property="og:title" content="{$zkMetaTitle}">
+{if $zkMetaDesc}<meta property="og:description" content="{$zkMetaDesc}">{/if}
 <meta property="og:image" content="[[!++site_url:replace=`ru/==`]]assets/templates/zk/img/hero.webp">
 <meta property="og:url" content="[[~[[*id]]? &scheme=`full`]]">
 <meta name="it-rating" content="it-rat-1320b27f41502b183e5f4961dd00e5c0">
