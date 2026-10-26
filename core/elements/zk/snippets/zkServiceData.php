@@ -208,14 +208,24 @@ $out['extra'] = [
     'img' => $thumb($b3img, 'w=900&h=700&zc=1&q=78&f=jpg'),
 ];
 
-$out['why'] = ['title' => $tv($res, 'varto-title'), 'text' => $clean($tv($res, 'varto-text'))];
+// Сторінки, де старі шаблони не виводили заповнені поля (лишаємо як було на сайті):
+// «Чому варто» — лише в «Основные услуги - ленды»; «Преимущества» — у «миниленд» з mig_perevagu_miniland, в інших — з mig_perevagu
+$legacyNoWhy = [27, 29, 132];
+$legacyNoAdvantages = [42, 111];
+$legacyAdvMiniland = [128, 129];
+
+$out['why'] = in_array($id, $legacyNoWhy)
+    ? ['title' => '', 'text' => '']
+    : ['title' => $tv($res, 'varto-title'), 'text' => $clean($tv($res, 'varto-text'))];
 
 // ---------- списки ----------
 $adv = [];
-foreach ($json($tv($res, 'mig_perevagu')) as $r) {
-    $t = trim($r['title-pr'] ?? '');
-    $d = trim(strip_tags($r['description-pr'] ?? ''));
-    if ($t !== '' || $d !== '') $adv[] = ['title' => $t, 'text' => $d];
+if (!in_array($id, $legacyAdvMiniland)) {
+    foreach ($json($tv($res, 'mig_perevagu')) as $r) {
+        $t = trim($r['title-pr'] ?? '');
+        $d = trim(strip_tags($r['description-pr'] ?? ''));
+        if ($t !== '' || $d !== '') $adv[] = ['title' => $t, 'text' => $d];
+    }
 }
 if (!$adv) {
     foreach ($json($tv($res, 'mig_perevagu_miniland')) as $r) {
@@ -224,7 +234,15 @@ if (!$adv) {
         if ($t !== '' || $d !== '') $adv[] = ['title' => rtrim($t, '.'), 'text' => $d];
     }
 }
-$out['advantages'] = $adv;
+$out['advantages'] = in_array($id, $legacyNoAdvantages) ? [] : $adv;
+
+// логотипи брендів (старий блок «logo-new», TV migx_logo_new / title_logo / text_logo)
+$brands = [];
+foreach ($json($tv($res, 'migx_logo_new')) as $r) {
+    $bimg = $path($r['lg-1'] ?? '', 'assets/images/design/');
+    if ($bimg !== '') $brands[] = $url($bimg);
+}
+$out['brands'] = ['title' => $tv($res, 'title_logo'), 'text' => trim(strip_tags($tv($res, 'text_logo'))), 'items' => $brands];
 
 $works = [];
 foreach ($json($tv($res, 'migx_nashi_rabotu_mian')) as $r) {

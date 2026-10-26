@@ -13,6 +13,7 @@
 {include 'zk.svc.children'}
 {include 'zk.svc.steps'}
 {include 'zk.svc.advantages'}
+{include 'zk.svc.brands'}
 {include 'zk.svc.works'}
 {include 'zk.svc.price'}
 {include 'zk.svc.extra'}
@@ -20,6 +21,7 @@
 {include 'zk.svc.objects'}
 {include 'zk.svc.why'}
 {include 'zk.svc.reviews'}
+{include 'zk.home.clients'}
 {include 'zk.svc.faq'}
 {include 'zk.svc.seo'}
 {include 'zk.home.contact'}

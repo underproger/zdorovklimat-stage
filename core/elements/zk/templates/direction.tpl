@@ -14,6 +14,7 @@
 {include 'zk.svc.advantages'}
 {include 'zk.svc.why'}
 {include 'zk.svc.steps'}
+{include 'zk.svc.brands'}
 {include 'zk.svc.works'}
 {include 'zk.svc.price'}
 {include 'zk.svc.videos'}
@@ -21,6 +22,7 @@
 {set $processNum = ''}
 {include 'zk.home.process'}
 {include 'zk.svc.reviews'}
+{include 'zk.home.clients'}
 {include 'zk.svc.faq'}
 {include 'zk.svc.seo'}
 {include 'zk.home.contact'}
