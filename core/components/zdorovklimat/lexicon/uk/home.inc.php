@@ -201,5 +201,5 @@ $_lang['zk.footer.l_blog'] = 'Блог';
 $_lang['zk.footer.l_reviews'] = 'Відгуки';
 $_lang['zk.footer.address'] = 'Львівська обл., с. Солонка,<br>вул. Стрийська, 55';
 $_lang['zk.footer.copy'] = '© 2011 – [[+year]] Здоровий Клімат. Усі права захищено.';
-$_lang['zk.footer.design'] = 'Дизайн — Impulse Design';
+$_lang['zk.footer.design'] = 'Розробка та просування сайтів';
 $_lang['zk.footer.top'] = 'Нагору';

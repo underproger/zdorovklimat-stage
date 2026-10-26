@@ -125,7 +125,11 @@
   }
 
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenus(); });
-  var onScroll = function () { if (header) header.classList.toggle('scrolled', window.scrollY > 180); };
+  var toTop = $('[data-to-top]');
+  var onScroll = function () {
+    if (header) header.classList.toggle('scrolled', window.scrollY > 180);
+    if (toTop) toTop.classList.toggle('is-visible', window.scrollY > 700);
+  };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
   window.addEventListener('resize', function () {
