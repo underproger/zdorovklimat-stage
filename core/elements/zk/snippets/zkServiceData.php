@@ -39,6 +39,14 @@ $path = function ($v, $base) {
     $v = preg_replace('#^(\./|/)+#', '', $v);
     $v = str_replace('/./', '/', $v);
     if (strpos($v, 'assets/') !== 0) $v = rtrim($base, '/') . '/' . $v;
+    // повний шлях у полі з джерелом медіа дає «assets/images/design/assets/images/design/x.jpg»
+    $v = preg_replace('#^assets/images/[^/]+/(assets/)#', '$1', $v);
+    // «../works/x.jpg» відносно джерела медіа — фото з іншої папки (об’єкти, «Наші роботи» інших послуг)
+    while (strpos($v, '/../') !== false) {
+        $n = preg_replace('#[^/]+/\.\./#', '', $v, 1);
+        if ($n === $v) break;
+        $v = $n;
+    }
     return $v;
 };
 $url = function ($p) {
@@ -208,10 +216,10 @@ $out['extra'] = [
     'img' => $thumb($b3img, 'w=900&h=700&zc=1&q=78&f=jpg'),
 ];
 
-// Сторінки, де старі шаблони не виводили заповнені поля (лишаємо як було на сайті):
+// Сторінки, де старі шаблони не виводили заповнені поля (лишаємо як було на сайті; 111 — показуємо, послуги приведено до повної структури):
 // «Чому варто» — лише в «Основные услуги - ленды»; «Преимущества» — у «миниленд» з mig_perevagu_miniland, в інших — з mig_perevagu
 $legacyNoWhy = [27, 29, 132];
-$legacyNoAdvantages = [42, 111];
+$legacyNoAdvantages = [42];
 $legacyAdvMiniland = [128, 129];
 
 $out['why'] = in_array($id, $legacyNoWhy)
@@ -256,10 +264,29 @@ foreach ($json($tv($res, 'migx_nashi_rabotu_mian')) as $r) {
 }
 $out['works'] = $works;
 
-$reviews = [];
-foreach ($json($tv($res, 'mig_reviews')) as $r) {
-    $t = trim(strip_tags($r['text-reviews'] ?? ''));
-    if ($t !== '') $reviews[] = ['name' => trim($r['name-reviews'] ?? ''), 'text' => $t];
+$readReviews = function (modResource $from) use ($json, $tv) {
+    $list = [];
+    foreach ($json($tv($from, 'mig_reviews')) as $r) {
+        $t = trim(strip_tags($r['text-reviews'] ?? ''));
+        if ($t !== '') $list[] = ['name' => trim($r['name-reviews'] ?? ''), 'text' => $t];
+    }
+    return $list;
+};
+$reviews = $readReviews($res);
+// послуга без власних відгуків показує відгуки найближчого напряму (батьківської сторінки), а якщо їх немає — сусідніх послуг
+if (!$reviews && $mode != 'direction') {
+    $p = $parent;
+    while ($p && !$reviews && $p->get('id') != $root) {
+        $reviews = array_slice($readReviews($p), 0, 3);
+        $p = $p->get('parent') ? $modx->getObject('modResource', $p->get('parent')) : null;
+    }
+    if (!$reviews && $parent) {
+        foreach ($kids($parent->get('id')) as $s) {
+            if ($s->get('id') == $id) continue;
+            $reviews = array_slice($readReviews($s), 0, 3);
+            if ($reviews) break;
+        }
+    }
 }
 $out['reviews'] = $reviews;
 
