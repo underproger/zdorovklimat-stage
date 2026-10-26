@@ -11,7 +11,6 @@
 <article class="blog-card">
     <a class="blog-photo" href="{$url}" tabindex="-1" aria-hidden="true">
         {if $img}<img src="{$img}" alt="" loading="lazy" width="820" height="410">{/if}
-        <span class="blog-num">{($idx < 10 ? '0' : '') ~ $idx}</span>
     </a>
     <div class="blog-body">
         <div class="eyebrow">{'zk.blog.cat' | lexicon}</div>

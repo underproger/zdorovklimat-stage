@@ -7,42 +7,114 @@
 
   /* ---------- header / menus ---------- */
   var header = $('.header'), menuToggle = $('.menu-toggle'), mobileMenu = $('.mobile-menu'),
-      serviceToggle = $('[data-services-toggle]'), megaMenu = $('.mega-menu');
+      serviceToggle = $('[data-services-toggle]'), megaMenu = $('.mega-menu'),
+      phoneDrop = $('[data-phone-drop]');
+  var canHover = window.matchMedia ? window.matchMedia('(hover: hover) and (pointer: fine)') : { matches: false };
 
+  function setMega(open) {
+    if (!megaMenu || !serviceToggle) return;
+    megaMenu.hidden = !open;
+    serviceToggle.setAttribute('aria-expanded', String(open));
+  }
+  function setPhones(open) {
+    if (!phoneDrop) return;
+    phoneDrop.classList.toggle('is-open', open);
+    var b = $('.header-phone-btn', phoneDrop);
+    if (b) b.setAttribute('aria-expanded', String(open));
+  }
   function closeMenus() {
+    var wasOpen = mobileMenu && !mobileMenu.hidden;
     if (mobileMenu && menuToggle) {
       mobileMenu.hidden = true;
       menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', menuToggle.dataset.labelOpen || '');
     }
-    if (megaMenu && serviceToggle) {
-      megaMenu.hidden = true;
-      serviceToggle.setAttribute('aria-expanded', 'false');
-    }
+    setMega(false);
+    setPhones(false);
     document.body.classList.remove('locked');
+    if (wasOpen && menuToggle) menuToggle.focus({ preventScroll: true });
   }
+
+  /* мобільне меню: панель поверх сторінки, закривається хрестиком, тлом або Esc */
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', function () {
-      var open = mobileMenu.hidden;
       closeMenus();
-      mobileMenu.hidden = !open;
-      menuToggle.setAttribute('aria-expanded', String(open));
-      menuToggle.setAttribute('aria-label', open ? menuToggle.dataset.labelClose : menuToggle.dataset.labelOpen);
-      document.body.classList.toggle('locked', open);
+      mobileMenu.hidden = false;
+      menuToggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('locked');
+      var c = $('.mm-close', mobileMenu);
+      if (c) c.focus({ preventScroll: true });
     });
+    $$('[data-menu-close]', mobileMenu).forEach(function (b) { b.addEventListener('click', closeMenus); });
+    mobileMenu.addEventListener('click', function (e) { if (e.target === mobileMenu) closeMenus(); });
   }
+  /* розкриття «Послуг» і напрямків у мобільному меню */
+  $$('[data-mm-toggle]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = document.getElementById(b.getAttribute('aria-controls'));
+      if (!t) return;
+      var open = b.getAttribute('aria-expanded') !== 'true';
+      b.setAttribute('aria-expanded', String(open));
+      t.hidden = !open;
+    });
+  });
+
+  /* «Послуги» на десктопі: відкриття кліком або наведенням, напрямок — наведенням/фокусом */
   if (serviceToggle && megaMenu) {
+    var megaTimer;
     serviceToggle.addEventListener('click', function () {
-      megaMenu.hidden = !megaMenu.hidden;
-      serviceToggle.setAttribute('aria-expanded', String(!megaMenu.hidden));
+      setPhones(false);
+      setMega(canHover.matches ? true : megaMenu.hidden);
+    });
+    serviceToggle.addEventListener('mouseenter', function () {
+      if (!canHover.matches) return;
+      clearTimeout(megaTimer);
+      setMega(true);
+    });
+    [serviceToggle, megaMenu].forEach(function (el) {
+      el.addEventListener('mouseleave', function () {
+        if (!canHover.matches) return;
+        clearTimeout(megaTimer);
+        megaTimer = setTimeout(function () { setMega(false); }, 280);
+      });
+      el.addEventListener('mouseenter', function () { clearTimeout(megaTimer); });
     });
     document.addEventListener('click', function (e) {
-      if (!e.target.closest('.header') && !megaMenu.hidden) {
-        megaMenu.hidden = true;
-        serviceToggle.setAttribute('aria-expanded', 'false');
-      }
+      if (!megaMenu.hidden && !e.target.closest('.mega-menu') && !e.target.closest('[data-services-toggle]')) setMega(false);
+    });
+
+    var dirs = $$('[data-mega-dir]', megaMenu), panes = $$('[data-mega-pane]', megaMenu), dirTimer;
+    var showPane = function (id) {
+      dirs.forEach(function (d) { d.classList.toggle('is-active', d.dataset.megaDir === id); });
+      panes.forEach(function (p) { p.hidden = p.dataset.megaPane !== id; });
+    };
+    dirs.forEach(function (d) {
+      d.addEventListener('mouseenter', function () {
+        clearTimeout(dirTimer);
+        dirTimer = setTimeout(function () { showPane(d.dataset.megaDir); }, 90);
+      });
+      d.addEventListener('mouseleave', function () { clearTimeout(dirTimer); });
+      d.addEventListener('focus', function () { showPane(d.dataset.megaDir); });
+      // сенсорний екран: перший дотик показує послуги напрямку, другий — відкриває його сторінку
+      d.addEventListener('click', function (e) {
+        if (!canHover.matches && !d.classList.contains('is-active')) { e.preventDefault(); showPane(d.dataset.megaDir); }
+      });
     });
   }
+
+  /* телефон у шапці на мобільному: список із двох номерів */
+  if (phoneDrop) {
+    var phoneBtn = $('.header-phone-btn', phoneDrop);
+    if (phoneBtn) phoneBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = !phoneDrop.classList.contains('is-open');
+      setMega(false);
+      setPhones(open);
+    });
+    document.addEventListener('click', function (e) {
+      if (phoneDrop.classList.contains('is-open') && !e.target.closest('[data-phone-drop]')) setPhones(false);
+    });
+  }
+
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenus(); });
   var onScroll = function () { if (header) header.classList.toggle('scrolled', window.scrollY > 180); };
   window.addEventListener('scroll', onScroll, { passive: true });

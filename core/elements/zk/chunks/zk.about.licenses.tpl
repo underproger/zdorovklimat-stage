@@ -17,7 +17,7 @@
 <section class="lic-section section" id="licenses">
     <div class="wrap lic-layout">
         <div class="lic-copy">
-            <div class="eyebrow"><span class="num">05</span><span class="sep">/</span>{'zka.lic.eyebrow' | lexicon}</div>
+            <div class="eyebrow">{'zka.lic.eyebrow' | lexicon}</div>
             <h2 class="section-title">{'zka.lic.title' | lexicon}</h2>
             <p>{'zka.lic.text' | lexicon}</p>
         </div>
@@ -26,7 +26,7 @@
             {set $label = ('zka.lic.item' | lexicon) ~ ' ' ~ ($i + 1)}
             <button class="lic-doc" type="button" data-full="{$lic.full}" data-title="{$label}" aria-label="{'zka.lic.open' | lexicon}: {$label}">
                 <span class="lic-paper"><img src="{$lic.thumb}" alt="{$label}" loading="lazy" width="520" height="720"></span>
-                <span class="lic-meta"><span>{($i < 9 ? '0' : '') ~ ($i + 1)}</span><i class="round"><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg></i></span>
+                <span class="lic-meta"><i class="round"><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg></i></span>
             </button>
             {/foreach}
         </div>

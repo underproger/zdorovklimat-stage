@@ -19,7 +19,6 @@
 {include 'zk.svc.price'}
 {include 'zk.svc.videos'}
 {include 'zk.svc.objects'}
-{set $processNum = ''}
 {include 'zk.home.process'}
 {include 'zk.svc.reviews'}
 {include 'zk.home.clients'}

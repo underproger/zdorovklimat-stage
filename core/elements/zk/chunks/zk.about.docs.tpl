@@ -3,7 +3,7 @@
     <div class="docs-lines" aria-hidden="true"><i></i><i></i></div>
     <div class="wrap docs-layout">
         <div class="docs-copy">
-            <div class="eyebrow"><span class="num">03</span><span class="sep">/</span>{'zka.docs.eyebrow' | lexicon}</div>
+            <div class="eyebrow">{'zka.docs.eyebrow' | lexicon}</div>
             <h2 class="section-title">{'zka.docs.title' | lexicon}</h2>
             <p class="docs-text">{'zka.docs.text' | lexicon}</p>
             <p class="docs-label">{'zka.docs.stages' | lexicon}</p>
@@ -19,7 +19,7 @@
             <div class="docs-count"><b>{$docs | length}</b><span>{'zka.docs.sections' | lexicon}</span></div>
             <ol class="docs-list">
                 {foreach $docs as $i => $doc}
-                <li><span>{($i < 9 ? '0' : '') ~ ($i + 1)}</span>{$doc}</li>
+                <li>{$doc}</li>
                 {/foreach}
             </ol>
         </div>

@@ -14,7 +14,7 @@
     <div class="wrap">
         <div class="section-head">
             <div>
-                <div class="eyebrow"><span class="num">05</span><span class="sep">/</span>{'zk.blog.eyebrow' | lexicon}</div>
+                <div class="eyebrow">{'zk.blog.eyebrow' | lexicon}</div>
                 <h2 class="section-title">{'zk.blog.title' | lexicon}</h2>
             </div>
             <a class="text-link" href="{$zk.blog | url}">{'zk.blog.all' | lexicon}<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>

@@ -13,7 +13,6 @@
             <article class="video-card">
                 <div class="video-cover">
                     <img src="https://i.ytimg.com/vi/{$v}/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
-                    <span class="video-num">{($i < 9 ? '0' : '') ~ ($i + 1)}</span>
                     <span class="video-play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
                 </div>
                 <div class="video-body">

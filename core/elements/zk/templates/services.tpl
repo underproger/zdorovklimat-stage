@@ -7,7 +7,6 @@
 {set $crumb = 'zks.crumb' | lexicon}
 {include 'zk.services.hero'}
 {include 'zk.services.list'}
-{set $processNum = '03'}
 {include 'zk.home.process'}
 {include 'zk.home.clients'}
 {include 'zk.home.contact'}

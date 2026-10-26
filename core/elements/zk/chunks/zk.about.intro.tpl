@@ -1,7 +1,7 @@
 <section class="intro-section section" id="who">
     <div class="wrap intro-layout">
         <div class="intro-copy">
-            <div class="eyebrow"><span class="num">01</span><span class="sep">/</span>{'zka.intro.eyebrow' | lexicon}</div>
+            <div class="eyebrow">{'zka.intro.eyebrow' | lexicon}</div>
             <h2 class="section-title">{'zka.intro.title' | lexicon}</h2>
             <p class="intro-lead">{'zka.intro.p1' | lexicon}</p>
             <p class="intro-text">{'zka.intro.p2' | lexicon}</p>
@@ -10,11 +10,11 @@
         <div class="intro-visual">
             <figure class="intro-photo intro-photo-main">
                 <img src="/assets/images/works/stryi_torba.jpg" alt="{'zka.intro.photo2' | lexicon}" loading="lazy" width="1800" height="1080">
-                <figcaption><span>02</span>{'zka.intro.photo2' | lexicon}</figcaption>
+                <figcaption>{'zka.intro.photo2' | lexicon}</figcaption>
             </figure>
             <figure class="intro-photo intro-photo-side">
                 <img src="/assets/images/works/hryhorivka.jpg" alt="{'zka.intro.photo1' | lexicon}" loading="lazy" width="1600" height="1200">
-                <figcaption><span>01</span>{'zka.intro.photo1' | lexicon}</figcaption>
+                <figcaption>{'zka.intro.photo1' | lexicon}</figcaption>
             </figure>
             <i class="intro-plus" aria-hidden="true"></i>
         </div>

@@ -2,7 +2,7 @@
     <div class="wrap">
         <div class="section-head">
             <div>
-                <div class="eyebrow"><span class="num">02</span><span class="sep">/</span>{'zka.pillars.eyebrow' | lexicon}</div>
+                <div class="eyebrow">{'zka.pillars.eyebrow' | lexicon}</div>
                 <h2 class="section-title">{'zka.pillars.title' | lexicon}</h2>
             </div>
             <p class="section-description">{'zka.pillars.text' | lexicon}</p>
@@ -12,7 +12,6 @@
             {set $n = $i + 1}
             <article class="pillar" id="{$p[0]}">
                 <div class="pillar-top">
-                    <span class="pillar-num">0{$n}</span>
                     <i class="pillar-icon"><svg aria-hidden="true"><use href="#{$p[1]}"/></svg></i>
                 </div>
                 <h3>{('zka.p' ~ $n ~ '.title') | lexicon}</h3>

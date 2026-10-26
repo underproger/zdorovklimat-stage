@@ -5,7 +5,15 @@
 <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v16m-6-6 6 6 6-6"/></symbol>
 <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V4m-6 6 6-6 6 6"/></symbol>
 <symbol id="i-close" viewBox="0 0 24 24"><path d="m5 5 14 14M5 19 19 5"/></symbol>
-<symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 7h18M3 16h18"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol>
+<symbol id="i-next" viewBox="0 0 24 24"><path d="m9.5 6 6 6-6 6"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 11 12 4l8.5 7M5.5 9.5V20h13V9.5"/><path d="M10 20v-5.5h4V20"/></symbol>
+<symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.6 3.6a5 5 0 0 0-5.3 6.9L3.8 16a1.9 1.9 0 0 0 2.7 2.7l5.5-5.5a5 5 0 0 0 6.9-5.3l-2.8 2.8-2.6-.6-.6-2.6Z"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 19.5c.6-3.6 3.2-5.6 6.5-5.6s5.9 2 6.5 5.6"/><path d="M15.5 4.8a3.3 3.3 0 0 1 0 6.4M17.6 14.2c2.1.6 3.5 2.4 3.9 5.3"/></symbol>
+<symbol id="i-article" viewBox="0 0 24 24"><path d="M14 3H5.5v18h13V7.5Z"/><path d="M13.5 3v5h5M8.5 12h7M8.5 15h7M8.5 18h4"/></symbol>
+<symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m10.3 9.3 4.4 2.7-4.4 2.7Z"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11h-8.5L7 19.5V16H4Z"/><path d="M8 9h8M8 12h5"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 4h6.5v6.5H4zM13.5 4H20v6.5h-6.5zM4 13.5h6.5V20H4zM13.5 13.5H20V20h-6.5z"/></symbol>
 <symbol id="i-play" viewBox="0 0 24 24"><path d="M8.5 6.6v10.8c0 .8.9 1.3 1.6.9l8.5-5.4c.6-.4.6-1.4 0-1.8L10.1 5.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor" stroke="none"/></symbol>
 <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-3 2c1.5 3 3 4.5 6 6l2-3 5 2v4c0 1-1 2-2 2C10 20 4 14 3 5c0-1 1-2 2-2Z"/></symbol>
 <symbol id="i-phone-solid" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z" fill="currentColor" stroke="none"/></symbol>

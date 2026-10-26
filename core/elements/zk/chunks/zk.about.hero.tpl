@@ -23,7 +23,7 @@
                 <li>
                     <a class="point-row" href="{$zk.self}#{$p[0]}">
                         <i class="point-icon"><svg aria-hidden="true"><use href="#{$p[1]}"/></svg></i>
-                        <div><span><b>0{$i + 1}</b> / {('zka.hero.f' ~ ($i + 1) ~ '.title') | lexicon}</span>{('zka.hero.f' ~ ($i + 1) ~ '.text') | lexicon}</div>
+                        <div><span>{('zka.hero.f' ~ ($i + 1) ~ '.title') | lexicon}</span>{('zka.hero.f' ~ ($i + 1) ~ '.text') | lexicon}</div>
                     </a>
                 </li>
                 {/foreach}

@@ -26,7 +26,7 @@
                 <li>
                     <div class="point-row">
                         <i class="point-icon"><svg aria-hidden="true"><use href="#{$icon}"/></svg></i>
-                        <div><span><b>0{$i + 1}</b> / {('zk.about.p' ~ ($i + 1) ~ '.label') | lexicon}</span>{('zk.about.p' ~ ($i + 1) ~ '.text') | lexicon}</div>
+                        <div><span>{('zk.about.p' ~ ($i + 1) ~ '.label') | lexicon}</span>{('zk.about.p' ~ ($i + 1) ~ '.text') | lexicon}</div>
                     </div>
                 </li>
                 {/foreach}

@@ -2,7 +2,7 @@
 <section class="section wrap" id="services">
     <div class="section-head">
         <div>
-            <div class="eyebrow"><span class="num">01</span><span class="sep">/</span>{'zk.services.eyebrow' | lexicon}</div>
+            <div class="eyebrow">{'zk.services.eyebrow' | lexicon}</div>
             <h2 class="section-title">{'zk.services.title' | lexicon}</h2>
         </div>
         <p class="section-description">{'zk.services.text' | lexicon}</p>
@@ -13,7 +13,6 @@
         {set $n = $i + 1}
         <a class="service-card" href="{$cardId | url}">
             <img src="{$zk.assets}img/{$cardImg[$i]}" alt="{$cardId | resource : 'pagetitle' | escape}" loading="lazy" width="410" height="365">
-            <span class="number">0{$n}</span>
             <span class="card-arrow"><svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span>
             <div class="card-bottom">
                 <h3>{('zk.card' ~ $n ~ '.title') | lexicon}</h3>

@@ -13,7 +13,6 @@
             <article class="svc-step">
                 <div class="svc-step-photo">
                     {if $s.img}<img src="{$s.img}" alt="{$s.alt ?: ($d.title | escape)}" loading="lazy" width="900" height="640">{/if}
-                    <span class="svc-step-num">0{$i + 1}</span>
                 </div>
                 <div class="svc-step-text article-content">{$s.html}</div>
             </article>

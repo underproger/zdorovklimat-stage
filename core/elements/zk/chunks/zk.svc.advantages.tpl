@@ -10,7 +10,6 @@
         <ol class="svc-adv-grid">
             {foreach $d.advantages as $i => $a}
             <li class="svc-adv-item">
-                <span class="svc-adv-num">{($i < 9 ? '0' : '') ~ ($i + 1)}</span>
                 {if $a.title}<h3>{$a.title}</h3>{/if}
                 {if $a.text}<p>{$a.text}</p>{/if}
             </li>

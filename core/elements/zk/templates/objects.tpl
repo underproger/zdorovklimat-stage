@@ -30,7 +30,7 @@
 {set $heroTitleClass = ''}
 {set $heroText = 'zko.hero.text' | lexicon}
 {include 'zk.objects.hero'}
-{set $gridEyebrow = '<span class="num">01</span><span class="sep">/</span>' ~ ('zko.list.eyebrow' | lexicon)}
+{set $gridEyebrow = '' ~ ('zko.list.eyebrow' | lexicon)}
 {set $gridTitle = 'zko.list.title' | lexicon}
 {set $gridFilter = true}
 {include 'zk.objects.grid'}

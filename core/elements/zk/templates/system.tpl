@@ -42,7 +42,7 @@
                 <li>
                     <div class="point-row">
                         <i class="point-icon"><svg aria-hidden="true"><use href="#{$icon}"/></svg></i>
-                        <div><span><b>0{$i + 1}</b> / {('zkp.thanks.s' ~ ($i + 1) ~ '.title') | lexicon}</span>{('zkp.thanks.s' ~ ($i + 1) ~ '.text') | lexicon}</div>
+                        <div><span>{('zkp.thanks.s' ~ ($i + 1) ~ '.title') | lexicon}</span>{('zkp.thanks.s' ~ ($i + 1) ~ '.text') | lexicon}</div>
                     </div>
                 </li>
                 {/foreach}
@@ -69,7 +69,6 @@
             {foreach [$zk.objects, $zk.video, $zk.about] as $i => $id}
             {set $t = $id | resource : 'menutitle'}
             <a class="sys-link" href="{$id | url}">
-                <span class="sys-link-num">0{$i + 1}</span>
                 <span class="sys-link-title">{$t ?: ($id | resource : 'pagetitle')}</span>
                 <span class="round" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
             </a>

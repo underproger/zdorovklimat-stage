@@ -3,7 +3,7 @@
     <div class="wrap">
         <div class="section-head">
             <div>
-                <div class="eyebrow"><span class="num">01</span><span class="sep">/</span>{'zkv.list.eyebrow' | lexicon}</div>
+                <div class="eyebrow">{'zkv.list.eyebrow' | lexicon}</div>
                 <h2 class="section-title">{'zkv.list.title' | lexicon}</h2>
             </div>
             <p class="section-description">{'zkv.list.text' | lexicon}</p>
@@ -16,7 +16,6 @@
             <article class="video-card">
                 <div class="video-cover">
                     <img src="{$v.cover}" alt="" loading="lazy" width="640" height="360">
-                    <span class="video-num">{($i < 9 ? '0' : '') ~ ($i + 1)}</span>
                     <span class="video-play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
                 </div>
                 <div class="video-body">

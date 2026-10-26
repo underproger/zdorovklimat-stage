@@ -25,7 +25,7 @@
     <div class="wrap">
         <div class="section-head">
             <div>
-                <div class="eyebrow"><span class="num">03</span><span class="sep">/</span>{'zk.projects.eyebrow' | lexicon}</div>
+                <div class="eyebrow">{'zk.projects.eyebrow' | lexicon}</div>
                 <h2 class="section-title">{'zk.projects.title' | lexicon}</h2>
             </div>
             <p class="section-description">{'zk.projects.text' | lexicon}</p>
