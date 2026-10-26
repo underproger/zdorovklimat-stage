@@ -22,7 +22,7 @@
     'maps'     => 'https://www.google.com/maps?cid=13721162408939025155',
     'assets'   => '/assets/templates/zk/',
     'self'     => ($_modx->resource.id | url),
-    'v'        => '20261026c',
+    'v'        => '20261026d',
 ]}
 {set $isHome = $_modx->resource.id in [1, 1288]}
 {set $processNum = '04'}
@@ -32,6 +32,8 @@
 {if $_modx->resource.parent == $zk.objects && $_modx->resource.isfolder}{set $darkHero = true}{/if}
 {set $zkParents = $_modx->getParentIds($_modx->resource.id)}
 {if $_modx->resource.id == $zk.services}{set $darkHero = true}{/if}
+{* службові: «Дякуємо», 404, 403 *}
+{if $_modx->resource.id in [20, 22, 1300, 1301, 1478, 1479]}{set $darkHero = true}{/if}
 {if $zk.services in $zkParents}{set $darkHero = true}{/if}
 <!doctype html>
 <html lang="{$ua ? 'uk' : 'ru'}">

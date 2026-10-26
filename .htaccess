@@ -32,6 +32,8 @@ RewriteRule ^$ /?%1%2 [R=301,L]
 RewriteRule ^dveri-odnostvorchati-xolodilni-1100-na-2200-mm-ta-tovshhinoyu-60-mm.html$ / [R=301,L]
 RewriteRule ^dverі-rozpashni-dvostvorchati-xolodilni-1200-na-1900-mm-ta-tovshhinoyu-80-mm.html$ / [R=301,L]
 RewriteRule ^virobniki.html$ / [R=301,L]
+# пошук прибрано з нового дизайну
+RewriteRule ^rezultati-poshuku.html$ /blog.html [R=301,L]
 RewriteRule ^texnoxolod.html$ / [R=301,L]
 RewriteRule ^Polair.html$ / [R=301,L]
 RewriteRule ^ross.html$ / [R=301,L]

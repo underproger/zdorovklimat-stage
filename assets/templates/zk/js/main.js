@@ -489,4 +489,11 @@
         .then(function () { btn.removeAttribute('aria-busy'); btn.firstChild.nodeValue = label; });
     });
   });
+
+  /* ---------- «Повернутися назад» на 404/403 ---------- */
+  $$('[data-back]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (document.referrer && history.length > 1) { e.preventDefault(); history.back(); }
+    });
+  });
 })();

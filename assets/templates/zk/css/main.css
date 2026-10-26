@@ -1479,6 +1479,36 @@ a.contact-big:hover{color:#8c6e00}
   .reviews-score>b{font-size:36px}
   .review-card time{display:none}
 }
+/* ---------- службові: «Дякуємо», 404, 403 ---------- */
+.sys-hero .page-hero-layout{min-height:max(720px,100svh)}
+.sys-code{position:absolute;right:calc(24% + 40px);bottom:9%;z-index:0;font-size:clamp(160px,22vw,340px);font-weight:700;line-height:.8;letter-spacing:-12px;color:transparent;-webkit-text-stroke:1px #ffffff2e;pointer-events:none;user-select:none}
+.sys-badge{display:flex;align-items:center;justify-content:center;width:72px;height:72px;margin-bottom:34px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 10px #ffd32b1f,0 18px 40px -12px #ffd32b80}
+.sys-badge svg{width:30px;height:30px;fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.sys-socials{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;margin-top:38px;padding-top:26px;border-top:1px solid #ffffff1f;max-width:540px}
+.sys-socials>span{margin-right:6px;font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#93a3ad}
+.sys-social{display:inline-flex;align-items:center;gap:9px;padding:9px 14px 9px 11px;border:1px solid #ffffff2e;font-size:11px;font-weight:700;letter-spacing:.4px;color:#fff;transition:background .2s,border-color .2s,color .2s}
+.sys-social svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.sys-social:hover{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+.sys-panel{align-self:center}
+.sys-links{background:#f4f4f2;padding-top:70px;padding-bottom:80px}
+.sys-links .eyebrow{margin-bottom:28px}
+.sys-links-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.sys-link{display:flex;align-items:center;gap:20px;padding:26px 26px 26px 28px;background:#fff;border:1px solid #e6e7e3;transition:box-shadow .3s,transform .3s var(--ease)}
+.sys-link:hover{transform:translateY(-3px);box-shadow:0 26px 50px -34px rgba(17,26,32,.4)}
+.sys-link-num{font-size:12px;letter-spacing:1.5px;color:var(--muted)}
+.sys-link-title{flex:1;font-size:19px;font-weight:600;letter-spacing:-.4px}
+.sys-link .round{width:42px;height:42px}
+.sys-link:hover .round{background:var(--yellow);border-color:var(--yellow)}
+@media(max-width:950px){
+  .sys-hero .page-hero-layout{min-height:0}
+  .sys-code{right:var(--pad);bottom:auto;top:110px;font-size:140px;letter-spacing:-6px}
+  .sys-links-grid{grid-template-columns:1fr;gap:12px}
+}
+@media(max-width:600px){
+  .sys-badge{width:60px;height:60px;margin-bottom:26px}
+  .sys-code{font-size:96px;top:96px}
+  .sys-link{padding:20px}
+}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*:before,*:after{animation:none!important;transition:none!important}
