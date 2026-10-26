@@ -46,6 +46,15 @@
     });
     $$('[data-menu-close]', mobileMenu).forEach(function (b) { b.addEventListener('click', closeMenus); });
     mobileMenu.addEventListener('click', function (e) { if (e.target === mobileMenu) closeMenus(); });
+    // фокус не виходить за межі відкритої панелі
+    mobileMenu.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      var f = $$('a[href], button:not([disabled])', mobileMenu).filter(function (el) { return el.offsetParent !== null; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
   }
   /* розкриття «Послуг» і напрямків у мобільному меню */
   $$('[data-mm-toggle]').forEach(function (b) {
