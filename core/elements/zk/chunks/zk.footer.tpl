@@ -3,8 +3,7 @@
         <div class="footer-top">
             <div class="footer-brand">
                 <a class="brand" href="{$zk.home | url}" aria-label="{'zk.brand_aria' | lexicon}">
-                    <img src="{$zk.assets}img/mark.svg" width="56" height="56" alt="" loading="lazy">
-                    <span>{'zk.brand' | lexicon}</span>
+                    <img class="brand-logo" src="{$zk.assets}img/logo.svg?v={$zk.v}" width="166" height="64" alt="{'zk.brand' | lexicon | replace : '<br>' : ' '}" loading="lazy">
                 </a>
                 <p class="footer-desc">{'zk.footer.desc' | lexicon}</p>
             </div>

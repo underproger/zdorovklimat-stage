@@ -1,7 +1,6 @@
 <section class="hero">
     <img class="hero-image" src="{$zk.assets}img/hero.webp" alt="{'zk.hero.img_alt' | lexicon}" fetchpriority="high" width="1672" height="941">
     <div class="wrap">
-        <div class="eyebrow">{'zk.hero.eyebrow' | lexicon}</div>
         <h1>{'zk.hero.title' | lexicon}</h1>
         <p class="hero-description">{'zk.hero.text' | lexicon}</p>
         <div class="hero-actions">

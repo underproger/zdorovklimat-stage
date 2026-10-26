@@ -1,8 +1,7 @@
 <header class="header{$darkHero ? '' : ' solid'}">
     <div class="header-inner wrap">
         <a class="brand" href="{$zk.home | url}" aria-label="{'zk.brand_aria' | lexicon}">
-            <img src="{$zk.assets}img/mark.svg" width="48" height="48" alt="">
-            <span>{'zk.brand' | lexicon}</span>
+            <img class="brand-logo" src="{$zk.assets}img/logo.svg?v={$zk.v}" width="140" height="54" alt="{'zk.brand' | lexicon | replace : '<br>' : ' '}">
         </a>
         <nav class="main-nav" aria-label="{'zk.menu_main' | lexicon}">
             {$_modx->runSnippet('pdoMenu', [
@@ -20,10 +19,17 @@
                 'sortby' => 'menuindex',
             ])}
         </nav>
-        <div class="lang-switch" role="group" aria-label="{'zk.lang' | lexicon}">[[!BabelLinks? &tpl=`zk.tpl.lang` &showCurrent=`1` &includeUnlinked=`1` &activeCls=`is-active` &outputSeparator=``]]</div>
-        <a class="header-phone" href="tel:+38{$zk.phone1 | ereplace : '/\D+/' : ''}" aria-label="{'zk.call' | lexicon}: {$zk.phone1}">
-            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>{$zk.phone1}
-        </a>
+        <div class="lang-switch" data-lang-drop>
+            <button class="lang-current" type="button" aria-haspopup="true" aria-expanded="false" aria-label="{'zk.lang' | lexicon}: {$ua ? 'UA' : 'RU'}">{$ua ? 'UA' : 'RU'}<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+            <div class="lang-menu">[[!BabelLinks? &tpl=`zk.tpl.lang` &showCurrent=`1` &includeUnlinked=`1` &activeCls=`is-active` &outputSeparator=``]]</div>
+        </div>
+        <div class="header-phone">
+            <a class="header-phone-icon" href="tel:+38{$zk.phone1 | ereplace : '/\D+/' : ''}" aria-label="{'zk.call' | lexicon}: {$zk.phone1}"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></a>
+            <span class="header-phone-list">
+                <a href="tel:+38{$zk.phone1 | ereplace : '/\D+/' : ''}">{$zk.phone1}</a>
+                {if $zk.phone2}<a href="tel:+38{$zk.phone2 | ereplace : '/\D+/' : ''}">{$zk.phone2}</a>{/if}
+            </span>
+        </div>
         <button class="btn btn-light header-cta" type="button" data-consult>{'zk.header_cta' | lexicon}<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
         <button class="menu-toggle" type="button" aria-label="{'zk.menu_open' | lexicon}" data-label-open="{'zk.menu_open' | lexicon}" data-label-close="{'zk.menu_close' | lexicon}" aria-expanded="false" aria-controls="mobile-menu">
             <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
@@ -57,4 +63,5 @@
     <div class="mobile-lang">[[!BabelLinks? &tpl=`zk.tpl.lang` &showCurrent=`1` &includeUnlinked=`1` &activeCls=`is-active` &outputSeparator=``]]</div>
     <button class="btn btn-yellow" type="button" data-consult>{'zk.consult' | lexicon}<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
     <a class="mobile-phone" href="tel:+38{$zk.phone1 | ereplace : '/\D+/' : ''}">{$zk.phone1}</a>
+    {if $zk.phone2}<a class="mobile-phone" href="tel:+38{$zk.phone2 | ereplace : '/\D+/' : ''}">{$zk.phone2}</a>{/if}
 </nav>
