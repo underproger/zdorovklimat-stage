@@ -1,7 +1,7 @@
 <header class="header{$darkHero ? '' : ' solid'}">
     <div class="header-inner wrap">
         <a class="brand" href="{$zk.home | url}" aria-label="{'zk.brand_aria' | lexicon}">
-            <img class="brand-logo" src="{$zk.assets}img/logo.svg?v={$zk.v}" width="140" height="70" alt="{'zk.brand' | lexicon | replace : '<br>' : ' '}">
+            <img class="brand-logo" src="{$zk.assets}img/logo.svg?v={$zk.v}" width="144" height="56" alt="{'zk.brand' | lexicon | replace : '<br>' : ' '}">
         </a>
         <nav class="main-nav" aria-label="{'zk.menu_main' | lexicon}">
             {$_modx->runSnippet('pdoMenu', [
