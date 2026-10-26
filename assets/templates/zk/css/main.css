@@ -918,12 +918,11 @@ dialog .dialog-description{font-size:13px;color:var(--muted);line-height:1.75;ma
 .lic-layout{display:grid;grid-template-columns:minmax(260px,.7fr) minmax(0,2fr);gap:clamp(40px,5vw,90px);align-items:center}
 .lic-copy .eyebrow{margin-bottom:24px}
 .lic-copy p{margin-top:24px;font-size:14px;line-height:1.85;color:var(--muted);max-width:360px}
-/* документи на світлій підкладці: білі аркуші з тінню, під кожним — «Переглянути» і лупа */
-.lic-docs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding:36px;background:#f5f4f0;position:relative}
-.lic-docs:before{content:'';position:absolute;left:0;top:0;width:56px;height:3px;background:var(--yellow)}
+/* документи: кожен у білій рамці з тінню, під кожним — «Переглянути» і лупа */
+.lic-docs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px}
 .lic-doc{display:block;border:0;padding:0;background:none;text-align:left;color:inherit}
-.lic-paper{display:block;position:relative;aspect-ratio:13/18;background:#fff;padding:10px;border:1px solid #e7e6e0;box-shadow:0 22px 38px -26px rgba(17,26,32,.4);transition:transform .35s var(--ease),box-shadow .35s}
-.lic-paper:after{content:'';position:absolute;inset:10px;background:#111a20;opacity:0;transition:opacity .3s}
+.lic-paper{display:block;position:relative;aspect-ratio:13/18;background:#fff;padding:12px;border:1px solid #ebebe7;box-shadow:0 2px 6px rgba(17,26,32,.05),0 24px 40px -24px rgba(17,26,32,.35);transition:transform .35s var(--ease),box-shadow .35s}
+.lic-paper:after{content:'';position:absolute;inset:12px;background:#111a20;opacity:0;transition:opacity .3s}
 .lic-paper img{width:100%;height:100%;object-fit:cover;object-position:top}
 .lic-doc:hover .lic-paper{transform:translateY(-6px);box-shadow:0 34px 50px -26px rgba(17,26,32,.5)}
 .lic-doc:hover .lic-paper:after{opacity:.06}
@@ -954,7 +953,7 @@ dialog .dialog-description{font-size:13px;color:var(--muted);line-height:1.75;ma
   .pillar{padding:30px 30px 26px}
   .docs-panel{padding:30px 28px 26px}
   .docs-list{column-gap:28px}
-  .lic-docs{gap:16px;padding:26px}
+  .lic-docs{gap:16px}
 }
 @media(max-width:950px){
   .header.solid,.header.solid.scrolled{height:84px}
@@ -1017,8 +1016,9 @@ dialog .dialog-description{font-size:13px;color:var(--muted);line-height:1.75;ma
   .docs-count b{font-size:44px}
   .docs-list{columns:1}
   .docs-list li{font-size:12.5px;padding:11px 0}
-  .lic-docs{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 14px;padding:18px}
-  .lic-paper{padding:7px}
+  .lic-docs{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 14px}
+  .lic-paper{padding:8px}
+  .lic-paper:after{inset:8px}
   .lic-meta{margin-top:12px;font-size:9px;letter-spacing:1px}
   .lic-meta>span:before{width:12px}
   .lic-meta .round{width:36px;height:36px}
