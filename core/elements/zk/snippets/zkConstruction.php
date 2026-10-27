@@ -104,6 +104,48 @@ foreach ($pick('cs-factors') as $r) {
         'img' => $thumb($r['image'] ?? '', 'w=420&h=420&zc=1&q=76&f=jpg')];
 }
 
+// блоки універсального шаблону послуги: прості списки (порожньо в послузі — беруться з напряму)
+$link = function ($v) use ($modx, $txt, $id) {
+    $v = $txt($v);
+    if ($v !== '' && ctype_digit($v)) return (int) $v === $id ? '' : ($modx->makeUrl((int) $v) ?: '');
+    return $v;
+};
+$simple = [
+    'tasks' => ['cs-tasks', ['task', 'solution']],
+    'result' => ['cs-result', ['title', 'text']],
+    'specs' => ['cs-specs', ['param', 'value']],
+    'compare' => ['cs-compare', ['criterion', 'a', 'b']],
+    'options' => ['cs-options', ['title', 'text', 'link']],
+    'stages' => ['cs-stages', ['title', 'text']],
+    'timing' => ['cs-timing', ['title', 'text']],
+    'docs' => ['cs-docs', ['title', 'text']],
+    'why' => ['cs-why', ['title', 'text']],
+    'quality' => ['cs-quality', ['title', 'text']],
+    'warranty' => ['cs-warranty', ['title', 'text']],
+];
+foreach ($simple as $key => list($tvName, $fields)) {
+    $out[$key] = [];
+    foreach ($pick($tvName) as $r) {
+        $row = [];
+        foreach ($fields as $f) $row[$f] = $f === 'link' ? $link($r[$f] ?? '') : $txt($r[$f] ?? '');
+        if ($row[$fields[0]] === '') continue;
+        $out[$key][] = $row;
+    }
+}
+// вартість: рядки з групою — що впливає (factor), що входить (included), окремо (extra), що потрібно для розрахунку (input)
+$out['price'] = ['factor' => [], 'included' => [], 'extra' => [], 'input' => []];
+foreach ($pick('cs-price') as $r) {
+    $g = $txt($r['group'] ?? 'factor');
+    if (!isset($out['price'][$g])) $g = 'factor';
+    if ($txt($r['title'] ?? '') === '') continue;
+    $out['price'][$g][] = ['title' => $txt($r['title']), 'text' => $txt($r['text'] ?? '')];
+}
+if (!array_filter($out['price'])) $out['price'] = [];
+// «Що отримує замовник» — фото блоку з тексту розділу
+if (!empty($sec['result']['image'])) $out['sections']['result']['img'] = $thumb($sec['result']['image'], 'w=1100&h=820&zc=1&q=78&f=jpg');
+// пункти першого екрана — рядки тексту розділу «hero»
+$out['heroPoints'] = !empty($sec['hero']['text']) ? array_values(array_filter(array_map('trim', preg_split('/\r?\n/', $sec['hero']['text'])))) : [];
+
 // реалізовані об’єкти: cs-objects послуги → напряму → &objects
 $ids = $raw($res, 'cs-objects');
 if ($ids === '' && $dir) $ids = $raw($dir, 'cs-objects');

@@ -437,7 +437,13 @@
   function sendToCrm(form) {
     if (!isProduction) return; // заявки в Bitrix24 — лише з бойового домену
     var fd = new FormData(form), body = new URLSearchParams();
-    var comment = [fd.get('type'), fd.get('message')].filter(Boolean).join('. ');
+    var withLabel = function (name) {
+      var el = form.elements[name], v = fd.get(name);
+      if (!v || !el) return v;
+      var lb = el.labels && el.labels[0] ? el.labels[0].textContent.replace(/\s*\*\s*$/, '').trim() : '';
+      return lb ? lb + ': ' + v : v;
+    };
+    var comment = [fd.get('type'), withLabel('param'), withLabel('city'), fd.get('message')].filter(Boolean).join('. ');
     body.append('lidName', 'Лид с сайта ' + location.hostname.replace(/^www\./, ''));
     body.append('lidSour', 'Лендінг Здоровий клімат (заявка)');
     body.append('url_site', location.href);

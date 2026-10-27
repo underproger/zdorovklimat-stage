@@ -4,7 +4,9 @@
     <div class="wrap">
         {set $hs = $c.sections.types}{set $hEyebrow = 'zkc.types.eyebrow' | lexicon}{set $hTitle = 'zkc.types.title' | lexicon}
         {include 'zk.cs.head'}
-        <div class="cs-types-grid">
+        {* 3 або 4 картки в ряд — що дає менше порожніх місць в останньому ряду *}
+        {set $tn = $c.types | length}{set $te3 = (3 - $tn % 3) % 3}{set $te4 = (4 - $tn % 4) % 4}
+        <div class="cs-types-grid{($tn > 3 && $te4 < $te3) ? ' is-4' : ''}">
             {foreach $c.types as $t}
             <article class="cs-type">
                 <div class="cs-type-photo">{if $t.img}<img src="{$t.img}" alt="{$t.title | escape}" loading="lazy" width="760" height="470">{/if}</div>

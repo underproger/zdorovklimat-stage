@@ -9,9 +9,18 @@
         {include 'zk.crumbs'}
         <h1 class="{($d.title | length) > 48 ? 'is-long' : ''}">{$d.title}</h1>
         {if $d.intro}<p class="page-hero-text">{$d.intro | truncate : 260 : '…'}</p>{/if}
+        {* універсальний шаблон: 2–3 переваги, «Розрахувати вартість» → форма розрахунку, «Наші об’єкти» → слайдер об’єктів *}
+        {if $heroUniversal && $c.heroPoints}
+        <ul class="svc-hero-points">{foreach $c.heroPoints as $hp}<li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>{$hp}</li>{/foreach}</ul>
+        {/if}
         <div class="hero-actions">
+            {if $heroUniversal}
+            <a class="btn btn-yellow btn-glow" href="{$zk.self}#calc">{'zku.hero.calc' | lexicon}<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            {if $c.objects}<a class="svc-hero-phone" href="{$zk.self}#objects"><svg class="icon" aria-hidden="true"><use href="#i-buildings"/></svg>{'zku.hero.objects' | lexicon}</a>{else}<button class="svc-hero-phone" type="button" data-consult><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>{'zku.hero.consult' | lexicon}</button>{/if}
+            {else}
             <button class="btn btn-yellow btn-glow" type="button" data-consult>{'zks.hero.cta' | lexicon}<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
             <a class="svc-hero-phone" href="tel:+38{$zk.phone1 | ereplace : '/\D+/' : ''}"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>{$zk.phone1}</a>
+            {/if}
         </div>
     </div>
 </section>

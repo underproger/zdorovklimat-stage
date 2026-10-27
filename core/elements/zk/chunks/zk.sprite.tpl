@@ -52,4 +52,9 @@
 <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 2.5 5 13.5h6l-1 8 8.5-11h-6Z"/></symbol>
 <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3.5s-6 6.6-6 11a6 6 0 0 0 12 0c0-4.4-6-11-6-11Z"/><path d="M9 15a3 3 0 0 0 3 3"/></symbol>
 <symbol id="i-ruler" viewBox="0 0 24 24"><path d="m3.5 16 12.5-12.5 4.5 4.5L8 20.5Z"/><path d="m7 12.5 2 2M9.8 9.7l1.3 1.3M12.5 7l2 2"/></symbol>
+<symbol id="i-wind" viewBox="0 0 24 24"><path d="M3 9h11a3 3 0 1 0-3-3M3 13h15a3 3 0 1 1-3 3M3 17h7"/></symbol>
+<symbol id="i-noise" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a7.8 7.8 0 0 1 0 11"/></symbol>
+<symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c-.5-7.5 4.5-13 15-14-.5 10.5-6 15.5-13.5 15"/><path d="M5 19c3-4.5 6-7.5 10-10"/></symbol>
+<symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></symbol>
+<symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 5h16l-6 7.5V19l-4-1.8v-4.7Z"/></symbol>
 </svg>
