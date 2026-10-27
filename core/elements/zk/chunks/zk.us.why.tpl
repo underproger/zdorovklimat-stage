@@ -1,6 +1,5 @@
-{* Чому обирають «Здоровий Клімат»: cs-why, інакше «Переваги» сторінки *}
+{* Чому обирають «Здоровий Клімат»: cs-why послуги, порожньо — напряму *}
 {set $whyRows = $c.why}
-{if !$whyRows && $d.advantages}{set $whyRows = []}{foreach $d.advantages as $a}{set $whyRows[] = ['title' => $a.title, 'text' => ($a.text | strip_tags)]}{/foreach}{/if}
 {if $whyRows}
 <section class="us-why section" id="why">
     <div class="wrap">

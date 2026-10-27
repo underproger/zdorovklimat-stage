@@ -8,7 +8,7 @@
    Дані: zkServiceData (вміст старої сторінки) + zkConstruction (поля cs-*; порожнє в послузі береться з напряму) *}
 {set $isDir = $_modx->resource.isfolder}
 {set $d = $_modx->runSnippet('zkServiceData', ['id' => $_modx->resource.id, 'root' => $zk.services, 'mode' => ($isDir ? 'direction' : '')]) | fromJSON}
-{set $c = $_modx->runSnippet('zkConstruction', ['id' => $_modx->resource.id, 'objects' => $d.objects]) | fromJSON}
+{set $c = $_modx->runSnippet('zkConstruction', ['id' => $_modx->resource.id]) | fromJSON}
 {set $svcMode = $isDir ? 'direction' : 'service'}
 {set $heroUniversal = true}
 {set $crumb = $d.label}

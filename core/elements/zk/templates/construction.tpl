@@ -6,7 +6,7 @@
 {* Будівельна послуга / напрям (макет 10.2026 «Будівництво складів»). Дані: zkServiceData (старий вміст сторінки) + zkConstruction (нові блоки, поля cs-*) *}
 {set $isDir = $_modx->resource.isfolder}
 {set $d = $_modx->runSnippet('zkServiceData', ['id' => $_modx->resource.id, 'root' => $zk.services, 'mode' => ($isDir ? 'direction' : '')]) | fromJSON}
-{set $c = $_modx->runSnippet('zkConstruction', ['id' => $_modx->resource.id, 'objects' => $d.objects]) | fromJSON}
+{set $c = $_modx->runSnippet('zkConstruction', ['id' => $_modx->resource.id]) | fromJSON}
 {set $svcMode = $isDir ? 'direction' : 'service'}
 {set $crumb = $d.label}
 {set $crumbTrail = [[('zks.crumb' | lexicon), ($zk.services | url), ($zk.services | url : ['scheme' => 'full'])]]}

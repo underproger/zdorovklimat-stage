@@ -144,10 +144,9 @@ if (!array_filter($out['price'])) $out['price'] = [];
 // «Що отримує замовник» — фото блоку з тексту розділу
 if (!empty($sec['result']['image'])) $out['sections']['result']['img'] = $thumb($sec['result']['image'], 'w=1100&h=820&zc=1&q=78&f=jpg');
 
-// реалізовані об’єкти: cs-objects послуги → напряму → &objects
+// реалізовані об’єкти: cs-objects послуги → напряму
 $ids = $raw($res, 'cs-objects');
 if ($ids === '' && $dir) $ids = $raw($dir, 'cs-objects');
-if ($ids === '') $ids = (string) $modx->getOption('objects', $scriptProperties, '');
 $out['objects'] = [];
 $imgTv = $modx->getObject('modTemplateVar', ['name' => 'object-img']);
 $dateTv = $modx->getObject('modTemplateVar', ['name' => 'object-date']);
