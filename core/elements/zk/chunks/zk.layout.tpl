@@ -22,7 +22,7 @@
     'maps'     => 'https://www.google.com/maps?cid=13721162408939025155',
     'assets'   => '/assets/templates/zk/',
     'self'     => ($_modx->resource.id | url),
-    'v'        => '20261027g',
+    'v'        => '20261027h',
 ]}
 {set $isHome = $_modx->resource.id in [1, 1288]}
 {set $crumbTrail = []}
