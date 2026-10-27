@@ -45,6 +45,9 @@
 </dialog>
 <dialog id="gallery-dialog" class="media-dialog gallery-dialog" aria-label="{'zk.gallery.label' | lexicon}">
     <button class="dialog-close" type="button" data-close aria-label="{'zk.close' | lexicon}"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    {* великі стрілки по боках зображення *}
+    <button class="gallery-side gallery-side-prev" type="button" data-gallery-prev aria-label="{'zk.gallery.prev' | lexicon}"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    <button class="gallery-side gallery-side-next" type="button" data-gallery-next aria-label="{'zk.gallery.next' | lexicon}"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
     <figure class="gallery-stage">
         <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
         <figcaption class="gallery-bar">
@@ -53,7 +56,6 @@
                 <span class="gallery-count"></span>
                 <button class="round gallery-prev" type="button" aria-label="{'zk.gallery.prev' | lexicon}"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
                 <button class="round gallery-next" type="button" aria-label="{'zk.gallery.next' | lexicon}"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
-                <a class="round gallery-open" href="#" target="_blank" rel="noopener" aria-label="{'zk.gallery.open' | lexicon}"><svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a>
             </span>
         </figcaption>
     </figure>

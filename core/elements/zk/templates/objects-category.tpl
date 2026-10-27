@@ -29,11 +29,10 @@
 {set $crumb = $catName ?: ($res.menutitle ?: $res.pagetitle)}
 {set $crumbTrail = [[('zko.crumb' | lexicon), ($res.parent | url), ($res.parent | url : ['scheme' => 'full'])]]}
 {set $activeCat = $res.id}
-{set $heroEyebrow = 'zko.cat.eyebrow' | lexicon}
-{set $heroTitle = $res.pagetitle}
-{set $heroTitleClass = 'is-long'}
-{set $heroText = 'zko.hero.text' | lexicon}
-{include 'zk.objects.hero'}
+{* вузький банер: лише крошки і H1 *}
+{set $slimTitle = $res.pagetitle}
+{set $slimWall = $wall}
+{include 'zk.hero.slim'}
 {set $gridEyebrow = 'zko.cat.list' | lexicon}
 {set $gridTitle = $catName ?: $res.menutitle}
 {set $gridFilter = false}

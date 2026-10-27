@@ -22,7 +22,12 @@
         {set $videos[] = ['id' => $yt, 'title' => ($row.text | trim | ereplace : '~"([^"]*)"~u' : '«$1»'), 'cover' => $cover, 'small' => $small]}
     {/if}
 {/foreach}
-{include 'zk.video.hero'}
+{* вузький банер: лише крошки і H1 *}
+{set $crumb = 'zkv.crumb' | lexicon}
+{set $slimTitle = 'zkv.hero.title' | lexicon}
+{set $slimWall = []}
+{foreach $videos as $v}{set $slimWall[] = $v.small}{/foreach}
+{include 'zk.hero.slim'}
 {include 'zk.video.list'}
 {include 'zk.home.clients'}
 {include 'zk.home.contact'}

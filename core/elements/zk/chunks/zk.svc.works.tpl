@@ -13,7 +13,7 @@
         </div>
         <div class="svc-works-grid{$wcls}" data-gallery>
             {foreach $d.works as $i => $w}
-            <button class="gallery-tile" type="button" data-full="{$w.full}" data-title="{($w.title ?: $d.title) | escape} — {$i + 1} / {$d.works | length}"{if $i > 7} hidden{/if}>
+            <button class="gallery-tile" type="button" data-full="{$w.full}" data-title="{($w.title ?: $d.title) | escape}"{if $i > 7} hidden{/if}>
                 <img src="{$w.thumb}" alt="{($w.title ?: $d.title) | escape}" loading="lazy" width="600" height="420">
                 {if $i == 7 && ($d.works | length) > 8}<span class="gallery-more">+{($d.works | length) - 8}</span>{/if}
                 <span class="round gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#i-zoom"/></svg></span>

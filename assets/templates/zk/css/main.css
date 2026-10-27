@@ -840,6 +840,14 @@ dialog .dialog-description{font-size:13px;color:var(--muted);line-height:1.75;ma
 .points-title{font-size:9.5px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#93a3ad;margin-bottom:20px}
 .page-hero-points li{padding:0}
 .page-hero-points .point-row{display:flex;gap:18px;align-items:center;padding:22px 0;width:100%}
+/* вузький перший екран: лише крошки і H1 (підкатегорії об’єктів, відео) */
+.slim-hero .video-wall{opacity:.32;top:56%}
+.slim-hero-inner{position:relative;z-index:1;padding-top:158px;padding-bottom:62px}
+.slim-hero .breadcrumbs{margin-bottom:22px}
+.slim-hero h1{max-width:1080px;font-size:clamp(34px,3.6vw,58px);letter-spacing:-1.8px;line-height:1.08}
+.slim-hero .page-hero-lines i:nth-child(1){display:block}
+@media(max-width:950px){.slim-hero-inner{padding-top:128px;padding-bottom:48px}}
+@media(max-width:600px){.slim-hero-inner{padding-top:104px;padding-bottom:38px}.slim-hero .breadcrumbs{margin-bottom:16px}.slim-hero h1{font-size:clamp(27px,7.6vw,36px);letter-spacing:-1px}}
 .page-hero-points .point-icon{transition:border-color .2s,background .2s}
 .page-hero-points a:hover .point-icon{border-color:var(--yellow);background:#ffd32b14}
 .page-hero-points a:hover div{color:#fff}
@@ -939,11 +947,29 @@ dialog .dialog-description{font-size:13px;color:var(--muted);line-height:1.75;ma
 .gallery-bar{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:72px;padding:12px 16px 12px 24px}
 .gallery-title{font-size:13px;color:#c5cdd2}
 .gallery-nav{display:flex;align-items:center;gap:8px}
-.gallery-count{font-size:11px;letter-spacing:1px;color:#93a3ad;margin-right:8px}
+.gallery-count{font-size:11px;letter-spacing:1px;color:#93a3ad;margin-right:8px;white-space:nowrap}
 .gallery-dialog .round{width:40px;height:40px;color:#fff;border-color:#ffffff40}
 .gallery-dialog .round:hover{color:var(--ink)}
 .gallery-prev .icon{transform:scaleX(-1)}
-.gallery-dialog.is-single .gallery-prev,.gallery-dialog.is-single .gallery-next,.gallery-dialog.is-single .gallery-count{display:none}
+.gallery-dialog.is-single .gallery-prev,.gallery-dialog.is-single .gallery-next,.gallery-dialog.is-single .gallery-count,.gallery-dialog.is-single .gallery-side{display:none}
+/* бокові стрілки — поза зображенням, на затемненому тлі */
+.gallery-dialog{overflow:visible}
+.media-dialog.gallery-dialog img{max-width:calc(100vw - 200px)}
+.gallery-side{position:absolute;top:calc(50% - 36px);z-index:3;display:grid;place-items:center;width:58px;height:58px;padding:0;border:1px solid #ffffff4d;border-radius:50%;background:#0d161d8c;color:#fff;transform:translateY(-50%);transition:background .2s,border-color .2s,color .2s}
+.gallery-side .icon{width:24px;height:24px}
+.gallery-side:hover{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+.gallery-side-prev{left:-82px}
+.gallery-side-prev .icon{transform:scaleX(-1)}
+.gallery-side-next{right:-82px}
+@media(max-width:760px){
+  .media-dialog.gallery-dialog img{max-width:100%}
+  .gallery-side{width:44px;height:44px;top:calc(50% - 31px)}
+  .gallery-side .icon{width:20px;height:20px}
+  .gallery-side-prev{left:8px}
+  .gallery-side-next{right:8px}
+  /* на телефоні вистачає бокових стрілок */
+  .gallery-nav .gallery-prev,.gallery-nav .gallery-next{display:none}
+}
 
 @media(max-width:1200px){
   .page-hero-layout{grid-template-columns:minmax(0,1fr) 300px;gap:40px}

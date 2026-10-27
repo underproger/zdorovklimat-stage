@@ -218,7 +218,6 @@
       gImg.alt = b.dataset.title || '';
       $('.gallery-title', gallery).textContent = b.dataset.title || '';
       $('.gallery-count', gallery).textContent = (gIndex + 1) + ' / ' + gItems.length;
-      $('.gallery-open', gallery).href = b.dataset.full;
     };
     $$('[data-gallery]').forEach(function (root) {
       var items = $$('[data-full]', root);
@@ -231,8 +230,8 @@
         });
       });
     });
-    $('.gallery-prev', gallery).addEventListener('click', function () { showItem(gIndex - 1); });
-    $('.gallery-next', gallery).addEventListener('click', function () { showItem(gIndex + 1); });
+    $$('.gallery-prev, [data-gallery-prev]', gallery).forEach(function (b) { b.addEventListener('click', function () { showItem(gIndex - 1); }); });
+    $$('.gallery-next, [data-gallery-next]', gallery).forEach(function (b) { b.addEventListener('click', function () { showItem(gIndex + 1); }); });
     gallery.addEventListener('keydown', function (e) {
       if (gItems.length < 2) return;
       if (e.key === 'ArrowLeft') showItem(gIndex - 1);
