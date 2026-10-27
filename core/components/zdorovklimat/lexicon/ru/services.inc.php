@@ -17,10 +17,6 @@ $_lang['zks.dirs.text'] = 'Каждое направление — это про
 $_lang['zks.all.eyebrow'] = 'Все услуги';
 $_lang['zks.all.title'] = 'Полный перечень<br>услуг компании.';
 
-$_lang['zks.panel.siblings'] = 'Услуги направления';
-$_lang['zks.panel.children'] = 'Что входит';
-$_lang['zks.panel.more'] = 'Показать все';
-$_lang['zks.panel.adv'] = 'Почему мы';
 $_lang['zks.children.eyebrow'] = 'Услуги направления';
 $_lang['zks.children.title'] = 'Что мы делаем<br>в этом направлении.';
 $_lang['zks.intro.eyebrow'] = 'Об услуге';
