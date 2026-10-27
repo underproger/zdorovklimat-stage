@@ -2069,8 +2069,7 @@ a.us-option:hover .round{background:var(--yellow);border-color:var(--yellow)}
 .us-why{background:#fff}
 .us-why-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid #e3e3de;border-left:1px solid #e3e3de}
 .us-why-grid li{padding:30px 28px;border-right:1px solid #e3e3de;border-bottom:1px solid #e3e3de}
-.us-why-num{display:block;font-size:44px;font-weight:200;letter-spacing:-2px;line-height:1;color:var(--yellow);-webkit-text-stroke:1px #c9a400}
-.us-why-grid h3{margin:20px 0 10px;font-size:18px;font-weight:600;letter-spacing:-.4px;line-height:1.3}
+.us-why-grid h3{margin:26px 0 10px;font-size:18px;font-weight:600;letter-spacing:-.4px;line-height:1.3}
 .us-why-grid p{font-size:13.5px;line-height:1.7;color:var(--muted)}
 /* контроль якості */
 .us-quality{background:#0d161d;color:#fff}
