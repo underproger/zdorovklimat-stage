@@ -43,4 +43,13 @@
 <symbol id="i-blueprint" viewBox="0 0 24 24"><path d="M13 20.5H3.5v-17h13V10"/><path d="M7 7.5v8M7 11.5h5.5M12.5 7.5v8"/><path d="m14.6 20.4 6-6a1.5 1.5 0 0 0-2.1-2.1l-6 6-.6 2.7Z"/></symbol>
 <symbol id="i-crane" viewBox="0 0 24 24"><path d="M2.5 21h19M6.5 21V3.5M3.5 6h17M6.5 3.5 3.5 6M6.5 9.5 10 6M6.5 13 10 9.5M6.5 16.5 10 13"/><path d="M16.5 6v3.5M15 9.5h3l-.5 2h-2Z"/><path d="M13 21v-6l3.5-2 3.5 2v6M15.5 21v-3h2v3"/></symbol>
 <symbol id="i-handover" viewBox="0 0 24 24"><path d="M3 21h9.5M4.5 21V5.5L11 3v18M11 8.5h5.5v4"/><path d="M7 7.5h1.5M7 10.5h1.5M7 13.5h1.5M7 16.5h1.5"/><circle cx="17" cy="17.3" r="4.2"/><path d="m15.2 17.4 1.3 1.3 2.4-2.5"/></symbol>
+<symbol id="i-cube" viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24"><path d="M2.5 6h11v10h-11zM13.5 9.5h4l3 3.5V16h-7"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></symbol>
+<symbol id="i-temp" viewBox="0 0 24 24"><path d="M10 14.5V5a2 2 0 0 1 4 0v9.5a4 4 0 1 1-4 0Z"/><path d="M12 9v7.5M16.5 6h3M16.5 9h2"/></symbol>
+<symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2.8v2.6M12 18.6v2.6M21.2 12h-2.6M5.4 12H2.8M18.5 5.5l-1.8 1.8M7.3 16.7l-1.8 1.8M18.5 18.5l-1.8-1.8M7.3 7.3 5.5 5.5"/><circle cx="12" cy="12" r="6.6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 5.8v5.4c0 4.6 3 8.3 7 9.8 4-1.5 7-5.2 7-9.8V5.8Z"/><path d="m8.8 12.2 2.2 2.2 4.2-4.4"/></symbol>
+<symbol id="i-gate" viewBox="0 0 24 24"><path d="M3 21V7l9-4 9 4v14"/><path d="M6.5 21v-9h11v9M6.5 15h11M6.5 18h11"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 2.5 5 13.5h6l-1 8 8.5-11h-6Z"/></symbol>
+<symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3.5s-6 6.6-6 11a6 6 0 0 0 12 0c0-4.4-6-11-6-11Z"/><path d="M9 15a3 3 0 0 0 3 3"/></symbol>
+<symbol id="i-ruler" viewBox="0 0 24 24"><path d="m3.5 16 12.5-12.5 4.5 4.5L8 20.5Z"/><path d="m7 12.5 2 2M9.8 9.7l1.3 1.3M12.5 7l2 2"/></symbol>
 </svg>

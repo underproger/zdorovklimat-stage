@@ -239,6 +239,37 @@
     });
   }
 
+  /* ---------- слайдери будівельної послуги (об’єкти, відгуки) ---------- */
+  $$('[data-cs-slider]').forEach(function (root) {
+    var track = $('[data-cs-track]', root);
+    if (!track) return;
+    var prev = $('[data-cs-prev]', root), next = $('[data-cs-next]', root), nav = $('[data-cs-nav]', root),
+        cur = $('[data-cs-current]', root), prog = $('[data-cs-progress]', root), items = track.children;
+    var step = function () {
+      if (!items.length) return 0;
+      var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      return items[0].getBoundingClientRect().width + gap;
+    };
+    var update = function () {
+      var max = track.scrollWidth - track.clientWidth, s = step();
+      if (nav) nav.hidden = max <= 4;
+      var idx = s ? Math.round(track.scrollLeft / s) : 0;
+      if (cur) cur.textContent = String(Math.min(idx + 1, items.length)).padStart(2, '0');
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft >= max - 2;
+      if (prog) {
+        var w = Math.min(100, (track.clientWidth / track.scrollWidth) * 100);
+        prog.style.width = w + '%';
+        prog.style.left = (max > 0 ? (track.scrollLeft / max) * (100 - w) : 0) + '%';
+      }
+    };
+    if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+    track.addEventListener('scroll', function () { window.requestAnimationFrame(update); }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
+
   /* ---------- article: зміст за заголовками h2 ---------- */
   var article = $('[data-article]'), toc = $('[data-toc]');
   if (article && toc) {
