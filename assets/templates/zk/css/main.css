@@ -2133,3 +2133,41 @@ a.us-option:hover .round{background:var(--yellow);border-color:var(--yellow)}
   .zk-universal .cs-approach-list h3{font-size:16px;margin-top:14px}
   .zk-universal .cs-approach-list p{font-size:12.5px}
 }
+
+/* ---------- сітки карток без порожніх клітинок: 12 колонок, ширина картки залежить від кількості ----------
+   3 в ряд; останній ряд із 2 карток — по половині; 4 картки — в один ряд (фактори з фото — 2 + 2); 7 — 3 + 2 + 2; на планшеті по 2, непарна остання — на всю ширину */
+.us-why-grid,.us-pf-grid,.us-pf-grid.is-4,.us-pf-grid.is-2,.cs-factors-grid,.us-warranty-grid{grid-template-columns:repeat(12,minmax(0,1fr))}
+.us-why-grid>*,.us-pf-grid>*,.cs-factors-grid>*,.us-warranty-grid>*{grid-column:span 12}
+@media(min-width:601px) and (max-width:950px){
+  .us-why-grid>*{grid-column:span 6}
+  .us-why-grid>:nth-child(odd):last-child{grid-column:span 12}
+  .us-pf-grid>*{grid-column:span 6}
+  .us-pf-grid>:nth-child(odd):last-child{grid-column:span 12}
+}
+@media(min-width:601px) and (max-width:1200px){
+  .us-warranty-grid>*{grid-column:span 6}
+  .us-warranty-grid>:nth-child(odd):last-child{grid-column:span 12}
+}
+@media(min-width:951px) and (max-width:1200px){
+  .cs-factors-grid>*{grid-column:span 6}
+  .cs-factors-grid>:nth-child(odd):last-child{grid-column:span 12}
+}
+@media(min-width:951px){
+  .us-why-grid>*{grid-column:span 4}
+  .us-why-grid>:nth-child(3n+1):nth-last-child(2),.us-why-grid>:nth-child(3n+1):nth-last-child(2)~*,.us-why-grid>:nth-child(3n+1):nth-last-child(4),.us-why-grid>:nth-child(3n+1):nth-last-child(4)~*{grid-column:span 6}
+  .us-why-grid>:first-child:nth-last-child(4),.us-why-grid>:first-child:nth-last-child(4)~*{grid-column:span 3}
+  .us-why-grid>:only-child{grid-column:span 12}
+  .us-pf-grid>*{grid-column:span 4}
+  .us-pf-grid>:nth-child(3n+1):nth-last-child(2),.us-pf-grid>:nth-child(3n+1):nth-last-child(2)~*,.us-pf-grid>:nth-child(3n+1):nth-last-child(4),.us-pf-grid>:nth-child(3n+1):nth-last-child(4)~*{grid-column:span 6}
+  .us-pf-grid>:first-child:nth-last-child(4),.us-pf-grid>:first-child:nth-last-child(4)~*{grid-column:span 3}
+  .us-pf-grid>:only-child{grid-column:span 12}
+}
+@media(min-width:1201px){
+  .cs-factors-grid>*{grid-column:span 4}
+  .cs-factors-grid>:nth-child(3n+1):nth-last-child(2),.cs-factors-grid>:nth-child(3n+1):nth-last-child(2)~*,.cs-factors-grid>:nth-child(3n+1):nth-last-child(4),.cs-factors-grid>:nth-child(3n+1):nth-last-child(4)~*{grid-column:span 6}
+  .cs-factors-grid>:only-child{grid-column:span 12}
+  .us-warranty-grid>*{grid-column:span 3}
+  .us-warranty-grid>:first-child:nth-last-child(3),.us-warranty-grid>:first-child:nth-last-child(3)~*{grid-column:span 4}
+  .us-warranty-grid>:first-child:nth-last-child(2),.us-warranty-grid>:first-child:nth-last-child(2)~*{grid-column:span 6}
+  .us-warranty-grid>:only-child{grid-column:span 12}
+}
