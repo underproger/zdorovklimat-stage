@@ -327,6 +327,8 @@ main{min-height:65vh;display:block}
 .seo-text a{text-decoration:underline}
 [data-collapsible].is-collapsible .seo-text{max-height:190px;overflow:hidden}
 [data-collapsible].is-collapsible .seo-text:after{content:'';position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(rgba(244,244,242,0),#f4f4f2)}
+/* SEO-блок на білому тлі (будівельні послуги) — затухання в білий */
+.cs-seo [data-collapsible].is-collapsible .seo-text:after{background:linear-gradient(rgba(244,244,242,0),#ffffff)}
 [data-collapsible].is-open .seo-text{max-height:none}
 [data-collapsible].is-open .seo-text:after{display:none}
 .seo-toggle{margin-top:14px;gap:12px;font-size:10px}
