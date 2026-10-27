@@ -24,8 +24,8 @@ $modx->lexicon->load('zdorovklimat:home');
 
 $csTpl = $res->get('template');
 $parent = $res->get('parent') ? $modx->getObject('modResource', $res->get('parent')) : null;
-// батьківський напрям — якщо він на тому ж шаблоні
-$dir = ($parent && $parent->get('template') == $csTpl) ? $parent : null;
+// батьківський напрям — якщо він на тому ж шаблоні. Напрям (папка) нічого не успадковує: його блоки — лише власні
+$dir = ($parent && $parent->get('template') == $csTpl && !$res->get('isfolder')) ? $parent : null;
 
 $raw = function (modResource $r, $name) use ($modx) {
     $tv = $modx->getObject('modTemplateVar', ['name' => $name]);
