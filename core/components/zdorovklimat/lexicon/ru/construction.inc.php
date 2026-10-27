@@ -26,3 +26,4 @@ $_lang['zkc.reviews.eyebrow'] = 'Отзывы клиентов';
 $_lang['zkc.reviews.title'] = 'О нас говорят<br>наши заказчики.';
 $_lang['zkc.reviews.text'] = 'Отзывы о сотрудничестве, строительстве и реализации инженерных проектов.';
 $_lang['zkc.reviews.all'] = 'Все отзывы';
+$_lang['zkc.reviews.stars'] = 'Оценка: 5 из 5';

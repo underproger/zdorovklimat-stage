@@ -1875,7 +1875,6 @@ a.contact-big:hover{color:#8c6e00}
 .cs-rev-track{grid-auto-columns:calc((100% - 3 * 22px) / 4)}
 .cs-rev{display:flex;flex-direction:column;gap:16px;min-width:0;margin:0;padding:28px 26px 22px;background:#fff;border:1px solid #ecebe6;border-top:2px solid #ecebe6;transition:border-color .25s,box-shadow .25s}
 .cs-rev:hover{border-top-color:var(--yellow);box-shadow:0 22px 40px -28px #13182055}
-.cs-rev-quote{height:22px;font:700 54px/1 Georgia,'Times New Roman',serif;color:var(--yellow)}
 .cs-rev blockquote{flex:1;margin:0;font-size:14px;line-height:1.7;color:#2c353b}
 .cs-rev figcaption{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid #ecebe6;font-size:13px;font-weight:600}
 .cs-rev-ava{display:grid;place-items:center;width:34px;height:34px;flex-shrink:0;border-radius:50%;background:#f1f0eb;font-size:12px;font-weight:700;color:var(--muted)}
@@ -1930,12 +1929,24 @@ a.contact-big:hover{color:#8c6e00}
 }
 
 /* ---------- універсальна сторінка послуги (майстер-шаблон 10.2026) ---------- */
+/* перший екран без фото: темне тло, крошки, H1, опис, кнопка */
+.svc-hero-plain{background:#111a20}
+.svc-hero-plain:before{background:radial-gradient(60% 120% at 0% 0%,#18242d 0%,transparent 70%)}
+.svc-hero-plain .svc-hero-inner{padding-top:150px;padding-bottom:88px}
+.svc-hero-plain .breadcrumbs{margin-bottom:28px}
+.svc-hero-plain h1,.svc-hero-plain h1.is-long{max-width:1000px;font-size:clamp(32px,3.2vw,48px);letter-spacing:-1.4px;line-height:1.15}
+.svc-hero-plain .page-hero-text{max-width:700px;margin-top:22px;font-size:15px;line-height:1.7}
+.svc-hero-plain .hero-actions{margin-top:30px}
+.svc-hero-plain .hero-actions .btn{min-width:224px;min-height:56px}
+@media(max-width:950px){.svc-hero-plain .svc-hero-inner{padding-top:124px;padding-bottom:60px}}
+@media(max-width:600px){.svc-hero-plain .svc-hero-inner{padding-top:100px;padding-bottom:46px}.svc-hero-plain h1,.svc-hero-plain h1.is-long{font-size:clamp(26px,7.4vw,34px);letter-spacing:-.8px}.svc-hero-plain .page-hero-text{font-size:14px}.svc-hero-plain .hero-actions .btn{width:100%}}
+/* FAQ під SEO-текстом: одне тло, без подвійного відступу */
+.seo-section+.svc-faq{padding-top:20px}
+/* відгуки: зірки замість лапок */
+.cs-rev .stars{--size:16px}
+.svc-review .stars{--size:14px;margin:4px 0 2px}
 .zk-universal .svc-faq{background:#fff}
 .zk-universal .cs-approach{padding-top:70px;padding-bottom:70px;border-bottom:1px solid #ecebe6}
-.svc-hero-points{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:24px;font-size:14px;font-weight:500;color:#e6ebee}
-.svc-hero-points li{display:flex;align-items:center;gap:10px}
-.svc-hero-points .icon{width:18px;height:18px;color:var(--yellow);stroke-width:2}
-button.svc-hero-phone{background:none;border-top:0;border-left:0;border-right:0;font:inherit;font-size:15px;font-weight:600;cursor:pointer}
 .us-sub{margin-bottom:14px;font-size:10.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink)}
 /* задачі */
 .us-tasks{background:#fff}
@@ -1986,16 +1997,10 @@ button.svc-hero-phone{background:none;border-top:0;border-left:0;border-right:0;
 .us-calc-title{font-size:clamp(28px,2.6vw,40px);font-weight:700;letter-spacing:-1px;line-height:1.1}
 .us-calc-copy p{margin-top:16px;font-size:14px;line-height:1.7;color:#3a3f3b}
 .calc-form .calc-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.calc-form .calc-fields-2{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);margin-top:16px}
 .calc-form .field label{color:#3a3f3b}
 .calc-form .field input,.calc-form .field textarea{background:transparent;border-bottom-color:#0d161d4d}
 .calc-form .field input:focus,.calc-form .field textarea:focus{border-bottom-color:var(--ink)}
 .calc-form .field input::placeholder,.calc-form .field textarea::placeholder{color:#6d6a55}
-.calc-more{margin-top:14px}
-.calc-more summary{display:inline-flex;align-items:center;gap:8px;list-style:none;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:3px}
-.calc-more summary::-webkit-details-marker{display:none}
-.calc-more summary .icon{width:14px;height:14px;transition:transform .2s}
-.calc-more[open] summary .icon{transform:rotate(180deg)}
 .calc-form .form-end{margin-top:22px}
 .calc-form .form-note{color:#3a3f3b}
 /* характеристики */
@@ -2094,11 +2099,10 @@ a.us-option:hover .round{background:var(--yellow);border-color:var(--yellow)}
   .us-calc{padding-bottom:75px}
 }
 @media(max-width:600px){
-  .svc-hero-points{flex-direction:column;gap:8px;font-size:13.5px}
-  .us-factor-list,.us-specs-grid,.us-why-grid,.us-warranty-grid{grid-template-columns:1fr}
+    .us-factor-list,.us-specs-grid,.us-why-grid,.us-warranty-grid{grid-template-columns:1fr}
   .us-stages-list{grid-template-columns:1fr;row-gap:26px}
   .us-calc-box{padding:30px 20px}
-  .calc-form .calc-fields,.calc-form .calc-fields-2{grid-template-columns:1fr}
+  .calc-form .calc-fields{grid-template-columns:1fr}
   .calc-form .form-end .btn{width:100%}
   .us-compare-table{min-width:560px}
   .us-compare-foot .btn{width:100%}

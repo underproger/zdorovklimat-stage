@@ -43,7 +43,7 @@
 {include 'zk.cs.reviews'}
 {include 'zk.home.clients'}
 {include 'zk.home.map'}
-{include 'zk.svc.faq'}
 {include 'zk.cs.seo'}
+{include 'zk.svc.faq'}
 {include 'zk.home.contact'}
 {/block}

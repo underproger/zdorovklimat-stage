@@ -143,8 +143,6 @@ foreach ($pick('cs-price') as $r) {
 if (!array_filter($out['price'])) $out['price'] = [];
 // «Що отримує замовник» — фото блоку з тексту розділу
 if (!empty($sec['result']['image'])) $out['sections']['result']['img'] = $thumb($sec['result']['image'], 'w=1100&h=820&zc=1&q=78&f=jpg');
-// пункти першого екрана — рядки тексту розділу «hero»
-$out['heroPoints'] = !empty($sec['hero']['text']) ? array_values(array_filter(array_map('trim', preg_split('/\r?\n/', $sec['hero']['text'])))) : [];
 
 // реалізовані об’єкти: cs-objects послуги → напряму → &objects
 $ids = $raw($res, 'cs-objects');

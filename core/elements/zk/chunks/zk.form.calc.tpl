@@ -25,19 +25,6 @@
             <input id="{$fid}-param" name="param" maxlength="120" placeholder="{'zku.calc.param_ph' | lexicon}">
         </div>
     </div>
-    <details class="calc-more">
-        <summary>{'zku.calc.more' | lexicon}<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
-        <div class="calc-fields calc-fields-2">
-            <div class="field">
-                <label for="{$fid}-city">{'zku.calc.city' | lexicon}</label>
-                <input id="{$fid}-city" name="city" autocomplete="address-level2" maxlength="120" placeholder="{'zku.calc.city_ph' | lexicon}">
-            </div>
-            <div class="field">
-                <label for="{$fid}-message">{'zku.calc.comment' | lexicon}</label>
-                <textarea id="{$fid}-message" name="message" placeholder="{'zku.calc.comment_ph' | lexicon}" rows="1" maxlength="2500"></textarea>
-            </div>
-        </div>
-    </details>
     <div class="hp-field" aria-hidden="true"><label>E-mail <input type="text" name="workemail" value="" tabindex="-1" autocomplete="off"></label></div>
     <input type="hidden" name="type" value="{$zkType}">
     <input type="hidden" name="title" value="{$_modx->resource.pagetitle | escape}">

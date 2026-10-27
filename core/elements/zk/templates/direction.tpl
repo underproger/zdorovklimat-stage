@@ -22,7 +22,7 @@
 {include 'zk.home.process'}
 {include 'zk.svc.reviews'}
 {include 'zk.home.clients'}
-{include 'zk.svc.faq'}
 {include 'zk.svc.seo'}
+{include 'zk.svc.faq'}
 {include 'zk.home.contact'}
 {/block}

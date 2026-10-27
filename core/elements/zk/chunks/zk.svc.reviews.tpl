@@ -11,6 +11,7 @@
             {foreach $d.reviews as $r}
             <figure class="svc-review">
                 <span class="svc-quote" aria-hidden="true">“</span>
+                <span class="stars" style="--rating:5" role="img" aria-label="{'zks.reviews.stars' | lexicon}"></span>
                 <blockquote>{$r.text}</blockquote>
                 {if $r.name}<figcaption>{$r.name}</figcaption>{/if}
             </figure>

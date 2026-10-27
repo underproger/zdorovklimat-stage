@@ -17,8 +17,8 @@
                 &snippet=`FormIt`
                 &hooks=`spam,email,FormItSaveForm`
                 &formName=`{'zku.calc.subject' | lexicon} «{$calcType | escape}»`
-                &formFields=`name,phone,type,param,city,message,title,link`
-                &fieldNames=`name==Ім’я,phone==Телефон,type==Послуга,param=={$calcParam | escape},city==Місто,message==Коментар,title==Сторінка,link==Посилання`
+                &formFields=`name,phone,type,param,title,link`
+                &fieldNames=`name==Ім’я,phone==Телефон,type==Послуга,param=={$calcParam | escape},title==Сторінка,link==Посилання`
                 &emailSubject=`{'zku.calc.subject' | lexicon} «{$calcType | escape}»`
                 &emailTo=`[[++form-mail]]`
                 &emailFrom=`no-reply@zdorovklimat.com.ua`

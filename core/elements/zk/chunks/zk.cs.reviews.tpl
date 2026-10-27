@@ -19,7 +19,7 @@
         <div class="cs-track cs-rev-track" data-cs-track tabindex="0" aria-label="{'zkc.reviews.eyebrow' | lexicon}">
             {foreach $c.reviews as $r}
             <figure class="cs-rev">
-                <span class="cs-rev-quote" aria-hidden="true">“</span>
+                <span class="stars" style="--rating:5" role="img" aria-label="{'zkc.reviews.stars' | lexicon}"></span>
                 <blockquote>{$r.text}</blockquote>
                 {if $r.name}<figcaption><span class="cs-rev-ava" aria-hidden="true">{$r.initial}</span><span>{$r.name}</span></figcaption>{/if}
             </figure>
