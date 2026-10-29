@@ -27,7 +27,7 @@
 {set $isHome = $_modx->resource.id in [1, 1288]}
 {set $crumbTrail = []}
 {* сторінки з темним першим екраном: шапка прозора поверх нього, на решті — суцільна *}
-{set $darkHero = $isHome || $_modx->resource.id in [$zk.about, $zk.video, $zk.objects]}
+{set $darkHero = $isHome || $_modx->resource.id in [$zk.about, $zk.video, $zk.objects, $zk.reviews]}
 {if $_modx->resource.parent == $zk.objects && $_modx->resource.isfolder}{set $darkHero = true}{/if}
 {set $zkParents = $_modx->getParentIds($_modx->resource.id)}
 {if $_modx->resource.id == $zk.services}{set $darkHero = true}{/if}
