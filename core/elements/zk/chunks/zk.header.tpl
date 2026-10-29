@@ -7,7 +7,6 @@
             {$_modx->runSnippet('pdoMenu', [
                 'parents' => 0,
                 'level' => 1,
-                'resources' => ($ua ? '-1492' : '-1493'),
                 'tpl' => 'zk.tpl.nav',
                 'tplOuter' => '@INLINE {$wrapper}',
                 'hereClass' => 'active',
