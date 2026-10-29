@@ -7,6 +7,7 @@
  *
  * &threads — гілки через кому, з яких показувати відгуки (за замовчуванням — гілка поточної сторінки)
  * &limit   — скільки відгуків максимум (0 — усі)
+ * &pages   — 1: додати відгуки зі сторінок послуг (TV mig_reviews) поточної мови, без повторів, з джерелом і напрямом
  *
  * Повертає JSON: thread (ім’я гілки для форми), antispam (поле-пастка), items[], count, countLabel, avg.
  * Лексикон zdorovklimat:reviews має бути завантажений до виклику (форми слова «відгук»).
@@ -93,7 +94,62 @@ foreach ($modx->getIterator('ecMessage', $q) as $m) {
         'long' => mb_strlen(strip_tags($body)) > 420,
         'replyAuthor' => htmlspecialchars(trim(strip_tags((string) $m->get('reply_author'))), ENT_QUOTES, 'UTF-8'),
         'reply' => $text($m->get('reply_text')),
+        'cat' => 'site',
+        'source' => 'site',
     ];
+}
+
+// ---------- відгуки зі сторінок послуг (поле «Отзывы» / mig_reviews) ----------
+$key = function ($s) { return mb_substr(preg_replace('/[^\p{L}\p{N}]+/u', '', mb_strtolower(html_entity_decode(strip_tags((string) $s), ENT_QUOTES, 'UTF-8'))), 0, 160); };
+$seen = [];
+foreach ($items as $it) $seen[$key($it['text'])] = 1;
+$cats = [];
+if ((int) $modx->getOption('pages', $scriptProperties, 0)) {
+    $ctx = $modx->context->get('key');
+    $root = $ctx == 'web' ? 25 : 1289;
+    $tvR = $modx->getObject('modTemplateVar', ['name' => 'mig_reviews']);
+    $dirs = $modx->getCollection('modResource', $modx->newQuery('modResource', ['parent' => $root, 'published' => 1, 'deleted' => 0])->sortby('menuindex', 'ASC'));
+    foreach ($dirs as $dir) {
+        $ids = array_merge([$dir->get('id')], $modx->getChildIds($dir->get('id'), 10, ['context' => $ctx]));
+        $q = $modx->newQuery('modResource', ['id:IN' => $ids, 'published' => 1, 'deleted' => 0]);
+        $q->sortby('parent', 'ASC');
+        $q->sortby('menuindex', 'ASC');
+        $pages = [];
+        foreach ($modx->getIterator('modResource', $q) as $r) $pages[$r->get('id')] = $r;
+        // напрям першим, далі — у порядку дерева
+        uksort($pages, function ($a, $b) use ($ids) { return array_search($a, $ids) - array_search($b, $ids); });
+        $dirCount = 0;
+        foreach ($pages as $pid => $r) {
+            $raw = $tvR ? json_decode((string) $tvR->getValue($pid), true) : null;
+            if (!is_array($raw)) continue;
+            foreach ($raw as $x) {
+                if (!is_array($x)) continue;
+                $body = $text($x['text-reviews'] ?? '');
+                $k = $key($body);
+                if ($body === '' || $k === '' || isset($seen[$k])) continue;
+                $seen[$k] = 1;
+                $items[] = [
+                    'id' => 0,
+                    'name' => htmlspecialchars(trim(html_entity_decode(strip_tags((string) ($x['name-reviews'] ?? '')), ENT_QUOTES, 'UTF-8')), ENT_QUOTES, 'UTF-8'),
+                    'company' => '',
+                    'date' => '',
+                    'rating' => 5,
+                    'text' => $body,
+                    'long' => mb_strlen(strip_tags($body)) > 420,
+                    'replyAuthor' => '',
+                    'reply' => '',
+                    'cat' => (string) $dir->get('id'),
+                    'source' => 'page',
+                    'sourceTitle' => htmlspecialchars(trim($r->get('menutitle') ?: $r->get('pagetitle')), ENT_QUOTES, 'UTF-8'),
+                    'sourceUrl' => $modx->makeUrl($pid),
+                ];
+                $dirCount++;
+            }
+        }
+        if ($dirCount) $cats[] = ['id' => (string) $dir->get('id'), 'name' => htmlspecialchars(trim($dir->get('menutitle') ?: $dir->get('pagetitle')), ENT_QUOTES, 'UTF-8'), 'n' => $dirCount];
+    }
+    $siteN = count(array_filter($items, function ($i) { return $i['source'] === 'site'; }));
+    if ($siteN) array_unshift($cats, ['id' => 'site', 'name' => $modx->lexicon('zkr.list.site'), 'n' => $siteN]);
 }
 
 $n = count($items);
@@ -108,5 +164,7 @@ return json_encode([
     'items' => $items,
     'count' => $n,
     'countLabel' => $n . ' ' . ($forms[$form] ?? ($forms[0] ?? '')),
-    'avg' => $rated ? round($sum / $rated, 1) : 0,
+    // середню оцінку показуємо лише для відгуків з форми, без відгуків зі сторінок послуг (у них немає оцінки)
+    'avg' => ($rated && !$cats) ? round($sum / $rated, 1) : 0,
+    'cats' => $cats,
 ], JSON_UNESCAPED_UNICODE);

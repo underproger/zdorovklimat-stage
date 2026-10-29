@@ -54,3 +54,7 @@ $_lang['zkr.form.error'] = 'Не вдалося надіслати відгук.
 $_lang['zkr.form.success_title'] = 'Дякуємо за відгук!';
 $_lang['zkr.form.success'] = 'Ми опублікуємо його після перевірки модератором.';
 $_lang['zkr.form.privacy'] = 'Email не публікується';
+$_lang['zkr.list.all'] = 'Усі';
+$_lang['zkr.list.site'] = 'Залишені на сайті';
+$_lang['zkr.list.src_site'] = 'Залишено через форму на сайті';
+$_lang['zkr.list.src_page'] = 'Зі сторінки';

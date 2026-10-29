@@ -54,3 +54,7 @@ $_lang['zkr.form.error'] = 'Не удалось отправить отзыв. �
 $_lang['zkr.form.success_title'] = 'Спасибо за отзыв!';
 $_lang['zkr.form.success'] = 'Мы опубликуем его после проверки модератором.';
 $_lang['zkr.form.privacy'] = 'Email не публикуется';
+$_lang['zkr.list.all'] = 'Все';
+$_lang['zkr.list.site'] = 'Оставленные на сайте';
+$_lang['zkr.list.src_site'] = 'Оставлен через форму на сайте';
+$_lang['zkr.list.src_page'] = 'Со страницы';
