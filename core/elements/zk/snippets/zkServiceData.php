@@ -109,7 +109,9 @@ $out = [
 
 // ---------- зображення першого екрана ----------
 $img = $path($tv($res, 'services-img'), 'assets/images/design/');
-$out['heroImg'] = $thumb($img, 'w=1600&h=1000&zc=1&q=78&f=jpg');
+// окреме фото банера (поле «Фото першого екрана», від assets/images/) — без обрізання, композицію тримає CSS
+$banner = $path($tv($res, 'banner-image'), 'assets/images/');
+$out['heroImg'] = $banner !== '' ? $thumb($banner, 'w=2000&q=80&f=jpg') : $thumb($img, 'w=1600&h=1000&zc=1&q=78&f=jpg');
 $out['cardImg'] = $thumb($img, 'w=760&h=520&zc=1&q=78&f=jpg');
 
 // ---------- ієрархія ----------
