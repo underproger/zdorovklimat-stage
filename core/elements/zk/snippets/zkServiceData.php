@@ -1,8 +1,8 @@
 <?php
 /**
  * zkServiceData — дані сторінки послуги / напряму для нового дизайну 2026.
- * Збирає в один JSON усе, що раніше було розкидано по TV старих шаблонів
- * («Основные услуги - ленды», «Услуги - миниленд», «миниленд NEW», «миниленд NEW-2»).
+ * Збирає в один JSON вміст сторінки, що зберігся зі старої версії (тексти, ціни, FAQ, відео, бренди),
+ * для шаблонів «Послуга 2026 (повна)» і «Будівельна послуга 2026» (нові блоки — zkConstruction).
  *
  * &id     — ресурс (за замовчуванням поточний)
  * &root   — id розділу «Послуги» поточної мови (для крошок)
@@ -173,30 +173,6 @@ if ($intro1 && $out['textSeo'] !== '') {
     $out['textSeo'] = $clean($seo);
 }
 
-// перший короткий рядок картки етапу → заголовок; «Високий ККД. Розрахунок…» → жирний вступ
-$stepLead = function ($html) {
-    if (preg_match('#^\s*<(div|p)[^>]*>((?:\s*<span[^>]*>)*)\s*([^<]{2,80}?)\s*((?:</span>\s*)*)</\1>#u', $html, $m)
-        && !preg_match('#[.!?:;,]$#u', trim($m[3])) && trim(substr($html, strlen($m[0]))) !== '') {
-        return '<h3>' . trim($m[3]) . '</h3>' . substr($html, strlen($m[0]));
-    }
-    if (preg_match('#^(\s*<p[^>]*>(?:\s*<span[^>]*>)*\s*)([^<.!?]{3,60}\.)\s#u', $html, $m)) {
-        return $m[1] . '<strong>' . $m[2] . '</strong> ' . substr($html, strlen($m[0]));
-    }
-    return $html;
-};
-$steps = [];
-for ($i = 1; $i <= 4; $i++) {
-    $simg = $path($tv($res, 'tv-bl1-seo-img-' . $i), 'assets/images/all/');
-    $stxt = $clean($tv($res, 'tv-bl1-seo-textimg-' . $i));
-    if ($simg === '' && $stxt === '') continue;
-    $steps[] = [
-        'img' => $thumb($simg, 'w=900&h=640&zc=1&q=78&f=jpg'),
-        'alt' => $tv($res, 'tv-bl1-seo-alt-' . $i),
-        'html' => $stepLead($stxt),
-    ];
-}
-$out['steps'] = ['title' => $tv($res, 'tv-bl1-seo-title'), 'items' => $steps, 'after' => $clean($tv($res, 'tv-bl1-seo-text-2'))];
-
 $priceRows = [];
 foreach ($json($tv($res, 'migx_table_price')) as $r) {
     if (trim(($r['price-serv'] ?? '') . ($r['price-price'] ?? '')) === '') continue;
@@ -211,40 +187,8 @@ $out['price'] = [
     'text' => $clean($tv($res, 'tv-bl2-seo-text-3')),
 ];
 
-$b3img = $path($tv($res, 'tv-bl1-seo-img'), 'assets/images/all/');
-$out['extra'] = [
-    'title' => $tv($res, 'tv-bl3-seo-title'),
-    'text' => $clean($tv($res, 'tv-bl3-seo-text-1')),
-    'img' => $thumb($b3img, 'w=900&h=700&zc=1&q=78&f=jpg'),
-];
-
-// Сторінки, де старі шаблони не виводили заповнені поля (лишаємо як було на сайті; 111 — показуємо, послуги приведено до повної структури):
-// «Чому варто» — лише в «Основные услуги - ленды»; «Преимущества» — у «миниленд» з mig_perevagu_miniland, в інших — з mig_perevagu
-$legacyNoWhy = [27, 29, 132];
-$legacyNoAdvantages = [42];
-$legacyAdvMiniland = [128, 129];
-
-$out['why'] = in_array($id, $legacyNoWhy)
-    ? ['title' => '', 'text' => '']
-    : ['title' => $tv($res, 'varto-title'), 'text' => $clean($tv($res, 'varto-text'))];
-
-// ---------- списки ----------
-$adv = [];
-if (!in_array($id, $legacyAdvMiniland)) {
-    foreach ($json($tv($res, 'mig_perevagu')) as $r) {
-        $t = trim($r['title-pr'] ?? '');
-        $d = trim(strip_tags($r['description-pr'] ?? ''));
-        if ($t !== '' || $d !== '') $adv[] = ['title' => $t, 'text' => $d];
-    }
-}
-if (!$adv) {
-    foreach ($json($tv($res, 'mig_perevagu_miniland')) as $r) {
-        $t = trim($r['tab-title'] ?? '');
-        $d = trim(strip_tags($r['tab-text'] ?? ''));
-        if ($t !== '' || $d !== '') $adv[] = ['title' => rtrim($t, '.'), 'text' => $d];
-    }
-}
-$out['advantages'] = in_array($id, $legacyNoAdvantages) ? [] : $adv;
+// тексти старої версії сторінки (етапи, «Чому варто», блок 3, переваги) — поле «Додатковий SEO-текст», у SEO-блоці
+$out['seoExtra'] = $clean($tv($res, 'seo-extra'));
 
 // логотипи брендів (старий блок «logo-new», TV migx_logo_new / title_logo / text_logo)
 $brands = [];
@@ -253,44 +197,6 @@ foreach ($json($tv($res, 'migx_logo_new')) as $r) {
     if ($bimg !== '') $brands[] = $url($bimg);
 }
 $out['brands'] = ['title' => $tv($res, 'title_logo'), 'text' => trim(strip_tags($tv($res, 'text_logo'))), 'items' => $brands];
-
-$works = [];
-foreach ($json($tv($res, 'migx_nashi_rabotu_mian')) as $r) {
-    $wimg = $path($r['image'] ?? '', 'assets/images/portfolio-services/');
-    if ($wimg === '') continue;
-    $works[] = [
-        'thumb' => $thumb($wimg, 'w=600&h=420&zc=1&q=76&f=jpg'),
-        'full' => $thumb($wimg, 'w=1600&h=1200&q=82&f=jpg'),
-        'title' => trim($r['title_portfolio_land'] ?? '') ?: trim($r['alt_portfolio_land'] ?? ''),
-    ];
-}
-$out['works'] = $works;
-
-$readReviews = function (modResource $from) use ($json, $tv) {
-    $list = [];
-    foreach ($json($tv($from, 'mig_reviews')) as $r) {
-        $t = trim(strip_tags($r['text-reviews'] ?? ''));
-        if ($t !== '') $list[] = ['name' => trim($r['name-reviews'] ?? ''), 'text' => $t];
-    }
-    return $list;
-};
-$reviews = $readReviews($res);
-// послуга без власних відгуків показує відгуки найближчого напряму (батьківської сторінки), а якщо їх немає — сусідніх послуг
-if (!$reviews && $mode != 'direction') {
-    $p = $parent;
-    while ($p && !$reviews && $p->get('id') != $root) {
-        $reviews = array_slice($readReviews($p), 0, 3);
-        $p = $p->get('parent') ? $modx->getObject('modResource', $p->get('parent')) : null;
-    }
-    if (!$reviews && $parent) {
-        foreach ($kids($parent->get('id')) as $s) {
-            if ($s->get('id') == $id) continue;
-            $reviews = array_slice($readReviews($s), 0, 3);
-            if ($reviews) break;
-        }
-    }
-}
-$out['reviews'] = $reviews;
 
 $faq = [];
 foreach ($json($tv($res, 'migx_questions')) as $r) {
@@ -307,8 +213,5 @@ foreach ($json($tv($res, 'mig_bl1_video_seo')) as $r) {
 }
 $out['videos'] = $videos;
 $out['videoText'] = $clean($tv($res, 'tv-bl2-seo-text-2'));
-
-$objects = trim($tv($res, 'tv-bl1-object-list'));
-$out['objects'] = preg_match('#^[\d,\s]+$#', $objects) ? preg_replace('#\s+#', '', $objects) : '';
 
 return json_encode($out, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);

@@ -1,1 +1,0 @@
-<li id="row[[+id]]"><strong>[[+name]]</strong> - [[+desc]]</li>

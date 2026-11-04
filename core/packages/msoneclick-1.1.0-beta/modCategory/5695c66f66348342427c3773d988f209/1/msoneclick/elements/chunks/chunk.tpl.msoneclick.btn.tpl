@@ -1,1 +1,0 @@
-<a href="[[~[[+id]]]]#[[+selector]]" id="[[+selector]]" class="btn_one_click" data-hash="[[+hash]]" data-product="[[+id]]">[[%msoc_btn_one_click]]</a>

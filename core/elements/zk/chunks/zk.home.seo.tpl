@@ -1,4 +1,5 @@
-{set $text = $_modx->resource.content | trim}
+{* SEO-текст сторінки (поле «Вміст») згорнутим блоком. Прибираємо службове зі старого вмісту: порожній відеоплеєр, інлайн-стилі *}
+{set $text = $_modx->resource.content | ereplace : '#<div class="youtube-player[^>]*>\s*</div>#u' : '' | ereplace : '#\s(style|dir)="[^"]*"#u' : '' | ereplace : '#<p>(\s|&nbsp;|<span>\s*</span>)*</p>#u' : '' | trim}
 {if $text}
 <section class="seo-section" id="seo">
     <div class="wrap">

@@ -3,7 +3,8 @@
 <base href="[[!++site_url]]">
 [[Canonical]]
 <title>[[*longtitle:default=`[[*pagetitle]]`]]</title>
-<meta name="robots" content="[[+seoTab.robotsTag]]">
+{* тестовий домен (stage) ніколи не індексується; на робочому — налаштування вкладки SEO сторінки *}
+<meta name="robots" content="[[!++http_host:contains=`stage`:then=`noindex,nofollow`:else=`[[+seoTab.robotsTag]]`]]">
 {* лапки в заголовках/описах ламали атрибути, а «0» у ключових словах SEO Pro друкувався на сторінці — тому через Fenom з екрануванням *}
 {set $zkMetaTitle = ($_modx->resource.longtitle ?: $_modx->resource.pagetitle) | escape}
 {set $zkMetaDesc = $_modx->resource.description | trim | escape}

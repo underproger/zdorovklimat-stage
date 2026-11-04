@@ -11,5 +11,6 @@
 {include 'zk.home.process'}
 {include 'zk.about.licenses'}
 {include 'zk.home.clients'}
+{include 'zk.home.seo'}
 {include 'zk.home.contact'}
 {/block}
