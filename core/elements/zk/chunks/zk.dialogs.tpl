@@ -18,7 +18,7 @@
             &emailFromName=`[[++site_name]]`
             &emailTpl=`zk.email.lead`
             &spamCheckIp=`true`
-            &validate=`name:required,phone:required,type:required,workemail:blank`
+            &validate=`name:required,phone:required,type:required,zk_hp:blank`
             &validationErrorMessage=`{'zk.form.required' | lexicon}`
             &successMessage=`{'zk.form.success' | lexicon}`
             &frontend_css=``

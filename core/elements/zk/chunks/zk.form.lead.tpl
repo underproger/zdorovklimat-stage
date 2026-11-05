@@ -34,7 +34,8 @@
         <label for="{$fid}-message">{'zk.form.message' | lexicon}</label>
         <textarea id="{$fid}-message" name="message" placeholder="{'zk.form.message_ph' | lexicon}" rows="1" maxlength="2500"></textarea>
     </div>
-    <div class="hp-field" aria-hidden="true"><label>E-mail <input type="text" name="workemail" value="" tabindex="-1" autocomplete="off"></label></div>
+    {* пастка для ботів: назва й підпис не схожі на e-mail/ім’я/телефон, щоб автозаповнення браузера її не заповнювало *}
+    <div class="hp-field" aria-hidden="true"><label>Не заповнюйте це поле <input type="text" name="zk_hp" value="" tabindex="-1" autocomplete="off"></label></div>
     <input type="hidden" name="title" value="{$_modx->resource.pagetitle | escape}">
     <input type="hidden" name="link" value="{$_modx->resource.id | url}">
     <div class="form-end">

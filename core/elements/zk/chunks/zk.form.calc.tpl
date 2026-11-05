@@ -25,7 +25,8 @@
             <input id="{$fid}-param" name="param" maxlength="120" placeholder="{'zku.calc.param_ph' | lexicon}">
         </div>
     </div>
-    <div class="hp-field" aria-hidden="true"><label>E-mail <input type="text" name="workemail" value="" tabindex="-1" autocomplete="off"></label></div>
+    {* пастка для ботів: назва й підпис не схожі на e-mail/ім’я/телефон, щоб автозаповнення браузера її не заповнювало *}
+    <div class="hp-field" aria-hidden="true"><label>Не заповнюйте це поле <input type="text" name="zk_hp" value="" tabindex="-1" autocomplete="off"></label></div>
     <input type="hidden" name="type" value="{$zkType}">
     <input type="hidden" name="title" value="{$_modx->resource.pagetitle | escape}">
     <input type="hidden" name="link" value="{$_modx->resource.id | url}">
