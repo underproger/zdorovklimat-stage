@@ -15,7 +15,7 @@
                 &zkType=`{$calcType | escape}`
                 &zkParam=`{$calcParam | escape}`
                 &snippet=`FormIt`
-                &hooks=`spam,email,FormItSaveForm`
+                &hooks=`spam,FormItSaveForm,email`
                 &formName=`{'zku.calc.subject' | lexicon} «{$calcType | escape}»`
                 &formFields=`name,phone,type,param,title,link`
                 &fieldNames=`name==Ім’я,phone==Телефон,type==Послуга,param=={$calcParam | escape},title==Сторінка,link==Посилання`

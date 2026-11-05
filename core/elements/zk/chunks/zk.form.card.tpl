@@ -7,7 +7,7 @@
         &form=`zk.form.lead`
         &zkId=`lead`
         &snippet=`FormIt`
-        &hooks=`spam,email,FormItSaveForm`
+        &hooks=`spam,FormItSaveForm,email`
         &formName=`{$formSubject}`
         &formFields=`name,phone,type,message,title,link`
         &fieldNames=`name==Ім’я,phone==Телефон,type==Тип об’єкта,message==Повідомлення,title==Сторінка,link==Посилання`
